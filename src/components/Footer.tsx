@@ -6,7 +6,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 items-start">
         <div>
           <p className="font-display text-2xl">DECOBAY Interiors</p>
-          <p className="text-muted-foreground text-sm mt-2">DECOBAY Designs LLC — All Rights Reserved</p>
+          <p className="text-muted-foreground text-sm mt-2">DECOBAY Interiors LLC — All Rights Reserved</p>
           <p className="text-muted-foreground text-sm mt-1">Interior design studio · California, USA</p>
         </div>
         <nav aria-label="Site" className="text-sm space-y-2">
