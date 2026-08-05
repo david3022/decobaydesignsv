@@ -14,17 +14,47 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "DECOBAY Interiors — Minimalist Interior Design in California" },
-      { name: "description", content: "California interior design studio creating minimalist, warm and timeless homes and commercial spaces. Book a free 30-minute consultation." },
-      { name: "keywords", content: "interior design California, minimalist interior design, residential interior design, commercial interior design, DECOBAY Interiors, free consultation" },
-      { property: "og:title", content: "DECOBAY Interiors — Minimalist Interior Design in California" },
-      { property: "og:description", content: "Minimalist, warm and timeless residential and commercial interior design from California. Book a free 30-minute consultation." },
+      {
+        name: "description",
+        content:
+          "California interior design studio creating minimalist, warm and timeless homes and commercial spaces. Book a free 30-minute consultation.",
+      },
+      {
+        name: "keywords",
+        content:
+          "interior design California, minimalist interior design, residential interior design, commercial interior design, DECOBAY Interiors, free consultation",
+      },
+      {
+        property: "og:title",
+        content: "DECOBAY Interiors — Minimalist Interior Design in California",
+      },
+      {
+        property: "og:description",
+        content:
+          "Minimalist, warm and timeless residential and commercial interior design from California. Book a free 30-minute consultation.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://deco-bay-dream.lovable.app/" },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fb883835-6702-42e0-a9dc-f2070c1fd8fa/id-preview-44fd052c--a0b0cace-1d38-4ef2-b39f-67d3ab31cade.lovable.app-1782841553501.png" },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fb883835-6702-42e0-a9dc-f2070c1fd8fa/id-preview-44fd052c--a0b0cace-1d38-4ef2-b39f-67d3ab31cade.lovable.app-1782841553501.png",
+      },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "DECOBAY Interiors — Minimalist Interior Design in California" },
-      { name: "twitter:description", content: "California interior design studio. Minimalist, warm and timeless residential and commercial interiors. Book a free consultation." },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fb883835-6702-42e0-a9dc-f2070c1fd8fa/id-preview-44fd052c--a0b0cace-1d38-4ef2-b39f-67d3ab31cade.lovable.app-1782841553501.png" },
+      {
+        name: "twitter:title",
+        content: "DECOBAY Interiors — Minimalist Interior Design in California",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "California interior design studio. Minimalist, warm and timeless residential and commercial interiors. Book a free consultation.",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fb883835-6702-42e0-a9dc-f2070c1fd8fa/id-preview-44fd052c--a0b0cace-1d38-4ef2-b39f-67d3ab31cade.lovable.app-1782841553501.png",
+      },
     ],
     links: [
       { rel: "canonical", href: "https://deco-bay-dream.lovable.app/" },
@@ -42,10 +72,12 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "InteriorDesignStudio",
           name: "DECOBAY Interiors",
-          description: "Minimalist interior design studio in California offering residential and commercial interior design services.",
+          description:
+            "Minimalist interior design studio in California offering residential and commercial interior design services.",
           areaServed: { "@type": "State", name: "California" },
           url: "https://deco-bay-dream.lovable.app/",
-          image: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fb883835-6702-42e0-a9dc-f2070c1fd8fa/id-preview-44fd052c--a0b0cace-1d38-4ef2-b39f-67d3ab31cade.lovable.app-1782841553501.png",
+          image:
+            "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fb883835-6702-42e0-a9dc-f2070c1fd8fa/id-preview-44fd052c--a0b0cace-1d38-4ef2-b39f-67d3ab31cade.lovable.app-1782841553501.png",
           priceRange: "$$",
           sameAs: [
             "https://decobayinteriors.com",
@@ -73,11 +105,13 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-
-
 function Hero() {
   return (
-    <section id="top" className="relative min-h-screen flex items-end overflow-hidden" aria-label="DECOBAY Interiors — Minimalist Interior Design in California">
+    <section
+      id="top"
+      className="relative min-h-screen flex items-end overflow-hidden"
+      aria-label="DECOBAY Interiors — Minimalist Interior Design in California"
+    >
       <div className="absolute inset-0">
         <img
           src={hero}
@@ -96,21 +130,44 @@ function Hero() {
           residential and commercial interiors — from a single room to a full home.
         </p>
         <div className="reveal reveal-up mt-10 flex flex-wrap gap-3">
-          <a href="#consultation" className="px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-accent transition-colors">Book a free consultation</a>
-          <a href="#projects" className="px-6 py-3 rounded-full border border-foreground/30 hover:border-foreground transition-colors">View projects</a>
-          <a href="/sarita" className="px-6 py-3 rounded-full border border-foreground/30 hover:border-foreground transition-colors">Sarita residence →</a>
+          <a
+            href="#consultation"
+            className="px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-accent transition-colors"
+          >
+            Book a free consultation
+          </a>
+          <a
+            href="#projects"
+            className="px-6 py-3 rounded-full border border-foreground/30 hover:border-foreground transition-colors"
+          >
+            View projects
+          </a>
+          <a
+            href="/sarita"
+            className="px-6 py-3 rounded-full border border-foreground/30 hover:border-foreground transition-colors"
+          >
+            Sarita residence →
+          </a>
         </div>
       </div>
     </section>
   );
 }
 
-
 function Philosophy() {
   const items = [
-    { title: "Our Philosophy", body: "Interior design is a collaboration. We listen first, then shape spaces that are beautiful and quietly functional." },
-    { title: "Our Experience", body: "Over a decade refining residential and commercial interiors — from a single room to a full home." },
-    { title: "Our Approach", body: "Light, color, texture and flow, considered together. Spaces that promote well-being as much as taste." },
+    {
+      title: "Our Philosophy",
+      body: "Interior design is a collaboration. We listen first, then shape spaces that are beautiful and quietly functional.",
+    },
+    {
+      title: "Our Experience",
+      body: "Over a decade refining residential and commercial interiors — from a single room to a full home.",
+    },
+    {
+      title: "Our Approach",
+      body: "Light, color, texture and flow, considered together. Spaces that promote well-being as much as taste.",
+    },
   ];
   return (
     <section id="philosophy" className="py-28 md:py-40 px-6 lg:px-10">
@@ -121,7 +178,11 @@ function Philosophy() {
         </h2>
         <div className="mt-16 grid md:grid-cols-3 gap-10 md:gap-14">
           {items.map((it, i) => (
-            <div key={it.title} className="reveal reveal-up" style={{ transitionDelay: `${i * 120}ms` }}>
+            <div
+              key={it.title}
+              className="reveal reveal-up"
+              style={{ transitionDelay: `${i * 120}ms` }}
+            >
               <div className="h-px w-12 bg-accent mb-6" />
               <h3 className="text-2xl md:text-3xl mb-3">{it.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{it.body}</p>
@@ -143,38 +204,70 @@ function Projects() {
             <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl">Recent projects</h2>
           </div>
           <p className="reveal reveal-fade max-w-sm text-muted-foreground">
-            A curated mix of residential and commercial spaces — each one shaped around how it will be lived in.
+            A curated mix of residential and commercial spaces — each one shaped around how it will
+            be lived in.
           </p>
         </div>
 
         {/* Editorial asymmetric grid */}
         <div className="grid grid-cols-12 gap-4 md:gap-6">
           <figure className="reveal reveal-left img-hover col-span-12 md:col-span-7 aspect-[16/11] overflow-hidden rounded-sm">
-            <img src={living} alt="Minimalist California living room with linen sofa and oak details" className="w-full h-full object-cover" loading="lazy" />
+            <img
+              src={living}
+              alt="Minimalist California living room with linen sofa and oak details"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
           </figure>
           <figure className="reveal reveal-zoom img-hover col-span-12 md:col-span-5 aspect-[4/5] overflow-hidden rounded-sm">
-            <img src={kitchen} alt="Minimalist oak kitchen with stone worktop by DECOBAY Interiors" className="w-full h-full object-cover" loading="lazy" />
+            <img
+              src={kitchen}
+              alt="Minimalist oak kitchen with stone worktop by DECOBAY Interiors"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
           </figure>
 
           <div className="reveal reveal-up col-span-12 md:col-span-5 flex flex-col justify-center md:pl-4">
             <p className="kicker">Residential</p>
             <h3 className="text-3xl md:text-4xl mt-3">Coastal residence</h3>
             <p className="text-muted-foreground mt-4 leading-relaxed">
-              A double-height living space where natural light, linen and oak set the tone for slow weekends.
+              A double-height living space where natural light, linen and oak set the tone for slow
+              weekends.
             </p>
           </div>
           <figure className="reveal reveal-right img-hover col-span-12 md:col-span-7 aspect-[16/10] overflow-hidden rounded-sm">
-            <img src={bedroom} alt="Warm neutral bedroom interior design in a California home" className="w-full h-full object-cover" loading="lazy" />
+            <img
+              src={bedroom}
+              alt="Warm neutral bedroom interior design in a California home"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
           </figure>
 
           <figure className="reveal reveal-tilt img-hover col-span-12 md:col-span-4 aspect-[4/5] overflow-hidden rounded-sm">
-            <img src={dining} alt="Minimalist dining room with sculptural wood table and soft lighting" className="w-full h-full object-cover" loading="lazy" />
+            <img
+              src={dining}
+              alt="Minimalist dining room with sculptural wood table and soft lighting"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
           </figure>
           <figure className="reveal reveal-fade img-hover col-span-12 md:col-span-4 aspect-[4/5] overflow-hidden rounded-sm md:mt-12">
-            <img src={bath} alt="Serene stone bathroom design with natural textures" className="w-full h-full object-cover" loading="lazy" />
+            <img
+              src={bath}
+              alt="Serene stone bathroom design with natural textures"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
           </figure>
           <figure className="reveal reveal-zoom img-hover col-span-12 md:col-span-4 aspect-[4/5] overflow-hidden rounded-sm md:mt-24">
-            <img src={commercial} alt="Commercial interior design project for a California workspace" className="w-full h-full object-cover" loading="lazy" />
+            <img
+              src={commercial}
+              alt="Commercial interior design project for a California workspace"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
           </figure>
         </div>
       </div>
@@ -183,15 +276,25 @@ function Projects() {
 }
 
 function Services() {
-  const list = ["Full-home design", "Single-room refresh", "Color & material consult", "Commercial spaces", "Furniture sourcing", "Project management"];
+  const list = [
+    "Full-home design",
+    "Single-room refresh",
+    "Color & material consult",
+    "Commercial spaces",
+    "Furniture sourcing",
+    "Project management",
+  ];
   return (
     <section id="services" className="py-28 md:py-40 px-6 lg:px-10 bg-muted/40">
       <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10">
         <div className="md:col-span-5">
           <p className="kicker reveal reveal-fade">03 — Services</p>
-          <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl">From a single room to the whole home.</h2>
+          <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl">
+            From a single room to the whole home.
+          </h2>
           <p className="reveal reveal-up mt-6 text-muted-foreground max-w-md">
-            We work at every scale. Tell us what you have in mind — we'll respond with a tailored proposal within 48 hours.
+            We work at every scale. Tell us what you have in mind — we'll respond with a tailored
+            proposal within 48 hours.
           </p>
         </div>
         <ul className="md:col-span-7 grid sm:grid-cols-2 gap-x-10">
@@ -220,7 +323,8 @@ function FreeConsultation() {
           Ready to bring your <em className="italic text-accent">vision</em> to life?
         </h2>
         <p className="reveal reveal-up mt-6 text-muted-foreground max-w-xl">
-          Schedule a complimentary 30-minute consultation to discuss your project, explore possibilities, and discover how Decobay Design can transform your space.
+          Schedule a complimentary 30-minute consultation to discuss your project, explore
+          possibilities, and discover how Decobay Design can transform your space.
         </p>
 
         <div className="reveal reveal-up mt-12 p-10 md:p-14 border border-accent/30 bg-card rounded-sm">
@@ -249,7 +353,6 @@ function FreeConsultation() {
     </section>
   );
 }
-
 
 function Index() {
   useReveal();

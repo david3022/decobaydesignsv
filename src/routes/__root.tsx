@@ -79,16 +79,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "DECOBAY Interiors — Interior Design Studio in California" },
-      { name: "description", content: "DECOBAY Interiors: minimalist, warm and timeless residential and commercial interior design in California." },
+      {
+        name: "description",
+        content:
+          "DECOBAY Interiors: minimalist, warm and timeless residential and commercial interior design in California.",
+      },
       { name: "author", content: "DECOBAY Designs LLC" },
       { property: "og:site_name", content: "DECOBAY Interiors" },
       { property: "og:title", content: "DECOBAY Interiors — Interior Design Studio in California" },
-      { property: "og:description", content: "Minimalist, warm and timeless residential and commercial interior design in California." },
+      {
+        property: "og:description",
+        content:
+          "Minimalist, warm and timeless residential and commercial interior design in California.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "DECOBAY Interiors — Interior Design Studio in California" },
-      { name: "twitter:description", content: "Minimalist, warm and timeless residential and commercial interior design in California." },
+      {
+        name: "twitter:title",
+        content: "DECOBAY Interiors — Interior Design Studio in California",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Minimalist, warm and timeless residential and commercial interior design in California.",
+      },
     ],
     links: [
       {

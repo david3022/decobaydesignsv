@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as HardscapeRouteImport } from './routes/hardscape'
 import { Route as SaritaRouteImport } from './routes/sarita'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HardscapeRoute = HardscapeRouteImport.update({
+  id: '/hardscape',
+  path: '/hardscape',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SaritaRoute = SaritaRouteImport.update({
@@ -31,30 +37,34 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/hardscape': typeof HardscapeRoute
   '/sarita': typeof SaritaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/hardscape': typeof HardscapeRoute
   '/sarita': typeof SaritaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/hardscape': typeof HardscapeRoute
   '/sarita': typeof SaritaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sarita' | '/sitemap.xml'
+  fullPaths: '/' | '/hardscape' | '/sarita' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sarita' | '/sitemap.xml'
-  id: '__root__' | '/' | '/sarita' | '/sitemap.xml'
+  to: '/' | '/hardscape' | '/sarita' | '/sitemap.xml'
+  id: '__root__' | '/' | '/hardscape' | '/sarita' | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HardscapeRoute: typeof HardscapeRoute
   SaritaRoute: typeof SaritaRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hardscape': {
+      id: '/hardscape'
+      path: '/hardscape'
+      fullPath: '/hardscape'
+      preLoaderRoute: typeof HardscapeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sarita': {
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HardscapeRoute: HardscapeRoute,
   SaritaRoute: SaritaRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }

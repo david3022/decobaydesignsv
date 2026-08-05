@@ -1,49 +1,50 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useReveal } from "@/hooks/use-reveal";
-import { Sarita } from "@/components/Sarita";
+import { Hardscape } from "@/components/Hardscape";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Consultation } from "@/components/consultation";
 
-export const Route = createFileRoute("/sarita")({
+export const Route = createFileRoute("/hardscape")({
   head: () => ({
     meta: [
-      { title: "Sarita Residence — California Project | DECOBAY" },
+      { title: "Hardscape — California Project | DECOBAY" },
       {
         name: "description",
         content:
-          "Sarita residence: a warm, light-filled California home by DECOBAY Interiors. Explore the gallery, design brief and interactive 3D walkthrough.",
+          "Hardscape: a warm, light-filled California home by DECOBAY Interiors. Explore the gallery, design brief and interactive 3D walkthrough.",
       },
       {
         name: "keywords",
         content:
-          "Sarita residence, California interior design project, 3D interior walkthrough, DECOBAY Interiors",
+          "Hardscape, California interior design project, 3D interior walkthrough, DECOBAY Interiors",
       },
-      { property: "og:title", content: "Sarita Residence — California Interior Design Project" },
+      { property: "og:title", content: "Hardscapeh — California Interior Design Project" },
       {
         property: "og:description",
         content:
           "A warm, light-filled California home. Gallery and interactive 3D walkthrough by DECOBAY Interiors.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://deco-bay-dream.lovable.app/sarita" },
+      { property: "og:url", content: "https://deco-bay-dream.lovable.app/hardscape" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Sarita Residence — California Interior Design Project" },
+      { name: "twitter:title", content: "Hardscape — California Interior Design Project" },
       {
         name: "twitter:description",
         content:
           "A warm, light-filled California home. Gallery and interactive 3D walkthrough by DECOBAY Interiors.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://deco-bay-dream.lovable.app/sarita" }],
+    links: [{ rel: "canonical", href: "https://deco-bay-dream.lovable.app/hardscape" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "CreativeWork",
-          name: "Sarita Residence",
+          name: "Hardscape",
           about: "Interior design project in California",
-          url: "https://deco-bay-dream.lovable.app/sarita",
+          url: "https://deco-bay-dream.lovable.app/hardscape",
           locationCreated: {
             "@type": "Place",
             address: { "@type": "PostalAddress", addressRegion: "CA", addressCountry: "US" },
@@ -70,18 +71,18 @@ export const Route = createFileRoute("/sarita")({
             {
               "@type": "ListItem",
               position: 2,
-              name: "Sarita residence",
-              item: "https://deco-bay-dream.lovable.app/sarita",
+              name: "Hardscape",
+              item: "https://deco-bay-dream.lovable.app/hardscape",
             },
           ],
         }),
       },
     ],
   }),
-  component: SaritaPage,
+  component: HardscapePage,
 });
 
-function SaritaPage() {
+function HardscapePage() {
   useReveal();
   return (
     <main className="bg-background text-foreground">
@@ -90,14 +91,15 @@ function SaritaPage() {
         <header className="max-w-7xl mx-auto px-6 lg:px-10">
           <p className="kicker">Featured project · California</p>
           <h1 className="mt-4 text-5xl md:text-7xl leading-[0.95] max-w-3xl">
-            Sarita residence — a <em className="italic text-accent">California</em> home.
+            Hardscape — a <em className="italic text-accent">California</em> home.
           </h1>
           <p className="mt-6 max-w-xl text-muted-foreground">
             A full-home interior design project by DECOBAY Interiors. Browse the gallery, read the
             design brief, and explore the interactive 3D walkthrough below.
           </p>
         </header>
-        <Sarita />
+        <Hardscape />
+        <Consultation />
         <nav
           aria-label="Related"
           className="max-w-7xl mx-auto px-6 lg:px-10 pb-16 flex flex-wrap gap-4 text-sm"
@@ -108,9 +110,9 @@ function SaritaPage() {
           <Link to="/" hash="projects" className="underline underline-offset-4 hover:text-accent">
             More projects
           </Link>
-          <Link to="/" hash="quote" className="underline underline-offset-4 hover:text-accent">
+          {/* <Link to="/" hash="quote" className="underline underline-offset-4 hover:text-accent">
             Request a quote
-          </Link>
+          </Link> */}
         </nav>
       </article>
       <Footer />

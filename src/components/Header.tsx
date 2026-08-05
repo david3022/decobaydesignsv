@@ -37,7 +37,7 @@ export function Header() {
           {sectionLink("projects", "Projects")}
           {sectionLink("services", "Services")}
           <span className="h-4 w-px bg-border" />
-          <Link className="hover:text-accent transition-colors" to="/sarita">Sarita</Link>
+          {/* <Link className="hover:text-accent transition-colors" to="/sarita">Sarita</Link> */}
         </nav>
       </div>
     </header>
