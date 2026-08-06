@@ -13,6 +13,8 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as PrivacyPolicyRouteImport } from './routes/PrivacyPolicy'
 import { Route as TermsAndConditionsRouteImport } from './routes/TermsAndConditions'
 import { Route as HardscapeRouteImport } from './routes/hardscape'
+import { Route as KatAndAdamRouteImport } from './routes/katAndAdam'
+import { Route as PalmettoRouteImport } from './routes/palmetto'
 import { Route as SaritaRouteImport } from './routes/sarita'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
@@ -36,6 +38,16 @@ const HardscapeRoute = HardscapeRouteImport.update({
   path: '/hardscape',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KatAndAdamRoute = KatAndAdamRouteImport.update({
+  id: '/katAndAdam',
+  path: '/katAndAdam',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PalmettoRoute = PalmettoRouteImport.update({
+  id: '/palmetto',
+  path: '/palmetto',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SaritaRoute = SaritaRouteImport.update({
   id: '/sarita',
   path: '/sarita',
@@ -52,6 +64,8 @@ export interface FileRoutesByFullPath {
   '/PrivacyPolicy': typeof PrivacyPolicyRoute
   '/TermsAndConditions': typeof TermsAndConditionsRoute
   '/hardscape': typeof HardscapeRoute
+  '/katAndAdam': typeof KatAndAdamRoute
+  '/palmetto': typeof PalmettoRoute
   '/sarita': typeof SaritaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -60,6 +74,8 @@ export interface FileRoutesByTo {
   '/PrivacyPolicy': typeof PrivacyPolicyRoute
   '/TermsAndConditions': typeof TermsAndConditionsRoute
   '/hardscape': typeof HardscapeRoute
+  '/katAndAdam': typeof KatAndAdamRoute
+  '/palmetto': typeof PalmettoRoute
   '/sarita': typeof SaritaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -69,6 +85,8 @@ export interface FileRoutesById {
   '/PrivacyPolicy': typeof PrivacyPolicyRoute
   '/TermsAndConditions': typeof TermsAndConditionsRoute
   '/hardscape': typeof HardscapeRoute
+  '/katAndAdam': typeof KatAndAdamRoute
+  '/palmetto': typeof PalmettoRoute
   '/sarita': typeof SaritaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
@@ -79,6 +97,8 @@ export interface FileRouteTypes {
     | '/PrivacyPolicy'
     | '/TermsAndConditions'
     | '/hardscape'
+    | '/katAndAdam'
+    | '/palmetto'
     | '/sarita'
     | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
@@ -87,6 +107,8 @@ export interface FileRouteTypes {
     | '/PrivacyPolicy'
     | '/TermsAndConditions'
     | '/hardscape'
+    | '/katAndAdam'
+    | '/palmetto'
     | '/sarita'
     | '/sitemap.xml'
   id:
@@ -95,6 +117,8 @@ export interface FileRouteTypes {
     | '/PrivacyPolicy'
     | '/TermsAndConditions'
     | '/hardscape'
+    | '/katAndAdam'
+    | '/palmetto'
     | '/sarita'
     | '/sitemap.xml'
   fileRoutesById: FileRoutesById
@@ -104,6 +128,8 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   HardscapeRoute: typeof HardscapeRoute
+  KatAndAdamRoute: typeof KatAndAdamRoute
+  PalmettoRoute: typeof PalmettoRoute
   SaritaRoute: typeof SaritaRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -138,6 +164,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HardscapeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/katAndAdam': {
+      id: '/katAndAdam'
+      path: '/katAndAdam'
+      fullPath: '/katAndAdam'
+      preLoaderRoute: typeof KatAndAdamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/palmetto': {
+      id: '/palmetto'
+      path: '/palmetto'
+      fullPath: '/palmetto'
+      preLoaderRoute: typeof PalmettoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sarita': {
       id: '/sarita'
       path: '/sarita'
@@ -160,6 +200,8 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   TermsAndConditionsRoute: TermsAndConditionsRoute,
   HardscapeRoute: HardscapeRoute,
+  KatAndAdamRoute: KatAndAdamRoute,
+  PalmettoRoute: PalmettoRoute,
   SaritaRoute: SaritaRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }

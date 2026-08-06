@@ -16,9 +16,13 @@ export function Header() {
   const sectionLink = (hash: string, label: string) => {
     const cls = "hover:text-accent transition-colors";
     return isHome ? (
-      <a className={cls} href={`#${hash}`}>{label}</a>
+      <a className={cls} href={`#${hash}`}>
+        {label}
+      </a>
     ) : (
-      <Link className={cls} to="/" hash={hash}>{label}</Link>
+      <Link className={cls} to="/" hash={hash}>
+        {label}
+      </Link>
     );
   };
 
