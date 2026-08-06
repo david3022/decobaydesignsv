@@ -94,8 +94,7 @@ function HardscapePage() {
             Hardscape — a <em className="italic text-accent">California</em> home.
           </h1>
           <p className="mt-6 max-w-xl text-muted-foreground">
-            A full-home interior design project by DECOBAY Interiors. Browse the gallery, read the
-            design brief, and explore the interactive 3D walkthrough below.
+            A full-home project by DECOBAY Interiors
           </p>
         </header>
         <Hardscape />
