@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PrivacyPolicyRouteImport } from './routes/PrivacyPolicy'
+import { Route as TermsAndConditionsRouteImport } from './routes/TermsAndConditions'
 import { Route as HardscapeRouteImport } from './routes/hardscape'
 import { Route as SaritaRouteImport } from './routes/sarita'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -17,6 +19,16 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/PrivacyPolicy',
+  path: '/PrivacyPolicy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
+  id: '/TermsAndConditions',
+  path: '/TermsAndConditions',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HardscapeRoute = HardscapeRouteImport.update({
@@ -37,12 +49,16 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/PrivacyPolicy': typeof PrivacyPolicyRoute
+  '/TermsAndConditions': typeof TermsAndConditionsRoute
   '/hardscape': typeof HardscapeRoute
   '/sarita': typeof SaritaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/PrivacyPolicy': typeof PrivacyPolicyRoute
+  '/TermsAndConditions': typeof TermsAndConditionsRoute
   '/hardscape': typeof HardscapeRoute
   '/sarita': typeof SaritaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -50,20 +66,43 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/PrivacyPolicy': typeof PrivacyPolicyRoute
+  '/TermsAndConditions': typeof TermsAndConditionsRoute
   '/hardscape': typeof HardscapeRoute
   '/sarita': typeof SaritaRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/hardscape' | '/sarita' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/PrivacyPolicy'
+    | '/TermsAndConditions'
+    | '/hardscape'
+    | '/sarita'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/hardscape' | '/sarita' | '/sitemap.xml'
-  id: '__root__' | '/' | '/hardscape' | '/sarita' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/PrivacyPolicy'
+    | '/TermsAndConditions'
+    | '/hardscape'
+    | '/sarita'
+    | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/PrivacyPolicy'
+    | '/TermsAndConditions'
+    | '/hardscape'
+    | '/sarita'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   HardscapeRoute: typeof HardscapeRoute
   SaritaRoute: typeof SaritaRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -76,6 +115,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/PrivacyPolicy': {
+      id: '/PrivacyPolicy'
+      path: '/PrivacyPolicy'
+      fullPath: '/PrivacyPolicy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/TermsAndConditions': {
+      id: '/TermsAndConditions'
+      path: '/TermsAndConditions'
+      fullPath: '/TermsAndConditions'
+      preLoaderRoute: typeof TermsAndConditionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hardscape': {
@@ -104,6 +157,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  TermsAndConditionsRoute: TermsAndConditionsRoute,
   HardscapeRoute: HardscapeRoute,
   SaritaRoute: SaritaRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
