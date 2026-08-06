@@ -103,8 +103,8 @@ export function Hardscape() {
 
       <div className="relative max-w-7xl mx-auto">
         {/* Cabecera del Proyecto */}
-        <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
-          <div>
+        {/* <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
+          <div> */}
             {/* <p className="kicker reveal reveal-fade"> — Outdoor Architecture</p>
             <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl">
               <em className="italic text-accent">Hardscape</em>  &amp; Deck
@@ -112,12 +112,12 @@ export function Hardscape() {
             <p className="reveal reveal-up mt-3 text-sm text-muted-foreground tracking-[0.2em] uppercase">
               California · Exterior Design &amp; Decking
             </p> */}
-          </div>
+          {/* </div> */}
           {/* <p className="reveal reveal-fade max-w-md text-muted-foreground">
             A multi-level outdoor living concept merging custom timber decking, natural flagstone 
             paving, and structural stone masonry for an effortless California backyard experience.
           </p> */}
-        </div>
+        {/* </div> */}
 
         {/* Resumen del Brief de Diseño */}
         <div className="reveal reveal-up bg-muted/30 border border-border/60 rounded-sm p-6 md:p-8 mb-12">

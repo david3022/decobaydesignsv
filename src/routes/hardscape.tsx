@@ -94,7 +94,14 @@ function HardscapePage() {
             Hardscape — a <em className="italic text-accent">California</em> home.
           </h1>
           <p className="mt-6 max-w-xl text-muted-foreground">
-            A full-home project by DECOBAY Interiors
+            Transform your outdoor space into a seamless extension of your home with DECOBAY’s custom hardscape design services. 
+            
+          </p>
+
+          <p className="mt-6 max-w-xl text-muted-foreground">
+            
+            We create thoughtfully planned environments that combine beauty, functionality, and lasting value through patios, walkways, 
+            driveways, outdoor kitchens, fire features, retaining walls, pool surrounds, and custom landscape elements
           </p>
         </header>
         <Hardscape />
