@@ -14,8 +14,10 @@ import { Route as PrivacyPolicyRouteImport } from './routes/PrivacyPolicy'
 import { Route as TermsAndConditionsRouteImport } from './routes/TermsAndConditions'
 import { Route as HardscapeRouteImport } from './routes/hardscape'
 import { Route as KatAndAdamRouteImport } from './routes/katAndAdam'
+import { Route as OperaplazaRouteImport } from './routes/operaplaza'
 import { Route as PalmettoRouteImport } from './routes/palmetto'
 import { Route as SaritaRouteImport } from './routes/sarita'
+import { Route as Sarita2RouteImport } from './routes/sarita2'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
 const IndexRoute = IndexRouteImport.update({
@@ -43,6 +45,11 @@ const KatAndAdamRoute = KatAndAdamRouteImport.update({
   path: '/katAndAdam',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OperaplazaRoute = OperaplazaRouteImport.update({
+  id: '/operaplaza',
+  path: '/operaplaza',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PalmettoRoute = PalmettoRouteImport.update({
   id: '/palmetto',
   path: '/palmetto',
@@ -51,6 +58,11 @@ const PalmettoRoute = PalmettoRouteImport.update({
 const SaritaRoute = SaritaRouteImport.update({
   id: '/sarita',
   path: '/sarita',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Sarita2Route = Sarita2RouteImport.update({
+  id: '/sarita2',
+  path: '/sarita2',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -65,8 +77,10 @@ export interface FileRoutesByFullPath {
   '/TermsAndConditions': typeof TermsAndConditionsRoute
   '/hardscape': typeof HardscapeRoute
   '/katAndAdam': typeof KatAndAdamRoute
+  '/operaplaza': typeof OperaplazaRoute
   '/palmetto': typeof PalmettoRoute
   '/sarita': typeof SaritaRoute
+  '/sarita2': typeof Sarita2Route
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
@@ -75,8 +89,10 @@ export interface FileRoutesByTo {
   '/TermsAndConditions': typeof TermsAndConditionsRoute
   '/hardscape': typeof HardscapeRoute
   '/katAndAdam': typeof KatAndAdamRoute
+  '/operaplaza': typeof OperaplazaRoute
   '/palmetto': typeof PalmettoRoute
   '/sarita': typeof SaritaRoute
+  '/sarita2': typeof Sarita2Route
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
@@ -86,8 +102,10 @@ export interface FileRoutesById {
   '/TermsAndConditions': typeof TermsAndConditionsRoute
   '/hardscape': typeof HardscapeRoute
   '/katAndAdam': typeof KatAndAdamRoute
+  '/operaplaza': typeof OperaplazaRoute
   '/palmetto': typeof PalmettoRoute
   '/sarita': typeof SaritaRoute
+  '/sarita2': typeof Sarita2Route
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
@@ -98,8 +116,10 @@ export interface FileRouteTypes {
     | '/TermsAndConditions'
     | '/hardscape'
     | '/katAndAdam'
+    | '/operaplaza'
     | '/palmetto'
     | '/sarita'
+    | '/sarita2'
     | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -108,8 +128,10 @@ export interface FileRouteTypes {
     | '/TermsAndConditions'
     | '/hardscape'
     | '/katAndAdam'
+    | '/operaplaza'
     | '/palmetto'
     | '/sarita'
+    | '/sarita2'
     | '/sitemap.xml'
   id:
     | '__root__'
@@ -118,8 +140,10 @@ export interface FileRouteTypes {
     | '/TermsAndConditions'
     | '/hardscape'
     | '/katAndAdam'
+    | '/operaplaza'
     | '/palmetto'
     | '/sarita'
+    | '/sarita2'
     | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
@@ -129,8 +153,10 @@ export interface RootRouteChildren {
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   HardscapeRoute: typeof HardscapeRoute
   KatAndAdamRoute: typeof KatAndAdamRoute
+  OperaplazaRoute: typeof OperaplazaRoute
   PalmettoRoute: typeof PalmettoRoute
   SaritaRoute: typeof SaritaRoute
+  Sarita2Route: typeof Sarita2Route
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -171,6 +197,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KatAndAdamRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/operaplaza': {
+      id: '/operaplaza'
+      path: '/operaplaza'
+      fullPath: '/operaplaza'
+      preLoaderRoute: typeof OperaplazaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/palmetto': {
       id: '/palmetto'
       path: '/palmetto'
@@ -183,6 +216,13 @@ declare module '@tanstack/react-router' {
       path: '/sarita'
       fullPath: '/sarita'
       preLoaderRoute: typeof SaritaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sarita2': {
+      id: '/sarita2'
+      path: '/sarita2'
+      fullPath: '/sarita2'
+      preLoaderRoute: typeof Sarita2RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -201,8 +241,10 @@ const rootRouteChildren: RootRouteChildren = {
   TermsAndConditionsRoute: TermsAndConditionsRoute,
   HardscapeRoute: HardscapeRoute,
   KatAndAdamRoute: KatAndAdamRoute,
+  OperaplazaRoute: OperaplazaRoute,
   PalmettoRoute: PalmettoRoute,
   SaritaRoute: SaritaRoute,
+  Sarita2Route: Sarita2Route,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
