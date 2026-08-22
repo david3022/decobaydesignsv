@@ -129,7 +129,7 @@ function ProjectImage({
       } transition-opacity duration-1000`}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      {/* Imagen con efecto parallax - Ajustado para alternar orden correctamente en desktop */}
+      {/* Imagen con efecto parallax - Ajustado orden en desktop */}
       <div className={`${isRight ? 'lg:order-2' : 'lg:order-1'} relative overflow-hidden rounded-sm bg-muted/30 w-full`}>
         <div className="parallax-image relative aspect-[4/3] w-full overflow-hidden transition-transform duration-700">
           <img
@@ -340,22 +340,23 @@ function OperaPlazaPage() {
   useReveal();
   
   return (
-    <main className="bg-background text-foreground overflow-x-hidden">
+    <main className="bg-background text-foreground w-full overflow-x-hidden">
       <Header />
-      <article className="pt-20 sm:pt-24 md:pt-28">
-        {/* Banner con imagen de fondo */}
-        <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 mb-6 sm:mb-8">
-          <div className="relative overflow-hidden rounded-sm min-h-[380px] sm:min-h-[420px] md:min-h-0 md:aspect-[21/9]">
+      <article className="pt-20 sm:pt-24 md:pt-28 w-full">
+        {/* Banner con imagen de fondo ajustado para responsividad estricta */}
+        <header className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 mb-6 sm:mb-8">
+          <div className="relative w-full overflow-hidden rounded-sm min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:aspect-[21/9]">
             <img
               src={banner}
               alt="Opera Plaza San Francisco — Bathroom Renovation Banner"
               loading="lazy"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
+            {/* Gradiente responsivo */}
+            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/85 via-black/50 to-black/25" />
             
-            {/* Contenido superpuesto al banner */}
-            <div className="relative h-full min-h-[380px] sm:min-h-[420px] md:min-h-0 flex flex-col justify-end md:justify-center p-6 sm:p-8 md:p-12 lg:p-16 z-10">
+            {/* Contenido superpuesto con box-sizing y límites controlados */}
+            <div className="relative h-full min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-0 w-full flex flex-col justify-end md:justify-center p-5 sm:p-8 md:p-12 lg:p-16 z-10 box-border">
               <p className="kicker reveal reveal-fade !text-white/80 text-xs sm:text-sm">
                 Featured Project · San Francisco
               </p>
@@ -367,17 +368,17 @@ function OperaPlazaPage() {
                 A complete transformation blending modern luxury with 
                 the timeless character of San Francisco's iconic Opera Plaza.
               </p>
-              <div className="reveal reveal-fade mt-5 sm:mt-6 flex flex-wrap items-center gap-3 sm:gap-6 text-white/70 text-xs sm:text-sm">
+              <div className="reveal reveal-fade mt-5 sm:mt-6 flex flex-wrap items-center gap-2.5 sm:gap-6 text-white/70 text-xs sm:text-sm">
                 <span className="flex items-center gap-1.5 sm:gap-2">
                   <Clock className="h-3.5 w-3.5 sm:h-4 sm:w-4 flex-shrink-0" />
                   4 weeks
                 </span>
-                <span className="w-px h-4 sm:h-6 bg-white/20" />
+                <span className="w-px h-3.5 sm:h-6 bg-white/20" />
                 <span className="flex items-center gap-1.5 sm:gap-2">
                   <Ruler className="h-3.5 w-3.5 sm:h-4 sm:w-4 flex-shrink-0" />
                   85 sq ft
                 </span>
-                <span className="w-px h-4 sm:h-6 bg-white/20" />
+                <span className="w-px h-3.5 sm:h-6 bg-white/20" />
                 <span className="flex items-center gap-1.5 sm:gap-2">
                   <CheckCircle2 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-emerald-400 flex-shrink-0" />
                   Completed 2025
