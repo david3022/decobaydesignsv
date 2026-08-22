@@ -89,7 +89,7 @@ function ProjectImage({
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
 
     if (imgRef.current) {
@@ -124,13 +124,13 @@ function ProjectImage({
   return (
     <div 
       ref={imgRef}
-      className={`relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 py-8 lg:py-12 border-b border-border/30 last:border-0 ${
+      className={`relative grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 py-8 md:py-12 border-b border-border/30 last:border-0 ${
         isVisible ? 'opacity-100' : 'opacity-0'
       } transition-opacity duration-1000`}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      {/* Imagen con efecto parallax */}
-      <div className={`${isRight ? 'lg:order-1' : 'lg:order-1'} relative overflow-hidden rounded-sm bg-muted/30`}>
+      {/* Imagen con efecto parallax - Ajustado para alternar orden correctamente en desktop */}
+      <div className={`${isRight ? 'lg:order-2' : 'lg:order-1'} relative overflow-hidden rounded-sm bg-muted/30 w-full`}>
         <div className="parallax-image relative aspect-[4/3] w-full overflow-hidden transition-transform duration-700">
           <img
             src={image.src}
@@ -139,8 +139,8 @@ function ProjectImage({
             className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
           />
           {/* Badge superpuesto */}
-          <div className="absolute top-4 left-4">
-            <span className="px-3 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase backdrop-blur bg-black/50 text-white border border-white/20">
+          <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
+            <span className="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-medium tracking-wider uppercase backdrop-blur bg-black/50 text-white border border-white/20">
               {image.badge}
             </span>
           </div>
@@ -150,25 +150,25 @@ function ProjectImage({
       </div>
 
       {/* Descripción */}
-      <div className={`flex flex-col justify-center ${isRight ? 'lg:order-2 lg:pl-4' : 'lg:order-0 lg:pr-4'}`}>
-        <div className="flex items-center gap-3 mb-4">
+      <div className={`flex flex-col justify-center ${isRight ? 'lg:order-1 lg:pr-4' : 'lg:order-2 lg:pl-4'}`}>
+        <div className="flex items-center gap-3 mb-3 sm:mb-4 mt-2 lg:mt-0">
           <span className="text-xs font-medium tracking-[0.15em] uppercase text-accent/70">
             {String(index + 1).padStart(2, '0')} / {String(projectImages.length).padStart(2, '0')}
           </span>
           <span className="h-px flex-1 bg-border/50" />
         </div>
         
-        <div className="flex items-center gap-2 mb-3">
-          <Icon className="h-5 w-5 text-accent" />
-          <span className="text-xs text-muted-foreground tracking-widest uppercase">
+        <div className="flex items-center gap-2 mb-2 sm:mb-3">
+          <Icon className="h-4 w-4 sm:h-5 sm:w-5 text-accent flex-shrink-0" />
+          <span className="text-[11px] sm:text-xs text-muted-foreground tracking-widest uppercase">
             {image.stat}
           </span>
         </div>
         
-        <h3 className="text-2xl md:text-3xl font-display mb-3">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-display mb-2 sm:mb-3">
           {image.title}
         </h3>
-        <p className="text-muted-foreground leading-relaxed">
+        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
           {image.description}
         </p>
         <div className="mt-4 flex items-center gap-2 text-xs text-accent">
@@ -193,7 +193,7 @@ function ProjectStats() {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
     if (statsRef.current) {
@@ -213,19 +213,19 @@ function ProjectStats() {
   return (
     <div 
       ref={statsRef}
-      className={`grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 py-12 border-y border-border/30 my-8 ${
+      className={`grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 py-8 md:py-12 border-y border-border/30 my-6 sm:my-8 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
       } transition-all duration-700`}
     >
       {stats.map((stat, idx) => (
         <div 
           key={stat.label}
-          className="text-center"
+          className="text-center p-2"
           style={{ transitionDelay: `${idx * 100}ms` }}
         >
-          <stat.icon className="h-6 w-6 mx-auto text-accent mb-3" />
-          <p className="text-2xl font-display">{stat.value}</p>
-          <p className="text-xs text-muted-foreground tracking-widest uppercase mt-1">
+          <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 mx-auto text-accent mb-2 sm:mb-3" />
+          <p className="text-xl sm:text-2xl font-display">{stat.value}</p>
+          <p className="text-[10px] sm:text-xs text-muted-foreground tracking-widest uppercase mt-1">
             {stat.label}
           </p>
         </div>
@@ -254,32 +254,32 @@ function OperaPlazaSection() {
   }, []);
 
   return (
-    <section id="bathroom-remodel" className="relative py-28 md:py-40 px-6 lg:px-10 overflow-hidden">
+    <section id="bathroom-remodel" className="relative py-16 sm:py-24 md:py-32 lg:py-40 px-4 sm:px-6 lg:px-10 overflow-hidden">
       {/* Fondo decorativo con parallax */}
       <div
         ref={parallaxRef}
         aria-hidden
-        className="absolute -top-24 -right-24 w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full bg-accent/5 blur-3xl will-change-transform"
+        className="absolute -top-24 -right-24 w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full bg-accent/5 blur-3xl will-change-transform pointer-events-none"
       />
       <div 
         aria-hidden
-        className="absolute -bottom-32 -left-32 w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-blue-500/5 blur-3xl will-change-transform"
+        className="absolute -bottom-32 -left-32 w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full bg-blue-500/5 blur-3xl will-change-transform pointer-events-none"
       />
 
       <div className="relative max-w-7xl mx-auto">
         {/* Encabezado */}
-        <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-14">
           <div>
             <p className="kicker reveal reveal-fade">Featured Project</p>
-            <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl">
+            <h2 className="reveal reveal-up mt-2 sm:mt-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
               <em className="italic text-accent">Opera Plaza</em> Bathroom
             </h2>
-            <p className="reveal reveal-up mt-3 text-sm text-muted-foreground tracking-[0.2em] uppercase flex items-center gap-3">
-              <MapPin className="h-4 w-4" />
+            <p className="reveal reveal-up mt-3 text-xs sm:text-sm text-muted-foreground tracking-[0.15em] sm:tracking-[0.2em] uppercase flex items-center gap-2 sm:gap-3">
+              <MapPin className="h-4 w-4 flex-shrink-0" />
               San Francisco · Complete Renovation
             </p>
           </div>
-          <p className="reveal reveal-fade max-w-md text-muted-foreground">
+          <p className="reveal reveal-fade max-w-md text-sm sm:text-base text-muted-foreground">
             A sophisticated bathroom transformation in the heart of San Francisco's 
             iconic Opera Plaza — blending modern luxury with timeless elegance 
             and thoughtful functionality.
@@ -290,21 +290,21 @@ function OperaPlazaSection() {
         <ProjectStats />
 
         {/* Galería de imágenes */}
-        <div className="mt-12">
+        <div className="mt-8 sm:mt-12">
           {projectImages.map((image, index) => (
             <ProjectImage key={index} image={image} index={index} />
           ))}
         </div>
 
         {/* Detalles adicionales del proyecto */}
-        <div className="reveal reveal-fade mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 p-8 bg-muted/20 rounded-sm border border-border/30">
+        <div className="reveal reveal-fade mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6 sm:p-8 bg-muted/20 rounded-sm border border-border/30">
           <div className="flex items-start gap-4">
             <div className="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
               <PenTool className="h-5 w-5 text-accent" />
             </div>
             <div>
               <p className="text-sm font-medium">Design Concept</p>
-              <p className="text-xs text-muted-foreground">Spa-inspired minimalism with natural materials</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Spa-inspired minimalism with natural materials</p>
             </div>
           </div>
           <div className="flex items-start gap-4">
@@ -313,21 +313,21 @@ function OperaPlazaSection() {
             </div>
             <div>
               <p className="text-sm font-medium">Key Features</p>
-              <p className="text-xs text-muted-foreground">Walk-in shower · Dual vanities · Smart storage</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Walk-in shower · Dual vanities · Smart storage</p>
             </div>
           </div>
-          <div className="flex items-start gap-4">
+          <div className="flex items-start gap-4 sm:col-span-2 md:col-span-1">
             <div className="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
               <Calendar className="h-5 w-5 text-accent" />
             </div>
             <div>
               <p className="text-sm font-medium">Completed</p>
-              <p className="text-xs text-muted-foreground">2025 · San Francisco, CA</p>
+              <p className="text-xs text-muted-foreground mt-0.5">2025 · San Francisco, CA</p>
             </div>
           </div>
         </div>
 
-        <p className="reveal reveal-fade mt-16 text-xs tracking-[0.25em] uppercase text-muted-foreground text-center">
+        <p className="reveal reveal-fade mt-12 sm:mt-16 text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.25em] uppercase text-muted-foreground text-center">
           All projects designed &amp; produced in California
         </p>
       </div>
@@ -340,46 +340,46 @@ function OperaPlazaPage() {
   useReveal();
   
   return (
-    <main className="bg-background text-foreground">
+    <main className="bg-background text-foreground overflow-x-hidden">
       <Header />
-      <article className="pt-24 md:pt-28">
+      <article className="pt-20 sm:pt-24 md:pt-28">
         {/* Banner con imagen de fondo */}
-        <header className="max-w-7xl mx-auto px-6 lg:px-10 mb-8">
-          <div className="relative overflow-hidden rounded-sm aspect-[21/9] min-h-[300px]">
+        <header className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 mb-6 sm:mb-8">
+          <div className="relative overflow-hidden rounded-sm min-h-[380px] sm:min-h-[420px] md:min-h-0 md:aspect-[21/9]">
             <img
               src={banner}
               alt="Opera Plaza San Francisco — Bathroom Renovation Banner"
               loading="lazy"
-              className="h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
             
             {/* Contenido superpuesto al banner */}
-            <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-12 lg:px-16">
-              <p className="kicker reveal reveal-fade !text-white/70 text-xs md:text-sm">
+            <div className="relative h-full min-h-[380px] sm:min-h-[420px] md:min-h-0 flex flex-col justify-end md:justify-center p-6 sm:p-8 md:p-12 lg:p-16 z-10">
+              <p className="kicker reveal reveal-fade !text-white/80 text-xs sm:text-sm">
                 Featured Project · San Francisco
               </p>
-              <h1 className="reveal reveal-up mt-4 text-3xl md:text-5xl lg:text-6xl text-white leading-[1.05] max-w-2xl">
-                Opera Plaza <br />
-                <span className="text-accent/80">Bathroom Remodel</span>
+              <h1 className="reveal reveal-up mt-2 sm:mt-4 text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1] max-w-2xl font-display">
+                Opera Plaza <br className="hidden sm:inline" />
+                <span className="text-accent/90">Bathroom Remodel</span>
               </h1>
-              <p className="reveal reveal-fade mt-4 text-white/70 max-w-md text-sm md:text-base">
+              <p className="reveal reveal-fade mt-3 sm:mt-4 text-white/80 max-w-md text-xs sm:text-sm md:text-base leading-relaxed">
                 A complete transformation blending modern luxury with 
                 the timeless character of San Francisco's iconic Opera Plaza.
               </p>
-              <div className="reveal reveal-fade mt-6 flex flex-wrap items-center gap-6 text-white/60 text-xs md:text-sm">
-                <span className="flex items-center gap-2">
-                  <Clock className="h-4 w-4" />
+              <div className="reveal reveal-fade mt-5 sm:mt-6 flex flex-wrap items-center gap-3 sm:gap-6 text-white/70 text-xs sm:text-sm">
+                <span className="flex items-center gap-1.5 sm:gap-2">
+                  <Clock className="h-3.5 w-3.5 sm:h-4 sm:w-4 flex-shrink-0" />
                   4 weeks
                 </span>
-                <span className="w-px h-6 bg-white/20" />
-                <span className="flex items-center gap-2">
-                  <Ruler className="h-4 w-4" />
+                <span className="w-px h-4 sm:h-6 bg-white/20" />
+                <span className="flex items-center gap-1.5 sm:gap-2">
+                  <Ruler className="h-3.5 w-3.5 sm:h-4 sm:w-4 flex-shrink-0" />
                   85 sq ft
                 </span>
-                <span className="w-px h-6 bg-white/20" />
-                <span className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-400" />
+                <span className="w-px h-4 sm:h-6 bg-white/20" />
+                <span className="flex items-center gap-1.5 sm:gap-2">
+                  <CheckCircle2 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-emerald-400 flex-shrink-0" />
                   Completed 2025
                 </span>
               </div>
@@ -392,7 +392,7 @@ function OperaPlazaPage() {
         
         <nav
           aria-label="Related"
-          className="max-w-7xl mx-auto px-6 lg:px-10 pb-16 flex flex-wrap gap-4 text-sm"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pb-12 sm:pb-16 flex flex-wrap gap-4 text-xs sm:text-sm"
         >
           <Link to="/" className="underline underline-offset-4 hover:text-accent transition-colors">
             ← Back to DECOBAY Interiors
