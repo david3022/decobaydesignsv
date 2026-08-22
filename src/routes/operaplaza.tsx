@@ -20,7 +20,7 @@ import { Footer } from "@/components/Footer";
 import { Consultation } from "@/components/consultation";
 
 // Importación de imágenes de Opera Plaza
-import banner from "@/assets/OperaPlaza/wallpaper.jpg";
+import banner from "@/assets/OperaPlaza/wallpaper1.jpg";
 import render from "@/assets/OperaPlaza/1.jpg";
 import final1 from "@/assets/OperaPlaza/2.jpg";
 import final2 from "@/assets/OperaPlaza/3.jpg";
