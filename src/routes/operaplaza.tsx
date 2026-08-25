@@ -256,7 +256,7 @@ function ShowerSponsorSection() {
             />
             <div className="absolute top-4 left-4 z-10">
               <span className="px-3 py-1.5 rounded-full text-[10px] sm:text-xs font-medium tracking-wider uppercase backdrop-blur bg-amber-500/80 text-white border border-amber-400/30">
-                Official Partner
+                Kingston Brass
               </span>
             </div>
           </div>
@@ -265,12 +265,12 @@ function ShowerSponsorSection() {
             <div className="flex items-center gap-2 mb-3">
               <Sparkles className="h-4 w-4 text-accent" />
               <span className="text-xs text-accent font-medium tracking-widest uppercase">
-                Featured Partner & Fixture
+                Featured 
               </span>
             </div>
             
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-display mb-4">
-              Heritage Antique Brass Shower System
+              Classic Brushed Brass Shower System
             </h3>
             
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
