@@ -10,7 +10,7 @@ export function Footer() {
             DECOBAY Interiors LLC — All Rights Reserved
           </p>
           <p className="text-muted-foreground text-sm mt-1">
-            Interior design studio · California, USA
+            Architectural & Interior Design Firm · California, USA
           </p>
         </div>
         <nav aria-label="Site" className="text-sm space-y-2">

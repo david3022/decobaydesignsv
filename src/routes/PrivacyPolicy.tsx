@@ -44,7 +44,7 @@ function PrivacyPolicy() {
             "@context": "https://schema.org",
             "@type": "WebPage",
             "name": "Privacy Policy | Decobay Interiors LLC",
-            "description": "Privacy policy and data protection practices for Decobay Interiors LLC, an architecture and interior design studio in The Bay Area, California.",
+            "description": "Privacy policy and data protection practices for Decobay Interiors LLC, an  Architectural & Interior Design Firm in The Bay Area, California.",
             "inLanguage": "en-US",
             "about": {
               "@type": "Thing",

@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "California interior design studio creating minimalist, warm and timeless homes and commercial spaces. Book a free 30-minute consultation.",
+          "California Architectural & Interior Design Firm creating minimalist, warm and timeless homes and commercial spaces. Book a free 30-minute consultation.",
       },
       {
         name: "keywords",
@@ -48,7 +48,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "California interior design studio. Minimalist, warm and timeless residential and commercial interiors. Book a free consultation.",
+          "California Architectural & Interior Design Firm. Minimalist, warm and timeless residential and commercial interiors. Book a free consultation.",
       },
       {
         name: "twitter:image",
@@ -73,7 +73,7 @@ export const Route = createFileRoute("/")({
           "@type": "InteriorDesignStudio",
           name: "DECOBAY Interiors",
           description:
-            "Minimalist interior design studio in California offering residential and commercial interior design services.",
+            "Minimalist Architectural & Interior Design Firm in California offering residential and commercial interior design services.",
           areaServed: { "@type": "State", name: "California" },
           url: "https://deco-bay-dream.lovable.app/",
           image:
