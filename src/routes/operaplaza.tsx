@@ -423,11 +423,15 @@ function OperaPlazaPage() {
             
             {/* Contenido superpuesto */}
             <div className="relative h-full min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-0 w-full flex flex-col justify-end md:justify-center p-5 sm:p-8 md:p-12 lg:p-16 z-10 box-border">
-              <p className="kicker reveal reveal-fade !text-white/80 text-xs sm:text-sm">
+              {/* <p className="kicker reveal reveal-fade !text-white/80 text-xs sm:text-sm">
                 Featured Project · San Francisco
-              </p>
+              </p> */}
+
+              <p className="kicker reveal reveal-fade !text-white/80 text-xs sm:text-sm">
+  Featured Project · <span className="whitespace-nowrap">Opera Plaza</span>
+</p>
               <h1 className="reveal reveal-up mt-2 sm:mt-4 text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1] max-w-2xl font-display">
-                Opera Plaza <br className="hidden sm:inline" />
+                San Francisco <br className="hidden sm:inline" />
                 <span className="text-accent/90">Bathroom Remodel</span>
               </h1>
               <p className="reveal reveal-fade mt-3 sm:mt-4 text-white/80 max-w-md text-xs sm:text-sm md:text-base leading-relaxed">
