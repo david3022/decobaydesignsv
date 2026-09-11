@@ -1,36 +1,35 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ChevronLeft, ChevronRight, Move, Building2, Ruler, Users, Calendar, MapPin } from "lucide-react";
+import { ChevronLeft, ChevronRight, Building2, Ruler, Users, Calendar, MapPin, Utensils, Sparkles, Layers } from "lucide-react";
 import { useReveal } from "@/hooks/use-reveal";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Consultation } from "@/components/consultation";
 
-// Imágenes del proyecto (solo las locales)
-import img1 from "@/assets/PalmettoSanRamon/SR3_02v3.jpg";
-import img2 from "@/assets/PalmettoSanRamon/SR3_01v3.jpg";
-import img3 from "@/assets/PalmettoSanRamon/SR3_03v3.jpg";
-import pano from "@/assets/PalmettoSanRamon/SR 360.jpg";
+// URLs de imágenes alojadas en Flickr
+const BANNER_URL = "https://live.staticflickr.com/65535/55521139214_6c9f39ea14_b.jpg";
 
-// Banner desde URL externa
-const BANNER_URL = "https://live.staticflickr.com/65535/55446000367_dfbe1964ef_b.jpg";
+const MAIN_IMAGES = [
+  "https://live.staticflickr.com/65535/55521087768_de98c025e2_b.jpg",
+  "https://live.staticflickr.com/65535/55521139169_6e0bbb2657_b.jpg",
+];
 
-// Configuración del collage
+const KITCHEN_IMAGES = [
+  "https://live.staticflickr.com/65535/55520985556_e948bbefdd_b.jpg",
+  "https://live.staticflickr.com/65535/55521139159_115fd8a5a6_b.jpg",
+];
+
+// Configuración del collage principal
 const collageImages = [
-  { 
-    src: img1, 
-    label: "Main facade",
-    description: "The clean, modern facade establishes a strong retail presence along the main thoroughfare."
+  {
+    src: MAIN_IMAGES[0],
+    label: "Exterior Architecture",
+    description: "Modern, thoughtful architectural lines integrated into the urban fabric of Berkeley.",
   },
-  { 
-    src: img2, 
-    label: "Interior space",
-    description: "Open, flexible interior volumes designed for diverse commercial tenants and future adaptability."
-  },
-  { 
-    src: img3, 
-    label: "Material detail",
-    description: "A carefully curated material palette of glass, steel, and stone balances durability with sophistication."
+  {
+    src: MAIN_IMAGES[1],
+    label: "Interior Living Experience",
+    description: "Open spatial layouts designed for seamless flow, high ceiling heights, and refined natural illumination.",
   },
 ];
 
@@ -39,30 +38,21 @@ function Banner() {
     <div className="relative w-full aspect-[21/9] overflow-hidden rounded-sm bg-muted">
       <img
         src={BANNER_URL}
-        alt="Palmetto San Ramon — Commercial Architecture Project"
+        alt="Palmetto Berkeley — Architectural Design Project"
         loading="eager"
         className="h-full w-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-      
-      {/* Badge superpuesto */}
-      {/* <div className="absolute top-6 left-6 md:top-10 md:left-10">
-        <span className="px-4 py-2 rounded-full bg-background/20 backdrop-blur-sm text-background text-xs font-medium tracking-[0.2em] uppercase border border-background/20">
-          Commercial · Mixed-use
-        </span>
-      </div>
-       */}
-      {/* Texto del banner */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
       <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 max-w-2xl">
         <p className="text-background/80 text-sm tracking-[0.2em] uppercase reveal reveal-fade">
-          Palmetto San Ramon
+          Palmetto Berkeley · Residential & Architectural Design
         </p>
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-display text-background mt-2 leading-[1.1] reveal reveal-up">
-          A new anchor for <br className="hidden sm:block" />San Ramon.
+          Urban refinement <br className="hidden sm:block" />in Berkeley.
         </h1>
         <p className="text-background/80 mt-3 max-w-lg text-sm md:text-base reveal reveal-fade">
-          A mixed-use commercial development designed to activate the street edge and create a 
-          vibrant new destination in the East Bay.
+          A modern residential concept crafted around warm minimalism, precise craftsmanship, and fluid indoor-outdoor connectivity.
         </p>
       </div>
     </div>
@@ -98,7 +88,7 @@ function Collage() {
           >
             <img
               src={img.src}
-              alt={`Palmetto San Ramon — ${img.label}`}
+              alt={`Palmetto Berkeley — ${img.label}`}
               loading="lazy"
               className="h-full w-full object-cover"
             />
@@ -116,14 +106,14 @@ function Collage() {
 
         <button
           onClick={prev}
-          aria-label="Previous"
+          aria-label="Previous image"
           className="absolute left-4 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-background/70 backdrop-blur flex items-center justify-center opacity-0 group-hover:opacity-100 hover:bg-background transition"
         >
           <ChevronLeft className="h-5 w-5" />
         </button>
         <button
           onClick={next}
-          aria-label="Next"
+          aria-label="Next image"
           className="absolute right-4 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-background/70 backdrop-blur flex items-center justify-center opacity-0 group-hover:opacity-100 hover:bg-background transition"
         >
           <ChevronRight className="h-5 w-5" />
@@ -143,7 +133,6 @@ function Collage() {
         </div>
       </div>
 
-      {/* Descripción activa con efecto reveal */}
       <div className="reveal reveal-fade bg-muted/30 rounded-lg p-6 border border-border/50">
         <p className="text-sm text-muted-foreground leading-relaxed">
           {collageImages[activeIndex].description}
@@ -153,110 +142,7 @@ function Collage() {
   );
 }
 
-function Panorama() {
-  const wrapRef = useRef<HTMLDivElement>(null);
-  const imgRef = useRef<HTMLImageElement>(null);
-  const [hint, setHint] = useState(true);
-  const drag = useRef<{ active: boolean; startX: number; startOffset: number }>({
-    active: false,
-    startX: 0,
-    startOffset: 0,
-  });
-  const [offset, setOffset] = useState(0);
-
-  const maxOffset = useCallback(() => {
-    const wrap = wrapRef.current,
-      img = imgRef.current;
-    if (!wrap || !img) return 0;
-    return Math.max(0, img.clientWidth - wrap.clientWidth);
-  }, []);
-
-  useEffect(() => {
-    let raf = 0;
-    let dir = 1;
-    let last = performance.now();
-    const tick = (now: number) => {
-      const dt = (now - last) / 1000;
-      last = now;
-      if (!drag.current.active && hint) {
-        setOffset((o) => {
-          const m = maxOffset();
-          if (m <= 0) return o;
-          let nv = o + dir * 18 * dt;
-          if (nv > m) {
-            nv = m;
-            dir = -1;
-          }
-          if (nv < 0) {
-            nv = 0;
-            dir = 1;
-          }
-          return nv;
-        });
-      }
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [hint, maxOffset]);
-
-  const onDown = (clientX: number) => {
-    drag.current = { active: true, startX: clientX, startOffset: offset };
-    setHint(false);
-  };
-  const onMove = (clientX: number) => {
-    if (!drag.current.active) return;
-    const m = maxOffset();
-    const dx = drag.current.startX - clientX;
-    const nv = Math.min(m, Math.max(0, drag.current.startOffset + dx));
-    setOffset(nv);
-  };
-  const onUp = () => {
-    drag.current.active = false;
-  };
-
-  return (
-    <div className="relative">
-      <div
-        ref={wrapRef}
-        className="relative aspect-[16/10] w-full overflow-hidden rounded-sm bg-muted cursor-grab active:cursor-grabbing select-none"
-        onMouseDown={(e) => onDown(e.clientX)}
-        onMouseMove={(e) => onMove(e.clientX)}
-        onMouseUp={onUp}
-        onMouseLeave={onUp}
-        onTouchStart={(e) => onDown(e.touches[0].clientX)}
-        onTouchMove={(e) => onMove(e.touches[0].clientX)}
-        onTouchEnd={onUp}
-      >
-        <img
-          ref={imgRef}
-          src={pano}
-          alt="Palmetto San Ramon 3D — drag to explore the commercial space"
-          draggable={false}
-          className="absolute top-0 left-0 h-full max-w-none pointer-events-none"
-          style={{ transform: `translateX(${-offset}px)` }}
-        />
-
-        <div
-          className={`absolute inset-0 flex items-end justify-center pb-6 transition-opacity duration-500 ${
-            hint ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/80 backdrop-blur text-xs">
-            <Move className="h-3.5 w-3.5" />
-            Drag to explore the 3D commercial space
-          </div>
-        </div>
-
-        <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-background/80 backdrop-blur text-[10px] tracking-[0.2em] uppercase">
-          3D · Interactive
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function PalmettoSection() {
+function OverviewSection() {
   const parallaxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -275,7 +161,7 @@ function PalmettoSection() {
   }, []);
 
   return (
-    <section id="palmetto" className="relative py-28 md:py-40 px-6 lg:px-10 overflow-hidden">
+    <section id="overview" className="relative py-20 md:py-32 px-6 lg:px-10 overflow-hidden">
       <div
         ref={parallaxRef}
         aria-hidden
@@ -285,27 +171,24 @@ function PalmettoSection() {
       <div className="relative max-w-7xl mx-auto">
         <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
           <div>
-            <p className="kicker reveal reveal-fade">06 — Commercial architecture</p>
+            <p className="kicker reveal reveal-fade">07 — Architecture & Interior Design</p>
             <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl">
-              <em className="italic text-accent">Palmetto</em> San Ramon
+              <em className="italic text-accent">Palmetto</em> Berkeley
             </h2>
             <p className="reveal reveal-up mt-3 text-sm text-muted-foreground tracking-[0.2em] uppercase">
-              San Ramon, CA · 
+              Berkeley, CA · East Bay Living
             </p>
           </div>
           <p className="reveal reveal-fade max-w-md text-muted-foreground">
-            A ground-up commercial development that redefines the retail experience in San Ramon. 
-            Designed to activate the street edge and create a new community gathering point.
+            A boutique architectural undertaking situated in Berkeley, balancing contemporary geometry with organic interior finishes.
           </p>
         </div>
 
         <div className="grid grid-cols-12 gap-6 md:gap-8">
-          {/* Columna izquierda: collage */}
           <div className="reveal reveal-left col-span-12 lg:col-span-7">
             <Collage />
           </div>
 
-          {/* Columna derecha: información del proyecto */}
           <div className="reveal reveal-right col-span-12 lg:col-span-5 flex flex-col justify-center lg:pl-2">
             <div className="flex items-center gap-2 mb-6">
               <Building2 className="h-5 w-5 text-accent" />
@@ -313,22 +196,19 @@ function PalmettoSection() {
                 Project Overview
               </span>
             </div>
-            <h3 className="text-3xl md:text-4xl">A new commercial <br className="hidden sm:block" />anchor.</h3>
+            <h3 className="text-3xl md:text-4xl">Harmonious architectural space.</h3>
             <p className="text-muted-foreground mt-4 leading-relaxed">
-              Palmetto San Ramon is a 12,000 SF  development designed to bring a new level 
-              of architectural sophistication to the East Bay retail landscape. The project features 
-              flexible commercial spaces, a central courtyard, and a material palette that balances 
-              durability with contemporary elegance.
+              Palmetto Berkeley embraces high-performance architectural envelope design with bespoke interior details. Created for modern lifestyles, the layout prioritizes quiet luxury, durable material selections, and light-filled spatial transitions.
             </p>
-            
+
             <div className="mt-6 space-y-3">
               <div className="flex items-center gap-3">
                 <div className="h-8 w-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
                   <Ruler className="h-4 w-4 text-accent" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium">Size</p>
-                  <p className="text-xs text-muted-foreground">12,000 SF </p>
+                  <p className="text-sm font-medium">Scale & Area</p>
+                  <p className="text-xs text-muted-foreground">4,800 SF · Custom Residence</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -336,8 +216,8 @@ function PalmettoSection() {
                   <Users className="h-4 w-4 text-accent" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium">Tenant mix</p>
-                  <p className="text-xs text-muted-foreground">Retail · Office · Hospitality</p>
+                  <p className="text-sm font-medium">Scope</p>
+                  <p className="text-xs text-muted-foreground">Architecture · Interiors · FF&E</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -345,8 +225,8 @@ function PalmettoSection() {
                   <Calendar className="h-4 w-4 text-accent" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium">Status</p>
-                  <p className="text-xs text-muted-foreground">Under construction · 2026</p>
+                  <p className="text-sm font-medium">Timeline</p>
+                  <p className="text-xs text-muted-foreground">Completed · 2026</p>
                 </div>
               </div>
             </div>
@@ -356,43 +236,108 @@ function PalmettoSection() {
                 <span className="text-muted-foreground">Location</span>
                 <span className="flex items-center gap-1">
                   <MapPin className="h-3 w-3" />
-                  San Ramon, CA
+                  Berkeley, CA
                 </span>
               </li>
-              {/* <li className="flex justify-between">
-                <span className="text-muted-foreground">Type</span>
-                <span>Commercial · Mixed-use</span>
-              </li> */}
               <li className="flex justify-between">
                 <span className="text-muted-foreground">Year</span>
                 <span>2026</span>
               </li>
             </ul>
           </div>
-
-          {/* Sección panorámica 3D */}
-          <div className="reveal reveal-zoom col-span-12 mt-8 md:mt-12">
-            <div className="mb-4">
-              <h4 className="text-sm font-medium tracking-widest uppercase text-muted-foreground">
-                Explore the 3D commercial space
-              </h4>
-              <p className="text-sm text-muted-foreground mt-1">
-                Drag to look around the fully modeled 3D environment
-              </p>
-            </div>
-            <Panorama />
-          </div>
         </div>
-
-        <p className="reveal reveal-fade mt-16 text-xs tracking-[0.25em] uppercase text-muted-foreground text-center">
-          Commercial architecture · Designed in California
-        </p>
       </div>
     </section>
   );
 }
 
-function PalmettoPage() {
+function NarrativeSection() {
+  return (
+    <section className="py-20 bg-muted/20 border-y border-border/40 px-6 lg:px-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-12 gap-8 items-center">
+        <div className="col-span-12 lg:col-span-6 space-y-6">
+          <div className="flex items-center gap-2">
+            <Sparkles className="h-5 w-5 text-accent" />
+            <span className="text-xs font-medium tracking-widest uppercase text-accent">
+              Design Philosophy
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-display leading-tight">
+            Curated textures, <br />tailored light.
+          </h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Every corner of Palmetto Berkeley reflects DECOBAY’s signature approach: pairing minimal visual noise with deep tactile richness. Monolithic natural stone surfaces are softened by custom architectural woodwork and warm, recessed ambient illumination.
+          </p>
+          <div className="grid grid-cols-2 gap-4 pt-4">
+            <div className="p-4 rounded-md bg-background border border-border/60">
+              <Layers className="h-5 w-5 text-accent mb-2" />
+              <p className="text-sm font-medium">Custom Joinery</p>
+              <p className="text-xs text-muted-foreground mt-1">Integrated storage and seamless wall transitions.</p>
+            </div>
+            <div className="p-4 rounded-md bg-background border border-border/60">
+              <Building2 className="h-5 w-5 text-accent mb-2" />
+              <p className="text-sm font-medium">Urban Context</p>
+              <p className="text-xs text-muted-foreground mt-1">Designed specifically to honor Berkeley’s landscape.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-span-12 lg:col-span-6">
+          <div className="aspect-[4/3] rounded-sm overflow-hidden bg-muted border border-border/50 shadow-sm">
+            <img
+              src={MAIN_IMAGES[1]}
+              alt="Palmetto Berkeley — Interior details"
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function KitchenGallerySection() {
+  return (
+    <section id="kitchen" className="py-24 px-6 lg:px-10">
+      <div className="max-w-7xl mx-auto space-y-12">
+        <div className="max-w-2xl space-y-3">
+          <div className="flex items-center gap-2">
+            <Utensils className="h-5 w-5 text-accent" />
+            <span className="text-xs font-medium tracking-widest uppercase text-accent">
+              Culinary & Kitchen Studio
+            </span>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-display">Bespoke Kitchen Architecture</h2>
+          <p className="text-muted-foreground text-sm md:text-base">
+            The culinary hub serves as the heart of the residence, featuring concealed cabinetry, stone island focal points, and warm ergonomic layout planning.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {KITCHEN_IMAGES.map((url, idx) => (
+            <div key={idx} className="group space-y-4">
+              <div className="aspect-[16/11] rounded-sm overflow-hidden bg-muted border border-border/40 relative">
+                <img
+                  src={url}
+                  alt={`Palmetto Berkeley — Kitchen Space ${idx + 1}`}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </div>
+              <div className="flex justify-between items-baseline text-xs text-muted-foreground border-b border-border/40 pb-3">
+                <span className="font-medium text-foreground">Kitchen Perspective 0{idx + 1}</span>
+                <span>Custom Millwork & Stone</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PalmettoBerkeleyPage() {
   useReveal();
   return (
     <main className="bg-background text-foreground">
@@ -400,7 +345,9 @@ function PalmettoPage() {
       <article>
         <Banner />
         <div className="pt-8 md:pt-12">
-          <PalmettoSection />
+          <OverviewSection />
+          <NarrativeSection />
+          <KitchenGallerySection />
           <Consultation />
           <nav
             aria-label="Related"
@@ -420,53 +367,53 @@ function PalmettoPage() {
   );
 }
 
-export const Route = createFileRoute("/palmetto")({
+export const Route = createFileRoute("/berkeley")({
   head: () => ({
     meta: [
-      { title: "Palmetto San Ramon — Commercial Architecture | DECOBAY Interiors" },
+      { title: "Palmetto Berkeley — Architecture & Interiors | DECOBAY Interiors" },
       {
         name: "description",
         content:
-          "Palmetto San Ramon: a 12,000 SF  commercial development by DECOBAY Interiors. Explore the gallery, design brief, and interactive 3D walkthrough.",
+          "Palmetto Berkeley: A modern architectural & interior design project by DECOBAY Interiors located in Berkeley, California.",
       },
       {
         name: "keywords",
         content:
-          "Palmetto San Ramon, commercial architecture, development, San Ramon retail, DECOBAY Interiors, 3D commercial walkthrough",
+          "Palmetto Berkeley, architecture, interior design, Berkeley California, DECOBAY Interiors, residential architecture",
       },
-      { property: "og:title", content: "Palmetto San Ramon — Commercial Architecture Project" },
+      { property: "og:title", content: "Palmetto Berkeley — Architecture & Interior Design" },
       {
         property: "og:description",
         content:
-          "A 12,000 SF  commercial development in San Ramon. Gallery and interactive 3D walkthrough by DECOBAY Interiors.",
+          "Explore Palmetto Berkeley by DECOBAY Interiors — custom architectural design and bespoke kitchen spaces in Berkeley, CA.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://deco-bay-dream.lovable.app/palmetto" },
+      { property: "og:url", content: "https://deco-bay-dream.lovable.app/palmetto-berkeley" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Palmetto San Ramon — Commercial Architecture Project" },
+      { name: "twitter:title", content: "Palmetto Berkeley — Architecture Project" },
       {
         name: "twitter:description",
         content:
-          "A 12,000 SF  commercial development in San Ramon. Gallery and interactive 3D walkthrough by DECOBAY Interiors.",
+          "Bespoke residential architecture and interior design in Berkeley, California by DECOBAY Interiors.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://deco-bay-dream.lovable.app/palmetto" }],
+    links: [{ rel: "canonical", href: "https://deco-bay-dream.lovable.app/palmetto-berkeley" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "CreativeWork",
-          name: "Palmetto San Ramon",
-          about: "Commercial architecture development in San Ramon, California",
-          url: "https://deco-bay-dream.lovable.app/palmetto",
+          name: "Palmetto Berkeley",
+          about: "Architectural and interior design project in Berkeley, California",
+          url: "https://deco-bay-dream.lovable.app/palmetto-berkeley",
           locationCreated: {
             "@type": "Place",
-            address: { 
-              "@type": "PostalAddress", 
-              addressLocality: "San Ramon",
-              addressRegion: "CA", 
-              addressCountry: "US" 
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Berkeley",
+              addressRegion: "CA",
+              addressCountry: "US",
             },
           },
           creator: {
@@ -491,13 +438,13 @@ export const Route = createFileRoute("/palmetto")({
             {
               "@type": "ListItem",
               position: 2,
-              name: "Palmetto San Ramon",
-              item: "https://deco-bay-dream.lovable.app/palmetto",
+              name: "Palmetto Berkeley",
+              item: "https://deco-bay-dream.lovable.app/palmetto-berkeley",
             },
           ],
         }),
       },
     ],
   }),
-  component: PalmettoPage,
+  component: PalmettoBerkeleyPage,
 });

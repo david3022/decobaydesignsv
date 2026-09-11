@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PrivacyPolicyRouteImport } from './routes/PrivacyPolicy'
 import { Route as TermsAndConditionsRouteImport } from './routes/TermsAndConditions'
+import { Route as BerkeleyRouteImport } from './routes/berkeley'
 import { Route as HardscapeRouteImport } from './routes/hardscape'
 import { Route as KatAndAdamRouteImport } from './routes/katAndAdam'
 import { Route as OperaplazaRouteImport } from './routes/operaplaza'
@@ -33,6 +34,11 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
 const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
   id: '/TermsAndConditions',
   path: '/TermsAndConditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BerkeleyRoute = BerkeleyRouteImport.update({
+  id: '/berkeley',
+  path: '/berkeley',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HardscapeRoute = HardscapeRouteImport.update({
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/PrivacyPolicy': typeof PrivacyPolicyRoute
   '/TermsAndConditions': typeof TermsAndConditionsRoute
+  '/berkeley': typeof BerkeleyRoute
   '/hardscape': typeof HardscapeRoute
   '/katAndAdam': typeof KatAndAdamRoute
   '/operaplaza': typeof OperaplazaRoute
@@ -87,6 +94,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/PrivacyPolicy': typeof PrivacyPolicyRoute
   '/TermsAndConditions': typeof TermsAndConditionsRoute
+  '/berkeley': typeof BerkeleyRoute
   '/hardscape': typeof HardscapeRoute
   '/katAndAdam': typeof KatAndAdamRoute
   '/operaplaza': typeof OperaplazaRoute
@@ -100,6 +108,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/PrivacyPolicy': typeof PrivacyPolicyRoute
   '/TermsAndConditions': typeof TermsAndConditionsRoute
+  '/berkeley': typeof BerkeleyRoute
   '/hardscape': typeof HardscapeRoute
   '/katAndAdam': typeof KatAndAdamRoute
   '/operaplaza': typeof OperaplazaRoute
@@ -114,6 +123,7 @@ export interface FileRouteTypes {
     | '/'
     | '/PrivacyPolicy'
     | '/TermsAndConditions'
+    | '/berkeley'
     | '/hardscape'
     | '/katAndAdam'
     | '/operaplaza'
@@ -126,6 +136,7 @@ export interface FileRouteTypes {
     | '/'
     | '/PrivacyPolicy'
     | '/TermsAndConditions'
+    | '/berkeley'
     | '/hardscape'
     | '/katAndAdam'
     | '/operaplaza'
@@ -138,6 +149,7 @@ export interface FileRouteTypes {
     | '/'
     | '/PrivacyPolicy'
     | '/TermsAndConditions'
+    | '/berkeley'
     | '/hardscape'
     | '/katAndAdam'
     | '/operaplaza'
@@ -151,6 +163,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
+  BerkeleyRoute: typeof BerkeleyRoute
   HardscapeRoute: typeof HardscapeRoute
   KatAndAdamRoute: typeof KatAndAdamRoute
   OperaplazaRoute: typeof OperaplazaRoute
@@ -181,6 +194,13 @@ declare module '@tanstack/react-router' {
       path: '/TermsAndConditions'
       fullPath: '/TermsAndConditions'
       preLoaderRoute: typeof TermsAndConditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/berkeley': {
+      id: '/berkeley'
+      path: '/berkeley'
+      fullPath: '/berkeley'
+      preLoaderRoute: typeof BerkeleyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hardscape': {
@@ -239,6 +259,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   TermsAndConditionsRoute: TermsAndConditionsRoute,
+  BerkeleyRoute: BerkeleyRoute,
   HardscapeRoute: HardscapeRoute,
   KatAndAdamRoute: KatAndAdamRoute,
   OperaplazaRoute: OperaplazaRoute,
