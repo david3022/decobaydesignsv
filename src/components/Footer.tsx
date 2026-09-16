@@ -10,7 +10,8 @@ export function Footer() {
             DECOBAY Interiors LLC — All Rights Reserved
           </p>
           <p className="text-muted-foreground text-sm mt-1">
-            Architectural & Interior Design Firm · California, USA
+            Architectural & Interior Design Firm · California, USA 3032 Promontory Cir San Ramon, CA
+            94583
           </p>
         </div>
         <nav aria-label="Site" className="text-sm space-y-2">
@@ -53,7 +54,7 @@ export function Footer() {
             target="_blank"
             rel="noreferrer"
           >
-            Decobay Designs →
+            Decobay Interiors →
           </a>
         </div>
         <div className="text-sm space-y-2 md:text-right">
