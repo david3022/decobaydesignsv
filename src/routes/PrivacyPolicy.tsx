@@ -50,6 +50,19 @@ function PrivacyPolicy() {
               "@type": "Thing",
               "name": "Privacy Policy",
               "description": "Information about how Decobay Interiors LLC collects, uses, and protects personal data."
+            },
+            /* ✅ AÑADIDO: LocalBusiness schema con dirección física para SEO local */
+            "publisher": {
+              "@type": "LocalBusiness",
+              "name": "Decobay Interiors LLC",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "3032 Promontory Cir",
+                "addressLocality": "San Ramon",
+                "addressRegion": "CA",
+                "postalCode": "94583",
+                "addressCountry": "US"
+              }
             }
           })}
         </script>
@@ -147,6 +160,17 @@ function PrivacyPolicy() {
               If you have any questions about this Privacy Policy or our architectural services, please don't hesitate to contact us.
             </p>
 
+            {/* ✅ AÑADIDO: Bloque de dirección postal dentro de la sección de contacto */}
+            <div className="mt-4 p-4 bg-muted/40 rounded-lg border border-border">
+              <p className="text-sm font-semibold text-foreground">Mailing Address</p>
+              <p className="text-sm text-muted-foreground mt-1">
+                Decobay Interiors LLC<br />
+                3032 Promontory Cir<br />
+                San Ramon, CA 94583<br />
+                United States
+              </p>
+            </div>
+
           </div>
 
           <footer className="border-t border-border mt-12 pt-6">
@@ -154,7 +178,8 @@ function PrivacyPolicy() {
               <div>
                 <p className="text-sm font-semibold text-foreground">Decobay Interiors LLC</p>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Location: The Bay Area, California, USA<br />
+                  {/* ✅ AÑADIDO: Dirección física reemplaza la línea genérica "Location: The Bay Area..." */}
+                  Address: 3032 Promontory Cir, San Ramon, CA 94583, USA<br />
                   Email: Susan@decobaydesign.com<br />
                   Phone: +1-408-410-7671
                 </p>
