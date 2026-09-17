@@ -344,7 +344,7 @@ function Services() {
         <div className="md:col-span-5">
           <p className="kicker reveal reveal-fade"> Services</p>
           <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl">
-            From architectural concepts to complete spaces.
+            From concepts to complete spaces.
           </h2>
           <p className="reveal reveal-up mt-6 text-muted-foreground max-w-md">
             We work at every scale — from architectural planning and construction documents to procurement and interior styling. Tell us what you have in mind — we'll respond with a tailored proposal within 48 hours.
@@ -385,7 +385,7 @@ function FreeConsultation() {
             <div className="max-w-lg">
               <h3 className="text-3xl md:text-4xl">Book your free consultation here</h3>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                Choose a time that works for you directly on Calendly. No extra forms needed
+                Choose a time that works for you directly on Calendly. No extra forms needed.
               </p>
               <div className="mt-6 inline-flex items-center gap-3 px-4 py-2 rounded-full border border-border/70 bg-background/50">
                 <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
