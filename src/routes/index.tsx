@@ -128,7 +128,7 @@ function Hero() {
         {/* Kicker actualizado para evitar redundancia y choque con el Navbar */}
         <p className="kicker reveal reveal-fade"></p>
         <h1 className="reveal reveal-up mt-4 text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-4xl">
-          Architectural  <em className="italic text-accent">Design</em> in California.
+          Architectural  <em className="italic text-accent">Interior Design</em> in California.
         </h1>
         <p className="reveal reveal-up mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
           DECOBAY Interiors is a California Interior Design firm shaping minimalist, warm, and timeless residential and commercial spaces — from architectural concept to procurement and full execution.
