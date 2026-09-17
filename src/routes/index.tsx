@@ -16,7 +16,7 @@ import commercial from "@/assets/commercial.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DECOBAY Interiors — Architectural & Minimalist Interior Design in California" },
+      { title: "DECOBAY Interiors — Architectural &  Interior Design in California" },
       {
         name: "description",
         content:
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "DECOBAY Interiors — Architectural & Minimalist Interior Design in California",
+        content: "DECOBAY Interiors — Architectural  Interior Design in California",
       },
       {
         property: "og:description",
@@ -46,7 +46,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "DECOBAY Interiors — Architectural & Minimalist Interior Design in California",
+        content: "DECOBAY Interiors — Architectural  Interior Design in California",
       },
       {
         name: "twitter:description",
@@ -114,7 +114,7 @@ function Hero() {
     <section
       id="top"
       className="relative min-h-screen flex items-end overflow-hidden pt-28 md:pt-36"
-      aria-label="DECOBAY Interiors — Architectural & Minimalist Interior Design in California"
+      aria-label="DECOBAY Interiors — Architectural  Interior Design in California"
     >
       <div className="absolute inset-0">
         <img
@@ -128,7 +128,7 @@ function Hero() {
         {/* Kicker actualizado para evitar redundancia y choque con el Navbar */}
         <p className="kicker reveal reveal-fade">California · Architecture & Interior Design Studio</p>
         <h1 className="reveal reveal-up mt-4 text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-4xl">
-          Architectural & <em className="italic text-accent">interior design</em> in California.
+          Architectural  <em className="italic text-accent">interior design</em> in California.
         </h1>
         <p className="reveal reveal-up mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
           DECOBAY Interiors is a California design studio shaping minimalist, warm, and timeless residential and commercial spaces — from architectural concept to procurement and full execution.

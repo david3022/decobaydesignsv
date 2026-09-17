@@ -8,7 +8,7 @@ export function Consultation() {
         </h2>
         <p className="reveal reveal-up mt-6 text-muted-foreground max-w-xl">
           Schedule a complimentary 30-minute consultation to discuss your project, explore
-          possibilities, and discover how Decobay Design can transform your space.
+          possibilities, and discover how Decobay Interiors can transform your space.
         </p>
 
         <div className="reveal reveal-up mt-12 p-10 md:p-14 border border-accent/30 bg-card rounded-sm">

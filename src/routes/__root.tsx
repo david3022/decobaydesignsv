@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "DECOBAY Interiors: minimalist, warm and timeless residential and commercial interior design in California.",
       },
-      { name: "author", content: "DECOBAY Designs LLC" },
+      { name: "author", content: "DECOBAY Interiors LLC" },
       { property: "og:site_name", content: "DECOBAY Interiors" },
       { property: "og:title", content: "DECOBAY Interiors — Architectural & Interior Design Firm in California" },
       {
