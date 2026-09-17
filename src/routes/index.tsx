@@ -131,7 +131,7 @@ function Hero() {
           Architectural  <em className="italic text-accent">interior design</em> in California.
         </h1>
         <p className="reveal reveal-up mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
-          DECOBAY Interiors is a California design studio shaping minimalist, warm, and timeless residential and commercial spaces — from architectural concept to procurement and full execution.
+          DECOBAY Interiors is a California design studio shaping warm, and timeless residential and commercial spaces — from architectural concept to procurement and full execution.
         </p>
         <div className="reveal reveal-up mt-10 flex flex-wrap gap-3">
           <a
@@ -226,9 +226,9 @@ function Philosophy() {
   return (
     <section id="philosophy" className="py-28 md:py-40 px-6 lg:px-10">
       <div className="max-w-7xl mx-auto">
-        <p className="kicker reveal reveal-fade">01 — Studio</p>
+        <p className="kicker reveal reveal-fade"></p>
         <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl max-w-3xl">
-          A studio devoted to <em className="italic">timeless</em> interiors.
+          Devoted to <em className="italic">timeless</em> interiors.
         </h2>
         <div className="mt-16 grid md:grid-cols-3 gap-10 md:gap-14">
           {items.map((it, i) => (
@@ -254,7 +254,7 @@ function Projects() {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-14 flex-wrap gap-4">
           <div>
-            <p className="kicker reveal reveal-fade">02 — Selected work</p>
+            <p className="kicker reveal reveal-fade"> Selected work</p>
             <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl">Recent projects</h2>
           </div>
           <p className="reveal reveal-fade max-w-sm text-muted-foreground">
@@ -342,7 +342,7 @@ function Services() {
     <section id="services" className="py-28 md:py-40 px-6 lg:px-10 bg-muted/40">
       <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10">
         <div className="md:col-span-5">
-          <p className="kicker reveal reveal-fade">03 — Services</p>
+          <p className="kicker reveal reveal-fade"> Services</p>
           <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl">
             From architectural concepts to complete spaces.
           </h2>
@@ -371,7 +371,7 @@ function FreeConsultation() {
   return (
     <section id="consultation" className="py-28 md:py-40 px-6 lg:px-10">
       <div className="max-w-5xl mx-auto">
-        <p className="kicker reveal reveal-fade">04 — Start</p>
+        <p className="kicker reveal reveal-fade"> Start</p>
         <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl max-w-3xl">
           Ready to bring your <em className="italic text-accent">vision</em> to life?
         </h2>
@@ -383,9 +383,9 @@ function FreeConsultation() {
         <div className="reveal reveal-up mt-12 p-10 md:p-14 border border-accent/30 bg-card rounded-sm">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
             <div className="max-w-lg">
-              <h3 className="text-3xl md:text-4xl">Book your free consultation</h3>
+              <h3 className="text-3xl md:text-4xl">Book your free consultation here</h3>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                Choose a time that works for you directly on Calendly. No extra forms needed.
+                Choose a time that works for you directly on Calendly. No extra forms needed
               </p>
               <div className="mt-6 inline-flex items-center gap-3 px-4 py-2 rounded-full border border-border/70 bg-background/50">
                 <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
