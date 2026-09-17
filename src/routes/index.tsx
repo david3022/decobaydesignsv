@@ -128,10 +128,10 @@ function Hero() {
         {/* Kicker actualizado para evitar redundancia y choque con el Navbar */}
         <p className="kicker reveal reveal-fade"></p>
         <h1 className="reveal reveal-up mt-4 text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-4xl">
-          Architectural  <em className="italic text-accent">design</em> in California.
+          Architectural  <em className="italic text-accent">Design</em> in California.
         </h1>
         <p className="reveal reveal-up mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
-          In DECOBAY Interiors we design warm, and timeless residential and commercial spaces — from architectural concept to procurement and full execution.
+          DECOBAY Interiors is a California Interior Design firm shaping minimalist, warm, and timeless residential and commercial spaces — from architectural concept to procurement and full execution.
         </p>
         <div className="reveal reveal-up mt-10 flex flex-wrap gap-3">
           <a
@@ -228,7 +228,7 @@ function Philosophy() {
       <div className="max-w-7xl mx-auto">
         <p className="kicker reveal reveal-fade"></p>
         <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl max-w-3xl">
-          Devoted to <em className="italic">timeless</em> interiors.
+          A Firm devoted to <em className="italic">timeless</em> interiors.
         </h2>
         <div className="mt-16 grid md:grid-cols-3 gap-10 md:gap-14">
           {items.map((it, i) => (
