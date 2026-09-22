@@ -3,6 +3,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import hero from "@/assets/hero.jpg";
+import bbb from "@/assets/bbb.png";
 import living from "@/assets/living.jpg";
 import kitchen from "@/assets/kitchen.jpg";
 import bedroom from "@/assets/bedroom.jpg";
@@ -10,13 +11,10 @@ import dining from "@/assets/dining.jpg";
 import bath from "@/assets/bath.jpg";
 import commercial from "@/assets/commercial.jpg";
 
-
-
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DECOBAY Interiors — Architectural &  Interior Design in California" },
+      { title: "DECOBAY Interiors — Architectural & Interior Design in California" },
       {
         name: "description",
         content:
@@ -29,7 +27,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "DECOBAY Interiors — Architectural  Interior Design in California",
+        content: "DECOBAY Interiors — Architectural Interior Design in California",
       },
       {
         property: "og:description",
@@ -46,7 +44,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "DECOBAY Interiors — Architectural  Interior Design in California",
+        content: "DECOBAY Interiors — Architectural Interior Design in California",
       },
       {
         name: "twitter:description",
@@ -108,13 +106,12 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-
 function Hero() {
   return (
     <section
       id="top"
       className="relative min-h-screen flex items-end overflow-hidden pt-28 md:pt-36"
-      aria-label="DECOBAY Interiors — Architectural  Interior Design in California"
+      aria-label="DECOBAY Interiors — Architectural Interior Design in California"
     >
       <div className="absolute inset-0">
         <img
@@ -125,14 +122,20 @@ function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/40" />
       </div>
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pb-20 md:pb-32 w-full">
-        {/* Kicker actualizado para evitar redundancia y choque con el Navbar */}
         <p className="kicker reveal reveal-fade"></p>
         <h1 className="reveal reveal-up mt-4 text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-4xl">
-          Architectural  <em className="italic text-accent">Interior Design</em> in California.
+          Architectural <em className="italic text-accent">Art of The Home Design.</em>
         </h1>
-        <p className="reveal reveal-up mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
-          DECOBAY Interiors is a California Interior Design firm shaping minimalist, warm, and timeless residential and commercial spaces — from architectural concept to procurement and full execution.
+        <p className="reveal reveal-up mt-6 max-w-xl text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
+          <em className="font-display italic font-semibold text-accent not-italic-none">
+            DECOBAY INTERIORS
+          </em>{" "}
+          Shaping minimalist, warm, and timeless residential and commercial spaces — from
+          architectural concept to procurement and full execution.
         </p>
+        {/* <p className="reveal reveal-up mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
+          Art of The Home Design. Shaping minimalist, warm, and timeless residential and commercial spaces — from architectural concept to procurement and full execution.
+        </p> */}
         <div className="reveal reveal-up mt-10 flex flex-wrap gap-3">
           <a
             href="#consultation"
@@ -157,56 +160,6 @@ function Hero() {
     </section>
   );
 }
-
-
-
-// function Hero() {
-//   return (
-//     <section
-//       id="top"
-//       className="relative min-h-screen flex items-end overflow-hidden"
-//       aria-label="DECOBAY Interiors — Architectural & Minimalist Interior Design in California"
-//     >
-//       <div className="absolute inset-0">
-//         <img
-//           src={hero}
-//           alt="Minimalist California living room interior designed by DECOBAY Interiors"
-//           className="w-full h-full object-cover scale-105 animate-[fade-in_1.4s_ease-out]"
-//         />
-//         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/40" />
-//       </div>
-//       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pb-20 md:pb-32 w-full">
-//         <p className="kicker reveal reveal-fade">DECOBAY Interiors LLC · California</p>
-//         <h1 className="reveal reveal-up mt-4 text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-4xl">
-//           Architectural & <em className="italic text-accent">interior design</em> in California.
-//         </h1>
-//         <p className="reveal reveal-up mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
-//           DECOBAY Interiors is a California design studio shaping minimalist, warm, and timeless residential and commercial spaces — from architectural concept to procurement and full execution.
-//         </p>
-//         <div className="reveal reveal-up mt-10 flex flex-wrap gap-3">
-//           <a
-//             href="#consultation"
-//             className="px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-accent transition-colors"
-//           >
-//             Book a free consultation
-//           </a>
-//           <a
-//             href="#projects"
-//             className="px-6 py-3 rounded-full border border-foreground/30 hover:border-foreground transition-colors"
-//           >
-//             View projects
-//           </a>
-//           <a
-//             href="/sarita"
-//             className="px-6 py-3 rounded-full border border-foreground/30 hover:border-foreground transition-colors"
-//           >
-//             Sarita residence →
-//           </a>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
 
 function Philosophy() {
   const items = [
@@ -347,7 +300,9 @@ function Services() {
             From concepts to complete spaces.
           </h2>
           <p className="reveal reveal-up mt-6 text-muted-foreground max-w-md">
-            We work at every scale — from architectural planning and construction documents to procurement and interior styling. Tell us what you have in mind — we'll respond with a tailored proposal within 48 hours.
+            We work at every scale — from architectural planning and construction documents to
+            procurement and interior styling. Tell us what you have in mind — we'll respond with a
+            tailored proposal within 48 hours.
           </p>
         </div>
         <ul className="md:col-span-7 grid sm:grid-cols-2 gap-x-10">
@@ -400,38 +355,92 @@ function FreeConsultation() {
             >
               Schedule your call →
             </a>
-          </div>git add <div className=""></div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
+function BBBAccreditation() {
+  return (
+    <section className="py-12 border-y border-border/50 bg-muted/20 px-6 lg:px-10">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex items-center gap-6">
+          <div className="shrink-0 w-20 h-20 md:w-24 md:h-24 aspect-square overflow-hidden rounded-sm border border-border/60 bg-background p-2 flex items-center justify-center">
+            <img
+              src={bbb}
+              alt="Better Business Bureau Accredited Business"
+              className="w-full h-full object-contain aspect-square"
+            />
+          </div>
+          <div>
+            <p className="kicker reveal reveal-fade">Trust & Excellence</p>
+            <h3 className="reveal reveal-up text-2xl md:text-3xl mt-1">
+              Accredited by the <em className="italic text-accent">Better Business Bureau</em>
+            </h3>
+            <p className="reveal reveal-up text-sm md:text-base text-muted-foreground mt-1 max-w-xl">
+              We are proud to be a BBB Accredited business, committed to the highest standards of
+              integrity, transparency, and architectural service quality in California.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
+function Index() {
+  useReveal();
+  return (
+    <main className="bg-background text-foreground">
+      <Header />
+      <Hero />
+      <Philosophy />
+      <Projects />
+      <Services />
 
+      <FreeConsultation />
+      <BBBAccreditation />
+      <Footer />
+    </main>
+  );
+}
+
+// import { createFileRoute } from "@tanstack/react-router";
+// import { useReveal } from "@/hooks/use-reveal";
+// import { Header } from "@/components/Header";
+// import { Footer } from "@/components/Footer";
+// import hero from "@/assets/hero.jpg";
+// import living from "@/assets/living.jpg";
+// import kitchen from "@/assets/kitchen.jpg";
+// import bedroom from "@/assets/bedroom.jpg";
+// import dining from "@/assets/dining.jpg";
+// import bath from "@/assets/bath.jpg";
+// import commercial from "@/assets/commercial.jpg";
 
 // export const Route = createFileRoute("/")({
 //   head: () => ({
 //     meta: [
-//       { title: "DECOBAY Interiors — Minimalist Interior Design in California" },
+//       { title: "DECOBAY Interiors — Architectural &  Interior Design in California" },
 //       {
 //         name: "description",
 //         content:
-//           "California Architectural & Interior Design Firm creating minimalist, warm and timeless homes and commercial spaces. Book a free 30-minute consultation.",
+//           "California Architectural & Interior Design Firm offering full-service architectural design, construction documentation, procurement, and project management for residential and commercial spaces. Book a free 30-minute consultation.",
 //       },
 //       {
 //         name: "keywords",
 //         content:
-//           "interior design California, minimalist interior design, residential interior design, commercial interior design, DECOBAY Interiors, free consultation",
+//           "interior design California, architectural design, construction documentation, procurement, minimalist interior design, residential interior design, commercial interior design, DECOBAY Interiors, free consultation",
 //       },
 //       {
 //         property: "og:title",
-//         content: "DECOBAY Interiors — Minimalist Interior Design in California",
+//         content: "DECOBAY Interiors — Architectural  Interior Design in California",
 //       },
 //       {
 //         property: "og:description",
 //         content:
-//           "Minimalist, warm and timeless residential and commercial interior design from California. Book a free 30-minute consultation.",
+//           "California Architectural & Interior Design Firm offering full-service architectural design, construction documentation, procurement, and timeless residential and commercial spaces.",
 //       },
 //       { property: "og:type", content: "website" },
 //       { property: "og:url", content: "https://deco-bay-dream.lovable.app/" },
@@ -443,12 +452,12 @@ function FreeConsultation() {
 //       { name: "twitter:card", content: "summary_large_image" },
 //       {
 //         name: "twitter:title",
-//         content: "DECOBAY Interiors — Minimalist Interior Design in California",
+//         content: "DECOBAY Interiors — Architectural  Interior Design in California",
 //       },
 //       {
 //         name: "twitter:description",
 //         content:
-//           "California Architectural & Interior Design Firm. Minimalist, warm and timeless residential and commercial interiors. Book a free consultation.",
+//           "California Architectural & Interior Design Firm. Architectural design, construction documents, procurement, and commercial interiors. Book a free consultation.",
 //       },
 //       {
 //         name: "twitter:image",
@@ -473,7 +482,7 @@ function FreeConsultation() {
 //           "@type": "InteriorDesignStudio",
 //           name: "DECOBAY Interiors",
 //           description:
-//             "Minimalist Architectural & Interior Design Firm in California offering residential and commercial interior design services.",
+//             "California Architectural & Interior Design Firm offering architectural design, construction documentation, procurement, and residential and commercial interior design services.",
 //           areaServed: { "@type": "State", name: "California" },
 //           url: "https://deco-bay-dream.lovable.app/",
 //           image:
@@ -488,13 +497,13 @@ function FreeConsultation() {
 //           address: { "@type": "PostalAddress", addressRegion: "CA", addressCountry: "US" },
 //           hasOfferCatalog: {
 //             "@type": "OfferCatalog",
-//             name: "Interior design services",
+//             name: "Architectural & Interior design services",
 //             itemListElement: [
-//               "Full-home design",
-//               "Single-room refresh",
-//               "Color & material consult",
+//               "Architectural & full-home design",
+//               "Construction documentation",
+//               "Procurement & furniture sourcing",
 //               "Commercial spaces",
-//               "Furniture sourcing",
+//               "Single-room refresh",
 //               "Project management",
 //             ].map((s) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: s } })),
 //           },
@@ -509,8 +518,8 @@ function FreeConsultation() {
 //   return (
 //     <section
 //       id="top"
-//       className="relative min-h-screen flex items-end overflow-hidden"
-//       aria-label="DECOBAY Interiors — Minimalist Interior Design in California"
+//       className="relative min-h-screen flex items-end overflow-hidden pt-28 md:pt-36"
+//       aria-label="DECOBAY Interiors — Architectural  Interior Design in California"
 //     >
 //       <div className="absolute inset-0">
 //         <img
@@ -521,13 +530,13 @@ function FreeConsultation() {
 //         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/40" />
 //       </div>
 //       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pb-20 md:pb-32 w-full">
-//         <p className="kicker reveal reveal-fade">DECOBAY Interiors LLC · California</p>
+//         {/* Kicker actualizado para evitar redundancia y choque con el Navbar */}
+//         <p className="kicker reveal reveal-fade"></p>
 //         <h1 className="reveal reveal-up mt-4 text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-4xl">
-//           Minimalist <em className="italic text-accent">interior design</em> in California.
+//           Architectural  <em className="italic text-accent">Interior Design</em> in California.
 //         </h1>
 //         <p className="reveal reveal-up mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
-//           DECOBAY Interiors is a California design studio shaping minimalist, warm and timeless
-//           residential and commercial interiors — from a single room to a full home.
+//           DECOBAY Interiors is a California Interior Design firm shaping minimalist, warm, and timeless residential and commercial spaces — from architectural concept to procurement and full execution.
 //         </p>
 //         <div className="reveal reveal-up mt-10 flex flex-wrap gap-3">
 //           <a
@@ -572,9 +581,9 @@ function FreeConsultation() {
 //   return (
 //     <section id="philosophy" className="py-28 md:py-40 px-6 lg:px-10">
 //       <div className="max-w-7xl mx-auto">
-//         <p className="kicker reveal reveal-fade">01 — Studio</p>
+//         <p className="kicker reveal reveal-fade"></p>
 //         <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl max-w-3xl">
-//           A studio devoted to <em className="italic">timeless</em> interiors.
+//           A Firm devoted to <em className="italic">timeless</em> interiors.
 //         </h2>
 //         <div className="mt-16 grid md:grid-cols-3 gap-10 md:gap-14">
 //           {items.map((it, i) => (
@@ -600,7 +609,7 @@ function FreeConsultation() {
 //       <div className="max-w-7xl mx-auto">
 //         <div className="flex items-end justify-between mb-14 flex-wrap gap-4">
 //           <div>
-//             <p className="kicker reveal reveal-fade">02 — Selected work</p>
+//             <p className="kicker reveal reveal-fade"> Selected work</p>
 //             <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl">Recent projects</h2>
 //           </div>
 //           <p className="reveal reveal-fade max-w-sm text-muted-foreground">
@@ -677,24 +686,23 @@ function FreeConsultation() {
 
 // function Services() {
 //   const list = [
-//     "Full-home design",
-//     "Single-room refresh",
-//     "Color & material consult",
+//     "Architectural & full-home design",
+//     "Construction documentation",
+//     "Procurement & furniture sourcing",
 //     "Commercial spaces",
-//     "Furniture sourcing",
+//     "Single-room refresh",
 //     "Project management",
 //   ];
 //   return (
 //     <section id="services" className="py-28 md:py-40 px-6 lg:px-10 bg-muted/40">
 //       <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10">
 //         <div className="md:col-span-5">
-//           <p className="kicker reveal reveal-fade">03 — Services</p>
+//           <p className="kicker reveal reveal-fade"> Services</p>
 //           <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl">
-//             From a single room to the whole home.
+//             From concepts to complete spaces.
 //           </h2>
 //           <p className="reveal reveal-up mt-6 text-muted-foreground max-w-md">
-//             We work at every scale. Tell us what you have in mind — we'll respond with a tailored
-//             proposal within 48 hours.
+//             We work at every scale — from architectural planning and construction documents to procurement and interior styling. Tell us what you have in mind — we'll respond with a tailored proposal within 48 hours.
 //           </p>
 //         </div>
 //         <ul className="md:col-span-7 grid sm:grid-cols-2 gap-x-10">
@@ -718,19 +726,19 @@ function FreeConsultation() {
 //   return (
 //     <section id="consultation" className="py-28 md:py-40 px-6 lg:px-10">
 //       <div className="max-w-5xl mx-auto">
-//         <p className="kicker reveal reveal-fade">04 — Start</p>
+//         <p className="kicker reveal reveal-fade"> Start</p>
 //         <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl max-w-3xl">
 //           Ready to bring your <em className="italic text-accent">vision</em> to life?
 //         </h2>
 //         <p className="reveal reveal-up mt-6 text-muted-foreground max-w-xl">
 //           Schedule a complimentary 30-minute consultation to discuss your project, explore
-//           possibilities, and discover how Decobay Design can transform your space.
+//           possibilities, and discover how DECOBAY Interiors can transform your space.
 //         </p>
 
 //         <div className="reveal reveal-up mt-12 p-10 md:p-14 border border-accent/30 bg-card rounded-sm">
 //           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
 //             <div className="max-w-lg">
-//               <h3 className="text-3xl md:text-4xl">Book your free consultation</h3>
+//               <h3 className="text-3xl md:text-4xl">Book your free consultation here</h3>
 //               <p className="mt-4 text-muted-foreground leading-relaxed">
 //                 Choose a time that works for you directly on Calendly. No extra forms needed.
 //               </p>
@@ -747,24 +755,24 @@ function FreeConsultation() {
 //             >
 //               Schedule your call →
 //             </a>
-//           </div>
+//           </div>git add <div className=""></div>
 //         </div>
 //       </div>
 //     </section>
 //   );
 // }
 
-function Index() {
-  useReveal();
-  return (
-    <main className="bg-background text-foreground">
-      <Header />
-      <Hero />
-      <Philosophy />
-      <Projects />
-      <Services />
-      <FreeConsultation />
-      <Footer />
-    </main>
-  );
-}
+// function Index() {
+//   useReveal();
+//   return (
+//     <main className="bg-background text-foreground">
+//       <Header />
+//       <Hero />
+//       <Philosophy />
+//       <Projects />
+//       <Services />
+//       <FreeConsultation />
+//       <Footer />
+//     </main>
+//   );
+// }
