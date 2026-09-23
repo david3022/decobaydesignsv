@@ -3,7 +3,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import hero from "@/assets/hero.jpg";
-import bbb from "@/assets/bbb.png";
+import bbb from "@/assets/BBB.png";
 import living from "@/assets/living.jpg";
 import kitchen from "@/assets/kitchen.jpg";
 import bedroom from "@/assets/bedroom.jpg";
@@ -124,13 +124,13 @@ function Hero() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pb-20 md:pb-32 w-full">
         <p className="kicker reveal reveal-fade"></p>
         <h1 className="reveal reveal-up mt-4 text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-4xl">
-          Architectural <em className="italic text-accent">Art of The Home Design.</em>
+          Architectural <em className="italic text-accent">Interior Design </em> Firm
         </h1>
         <p className="reveal reveal-up mt-6 max-w-xl text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
           <em className="font-display italic font-semibold text-accent not-italic-none">
             DECOBAY INTERIORS
           </em>{" "}
-          Shaping minimalist, warm, and timeless residential and commercial spaces — from
+          Shaping  warm, and timeless residential and commercial spaces — from
           architectural concept to procurement and full execution.
         </p>
         {/* <p className="reveal reveal-up mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
