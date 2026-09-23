@@ -3,7 +3,7 @@ import { useReveal } from "@/hooks/use-reveal";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import hero from "@/assets/hero.jpg";
-import bbb from "@/assets/BBB.png";
+import bbb from "@/assets/bbb.png";
 import living from "@/assets/living.jpg";
 import kitchen from "@/assets/kitchen.jpg";
 import bedroom from "@/assets/bedroom.jpg";

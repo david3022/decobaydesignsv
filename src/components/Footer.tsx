@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import bbb from "../assets/BBB.png";
+import bbb from "../assets/bbb.png";
 
 
 
