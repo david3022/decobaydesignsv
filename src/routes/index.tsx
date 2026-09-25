@@ -124,7 +124,7 @@ function Hero() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pb-20 md:pb-32 w-full">
         <p className="kicker reveal reveal-fade"></p>
         <h1 className="reveal reveal-up mt-4 text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-4xl">
-          Architectural <em className="italic text-accent">Interior Design </em> Firm
+          Architectural &<em className="italic text-accent">Interior Design </em> Firm
         </h1>
         <p className="reveal reveal-up mt-6 max-w-xl text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
           <em className="font-display italic font-semibold text-accent not-italic-none">
