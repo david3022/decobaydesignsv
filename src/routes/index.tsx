@@ -274,7 +274,7 @@ function Philosophy() {
 
 function Projects() {
   return (
-    <section id="projects" className="py-20 md:py-28 px-6 lg:px-10">
+    <section id="projects" className="scroll-mt-20 py-20 md:py-28 px-6 lg:px-10">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-14 flex-wrap gap-4">
           <div>
