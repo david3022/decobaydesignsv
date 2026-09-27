@@ -4,12 +4,12 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import hero from "@/assets/hero.jpg";
 import bbb from "@/assets/bbb.png";
-import living from "@/assets/living.jpg";
-import kitchen from "@/assets/kitchen.jpg";
+import living from "@/assets/bedroom-interior.jpg";
+import kitchen from "@/assets/PalmettoSanRamon/SR3_03v3.jpg";
 import bedroom from "@/assets/bedroom.jpg";
-import dining from "@/assets/dining.jpg";
-import bath from "@/assets/bath.jpg";
-import commercial from "@/assets/commercial.jpg";
+import dining from "@/assets/sarita-2.jpg";
+import bath from "@/assets/KatAndAdam/k2.jpg";
+import commercial from "@/assets/hardscape/hardscape9.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -106,11 +106,12 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+
 function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-screen flex items-end overflow-hidden pt-28 md:pt-36"
+      className="relative min-h-screen flex items-center justify-center text-center overflow-hidden pt-28 md:pt-36"
       aria-label="DECOBAY Interiors — Architectural Interior Design in California"
     >
       <div className="absolute inset-0">
@@ -121,22 +122,36 @@ function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/40" />
       </div>
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pb-20 md:pb-32 w-full">
-        <p className="kicker reveal reveal-fade"></p>
-        <h1 className="reveal reveal-up mt-4 text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-4xl">
-          Architectural &<em className="italic text-accent">Interior Design </em> Firm
-        </h1>
-        <p className="reveal reveal-up mt-6 max-w-xl text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
-          <em className="font-display italic font-semibold text-accent not-italic-none">
-            DECOBAY INTERIORS
-          </em>{" "}
-          Shaping  warm, and timeless residential and commercial spaces — from
-          architectural concept to procurement and full execution.
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pb-20 md:pb-32 w-full flex flex-col items-center">
+        
+        {/* Eslogan centrado en la parte superior con la misma fuente y estilo tipográfico del título */}
+        <p className="reveal reveal-fade text-2xl md:text-3xl lg:text-4xl italic text-accent font-display mb-4">
+           Architectural & Interior Design Firm
         </p>
-        {/* <p className="reveal reveal-up mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
-          Art of The Home Design. Shaping minimalist, warm, and timeless residential and commercial spaces — from architectural concept to procurement and full execution.
+
+        <h1 className="reveal reveal-up text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-4xl">
+          Art of<em className="italic text-accent"> Home Design  </em> 
+        </h1>
+
+        <p className="reveal reveal-up mt-6 max-w-xl text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
+  <em className="font-display italic font-semibold text-accent not-italic-none">
+    DECOBAY INTERIORS
+  </em>{" "}
+  <span className="text-black ">
+    Shaping warm, and timeless residential and commercial spaces — from
+    architectural concept to procurement and full execution.
+  </span>
+</p>
+
+        {/* <p className="reveal reveal-up mt-6 max-w-xl text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
+          <em className="font-display italic font-semibold text-accent not-italic-none">
+            DECOBAY INTERIORS 
+          </em>{" "}
+          Shaping warm, and timeless residential and commercial spaces — from
+          architectural concept to procurement and full execution.
         </p> */}
-        <div className="reveal reveal-up mt-10 flex flex-wrap gap-3">
+
+        <div className="reveal reveal-up mt-10 flex flex-wrap justify-center gap-3">
           <a
             href="#consultation"
             className="px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-accent transition-colors"
@@ -160,6 +175,62 @@ function Hero() {
     </section>
   );
 }
+
+
+// function Hero() {
+//   return (
+//     <section
+//       id="top"
+//       className="relative min-h-screen flex items-end overflow-hidden pt-28 md:pt-36"
+//       aria-label="DECOBAY Interiors — Architectural Interior Design in California"
+//     >
+//       <div className="absolute inset-0">
+//         <img
+//           src={hero}
+//           alt="Minimalist California living room interior designed by DECOBAY Interiors"
+//           className="w-full h-full object-cover scale-105 animate-[fade-in_1.4s_ease-out]"
+//         />
+//         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/40" />
+//       </div>
+//       <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pb-20 md:pb-32 w-full">
+//         <p className="kicker reveal reveal-fade"></p>
+//         <h1 className="reveal reveal-up mt-4 text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-4xl">
+//           Architectural &<em className="italic text-accent">Interior Design </em> Firm
+//         </h1>
+//         <p className="reveal reveal-up mt-6 max-w-xl text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
+//           <em className="font-display italic font-semibold text-accent not-italic-none">
+//             DECOBAY INTERIORS
+//           </em>{" "}
+//           Shaping  warm, and timeless residential and commercial spaces — from
+//           architectural concept to procurement and full execution.
+//         </p>
+//         {/* <p className="reveal reveal-up mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
+//           Art of The Home Design. Shaping minimalist, warm, and timeless residential and commercial spaces — from architectural concept to procurement and full execution.
+//         </p> */}
+//         <div className="reveal reveal-up mt-10 flex flex-wrap gap-3">
+//           <a
+//             href="#consultation"
+//             className="px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-accent transition-colors"
+//           >
+//             Book a free consultation
+//           </a>
+//           <a
+//             href="#projects"
+//             className="px-6 py-3 rounded-full border border-foreground/30 hover:border-foreground transition-colors"
+//           >
+//             View projects
+//           </a>
+//           <a
+//             href="/sarita"
+//             className="px-6 py-3 rounded-full border border-foreground/30 hover:border-foreground transition-colors"
+//           >
+//             Sarita residence →
+//           </a>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 function Philosophy() {
   const items = [
@@ -219,20 +290,24 @@ function Projects() {
         {/* Editorial asymmetric grid */}
         <div className="grid grid-cols-12 gap-4 md:gap-6">
           <figure className="reveal reveal-left img-hover col-span-12 md:col-span-7 aspect-[16/11] overflow-hidden rounded-sm">
-            <img
-              src={living}
-              alt="Minimalist California living room with linen sofa and oak details"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
+            <a href="./berkeley" className="block w-full h-full">
+              <img
+                src={living}
+                alt="Minimalist California living room with linen sofa and oak details"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </a>
           </figure>
           <figure className="reveal reveal-zoom img-hover col-span-12 md:col-span-5 aspect-[4/5] overflow-hidden rounded-sm">
-            <img
-              src={kitchen}
-              alt="Minimalist oak kitchen with stone worktop by DECOBAY Interiors"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
+            <a href="./palmetto" className="block w-full h-full">
+              <img
+                src={kitchen}
+                alt="Minimalist oak kitchen with stone worktop by DECOBAY Interiors"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </a>
           </figure>
 
           <div className="reveal reveal-up col-span-12 md:col-span-5 flex flex-col justify-center md:pl-4">
@@ -244,43 +319,132 @@ function Projects() {
             </p>
           </div>
           <figure className="reveal reveal-right img-hover col-span-12 md:col-span-7 aspect-[16/10] overflow-hidden rounded-sm">
-            <img
-              src={bedroom}
-              alt="Warm neutral bedroom interior design in a California home"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
+            <a href="./sarita" className="block w-full h-full">
+              <img
+                src={bedroom}
+                alt="Warm neutral bedroom interior design in a California home"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </a>
           </figure>
 
           <figure className="reveal reveal-tilt img-hover col-span-12 md:col-span-4 aspect-[4/5] overflow-hidden rounded-sm">
-            <img
-              src={dining}
-              alt="Minimalist dining room with sculptural wood table and soft lighting"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
+            <a href="./sarita" className="block w-full h-full">
+              <img
+                src={dining}
+                alt="Minimalist dining room with sculptural wood table and soft lighting"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </a>
           </figure>
           <figure className="reveal reveal-fade img-hover col-span-12 md:col-span-4 aspect-[4/5] overflow-hidden rounded-sm md:mt-12">
-            <img
-              src={bath}
-              alt="Serene stone bathroom design with natural textures"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
+            <a href="./katAndAdam" className="block w-full h-full">
+              <img
+                src={bath}
+                alt="Serene stone bathroom design with natural textures"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </a>
           </figure>
           <figure className="reveal reveal-zoom img-hover col-span-12 md:col-span-4 aspect-[4/5] overflow-hidden rounded-sm md:mt-24">
-            <img
-              src={commercial}
-              alt="Commercial interior design project for a California workspace"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
+            <a href="./hardscape" className="block w-full h-full">
+              <img
+                src={commercial}
+                alt="Commercial interior design project for a California workspace"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </a>
           </figure>
         </div>
       </div>
     </section>
   );
 }
+
+// function Projects() {
+//   return (
+//     <section id="projects" className="py-20 md:py-28 px-6 lg:px-10">
+//       <div className="max-w-7xl mx-auto">
+//         <div className="flex items-end justify-between mb-14 flex-wrap gap-4">
+//           <div>
+//             <p className="kicker reveal reveal-fade"> Selected work</p>
+//             <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl">Recent projects</h2>
+//           </div>
+//           <p className="reveal reveal-fade max-w-sm text-muted-foreground">
+//             A curated mix of residential and commercial spaces — each one shaped around how it will
+//             be lived in.
+//           </p>
+//         </div>
+
+//         {/* Editorial asymmetric grid */}
+//         <div className="grid grid-cols-12 gap-4 md:gap-6">
+//           <figure className="reveal reveal-left img-hover col-span-12 md:col-span-7 aspect-[16/11] overflow-hidden rounded-sm">
+//             <img
+//               src={living}
+//               alt="Minimalist California living room with linen sofa and oak details"
+//               className="w-full h-full object-cover"
+//               loading="lazy"
+//             />
+//           </figure>
+//           <figure className="reveal reveal-zoom img-hover col-span-12 md:col-span-5 aspect-[4/5] overflow-hidden rounded-sm">
+//             <img
+//               src={kitchen}
+//               alt="Minimalist oak kitchen with stone worktop by DECOBAY Interiors"
+//               className="w-full h-full object-cover"
+//               loading="lazy"
+//             />
+//           </figure>
+
+//           <div className="reveal reveal-up col-span-12 md:col-span-5 flex flex-col justify-center md:pl-4">
+//             <p className="kicker">Residential</p>
+//             <h3 className="text-3xl md:text-4xl mt-3">Coastal residence</h3>
+//             <p className="text-muted-foreground mt-4 leading-relaxed">
+//               A double-height living space where natural light, linen and oak set the tone for slow
+//               weekends.
+//             </p>
+//           </div>
+//           <figure className="reveal reveal-right img-hover col-span-12 md:col-span-7 aspect-[16/10] overflow-hidden rounded-sm">
+//             <img
+//               src={bedroom}
+//               alt="Warm neutral bedroom interior design in a California home"
+//               className="w-full h-full object-cover"
+//               loading="lazy"
+//             />
+//           </figure>
+
+//           <figure className="reveal reveal-tilt img-hover col-span-12 md:col-span-4 aspect-[4/5] overflow-hidden rounded-sm">
+//             <img
+//               src={dining}
+//               alt="Minimalist dining room with sculptural wood table and soft lighting"
+//               className="w-full h-full object-cover"
+//               loading="lazy"
+//             />
+//           </figure>
+//           <figure className="reveal reveal-fade img-hover col-span-12 md:col-span-4 aspect-[4/5] overflow-hidden rounded-sm md:mt-12">
+//             <img
+//               src={bath}
+//               alt="Serene stone bathroom design with natural textures"
+//               className="w-full h-full object-cover"
+//               loading="lazy"
+//             />
+//           </figure>
+//           <figure className="reveal reveal-zoom img-hover col-span-12 md:col-span-4 aspect-[4/5] overflow-hidden rounded-sm md:mt-24">
+//             <img
+//               src={commercial}
+//               alt="Commercial interior design project for a California workspace"
+//               className="w-full h-full object-cover"
+//               loading="lazy"
+//             />
+//           </figure>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 function Services() {
   const list = [
