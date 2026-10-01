@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "interior design California, architectural design, construction documentation, procurement, minimalist interior design, residential interior design, commercial interior design, DECOBAY Interiors, free consultation",
+          "interior design California, architectural design, construction documentation, procurement, interior design, residential interior design, commercial interior design, DECOBAY Interiors, free consultation",
       },
       {
         property: "og:title",
@@ -117,7 +117,7 @@ function Hero() {
       <div className="absolute inset-0">
         <img
           src={hero}
-          alt="Minimalist California living room interior designed by DECOBAY Interiors"
+          alt="California living room interior designed by DECOBAY Interiors"
           className="w-full h-full object-cover scale-105 animate-[fade-in_1.4s_ease-out]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/40" />
@@ -187,7 +187,7 @@ function Hero() {
 //       <div className="absolute inset-0">
 //         <img
 //           src={hero}
-//           alt="Minimalist California living room interior designed by DECOBAY Interiors"
+//           alt=" California living room interior designed by DECOBAY Interiors"
 //           className="w-full h-full object-cover scale-105 animate-[fade-in_1.4s_ease-out]"
 //         />
 //         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/40" />
@@ -205,7 +205,7 @@ function Hero() {
 //           architectural concept to procurement and full execution.
 //         </p>
 //         {/* <p className="reveal reveal-up mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
-//           Art of The Home Design. Shaping minimalist, warm, and timeless residential and commercial spaces — from architectural concept to procurement and full execution.
+//           Art of The Home Design. Shaping , warm, and timeless residential and commercial spaces — from architectural concept to procurement and full execution.
 //         </p> */}
 //         <div className="reveal reveal-up mt-10 flex flex-wrap gap-3">
 //           <a
@@ -293,7 +293,7 @@ function Projects() {
             <a href="./berkeley" className="block w-full h-full">
               <img
                 src={living}
-                alt="Minimalist California living room with linen sofa and oak details"
+                alt="California living room with linen sofa and oak details"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -303,7 +303,7 @@ function Projects() {
             <a href="./palmetto" className="block w-full h-full">
               <img
                 src={kitchen}
-                alt="Minimalist oak kitchen with stone worktop by DECOBAY Interiors"
+                alt=" oak kitchen with stone worktop by DECOBAY Interiors"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -333,7 +333,7 @@ function Projects() {
             <a href="./sarita" className="block w-full h-full">
               <img
                 src={dining}
-                alt="Minimalist dining room with sculptural wood table and soft lighting"
+                alt="Dining room with sculptural wood table and soft lighting"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -385,7 +385,7 @@ function Projects() {
 //           <figure className="reveal reveal-left img-hover col-span-12 md:col-span-7 aspect-[16/11] overflow-hidden rounded-sm">
 //             <img
 //               src={living}
-//               alt="Minimalist California living room with linen sofa and oak details"
+//               alt="California living room with linen sofa and oak details"
 //               className="w-full h-full object-cover"
 //               loading="lazy"
 //             />
@@ -393,7 +393,7 @@ function Projects() {
 //           <figure className="reveal reveal-zoom img-hover col-span-12 md:col-span-5 aspect-[4/5] overflow-hidden rounded-sm">
 //             <img
 //               src={kitchen}
-//               alt="Minimalist oak kitchen with stone worktop by DECOBAY Interiors"
+//               alt=" oak kitchen with stone worktop by DECOBAY Interiors"
 //               className="w-full h-full object-cover"
 //               loading="lazy"
 //             />
@@ -419,7 +419,7 @@ function Projects() {
 //           <figure className="reveal reveal-tilt img-hover col-span-12 md:col-span-4 aspect-[4/5] overflow-hidden rounded-sm">
 //             <img
 //               src={dining}
-//               alt="Minimalist dining room with sculptural wood table and soft lighting"
+//               alt="dining room with sculptural wood table and soft lighting"
 //               className="w-full h-full object-cover"
 //               loading="lazy"
 //             />
@@ -595,7 +595,7 @@ function Index() {
 //       {
 //         name: "keywords",
 //         content:
-//           "interior design California, architectural design, construction documentation, procurement, minimalist interior design, residential interior design, commercial interior design, DECOBAY Interiors, free consultation",
+//           "interior design California, architectural design, construction documentation, procurement, interior design, residential interior design, commercial interior design, DECOBAY Interiors, free consultation",
 //       },
 //       {
 //         property: "og:title",
@@ -688,7 +688,7 @@ function Index() {
 //       <div className="absolute inset-0">
 //         <img
 //           src={hero}
-//           alt="Minimalist California living room interior designed by DECOBAY Interiors"
+//           alt=" California living room interior designed by DECOBAY Interiors"
 //           className="w-full h-full object-cover scale-105 animate-[fade-in_1.4s_ease-out]"
 //         />
 //         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/40" />
@@ -700,7 +700,7 @@ function Index() {
 //           Architectural  <em className="italic text-accent">Interior Design</em> in California.
 //         </h1>
 //         <p className="reveal reveal-up mt-6 max-w-xl text-base md:text-lg text-muted-foreground">
-//           DECOBAY Interiors is a California Interior Design firm shaping minimalist, warm, and timeless residential and commercial spaces — from architectural concept to procurement and full execution.
+//           DECOBAY Interiors is a California Interior Design firm shaping, warm, and timeless residential and commercial spaces — from architectural concept to procurement and full execution.
 //         </p>
 //         <div className="reveal reveal-up mt-10 flex flex-wrap gap-3">
 //           <a
@@ -787,7 +787,7 @@ function Index() {
 //           <figure className="reveal reveal-left img-hover col-span-12 md:col-span-7 aspect-[16/11] overflow-hidden rounded-sm">
 //             <img
 //               src={living}
-//               alt="Minimalist California living room with linen sofa and oak details"
+//               alt=" California living room with linen sofa and oak details"
 //               className="w-full h-full object-cover"
 //               loading="lazy"
 //             />
@@ -795,7 +795,7 @@ function Index() {
 //           <figure className="reveal reveal-zoom img-hover col-span-12 md:col-span-5 aspect-[4/5] overflow-hidden rounded-sm">
 //             <img
 //               src={kitchen}
-//               alt="Minimalist oak kitchen with stone worktop by DECOBAY Interiors"
+//               alt=" oak kitchen with stone worktop by DECOBAY Interiors"
 //               className="w-full h-full object-cover"
 //               loading="lazy"
 //             />
@@ -821,7 +821,7 @@ function Index() {
 //           <figure className="reveal reveal-tilt img-hover col-span-12 md:col-span-4 aspect-[4/5] overflow-hidden rounded-sm">
 //             <img
 //               src={dining}
-//               alt="Minimalist dining room with sculptural wood table and soft lighting"
+//               alt="Dining room with sculptural wood table and soft lighting"
 //               className="w-full h-full object-cover"
 //               loading="lazy"
 //             />
