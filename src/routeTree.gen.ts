@@ -19,6 +19,7 @@ import { Route as OperaplazaRouteImport } from './routes/operaplaza'
 import { Route as PalmettoRouteImport } from './routes/palmetto'
 import { Route as SaritaRouteImport } from './routes/sarita'
 import { Route as Sarita2RouteImport } from './routes/sarita2'
+import { Route as ShootzRouteImport } from './routes/shootz'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
 const IndexRoute = IndexRouteImport.update({
@@ -71,6 +72,11 @@ const Sarita2Route = Sarita2RouteImport.update({
   path: '/sarita2',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShootzRoute = ShootzRouteImport.update({
+  id: '/shootz',
+  path: '/shootz',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/palmetto': typeof PalmettoRoute
   '/sarita': typeof SaritaRoute
   '/sarita2': typeof Sarita2Route
+  '/shootz': typeof ShootzRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
@@ -101,6 +108,7 @@ export interface FileRoutesByTo {
   '/palmetto': typeof PalmettoRoute
   '/sarita': typeof SaritaRoute
   '/sarita2': typeof Sarita2Route
+  '/shootz': typeof ShootzRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
@@ -115,6 +123,7 @@ export interface FileRoutesById {
   '/palmetto': typeof PalmettoRoute
   '/sarita': typeof SaritaRoute
   '/sarita2': typeof Sarita2Route
+  '/shootz': typeof ShootzRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
@@ -130,6 +139,7 @@ export interface FileRouteTypes {
     | '/palmetto'
     | '/sarita'
     | '/sarita2'
+    | '/shootz'
     | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -143,6 +153,7 @@ export interface FileRouteTypes {
     | '/palmetto'
     | '/sarita'
     | '/sarita2'
+    | '/shootz'
     | '/sitemap.xml'
   id:
     | '__root__'
@@ -156,6 +167,7 @@ export interface FileRouteTypes {
     | '/palmetto'
     | '/sarita'
     | '/sarita2'
+    | '/shootz'
     | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
@@ -170,6 +182,7 @@ export interface RootRouteChildren {
   PalmettoRoute: typeof PalmettoRoute
   SaritaRoute: typeof SaritaRoute
   Sarita2Route: typeof Sarita2Route
+  ShootzRoute: typeof ShootzRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -245,6 +258,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Sarita2RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/shootz': {
+      id: '/shootz'
+      path: '/shootz'
+      fullPath: '/shootz'
+      preLoaderRoute: typeof ShootzRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -266,6 +286,7 @@ const rootRouteChildren: RootRouteChildren = {
   PalmettoRoute: PalmettoRoute,
   SaritaRoute: SaritaRoute,
   Sarita2Route: Sarita2Route,
+  ShootzRoute: ShootzRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
