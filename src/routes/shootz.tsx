@@ -15,8 +15,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Consultation } from "@/components/consultation";
 
-import banner1 from "@/assets/shootz/Banner1.jpg";
-import banner2 from "@/assets/shootz/Banner2.jpg";
+import banner1 from "@/assets/shootz/banner1.jpg";
+import banner2 from "@/assets/shootz/banner2.jpg";
 import local1 from "@/assets/shootz/local.jpg";
 import local2 from "@/assets/shootz/local2.jpg";
 import local3 from "@/assets/shootz/local3.jpg";
