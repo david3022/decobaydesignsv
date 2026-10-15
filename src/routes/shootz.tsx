@@ -15,15 +15,15 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Consultation } from "@/components/consultation";
 
-import banner1 from "@/assets/shootz/banner1.jpg";
-import banner2 from "@/assets/shootz/banner2.jpg";
-import local1 from "@/assets/shootz/local.jpg";
-import local2 from "@/assets/shootz/local2.jpg";
-import local3 from "@/assets/shootz/local3.jpg";
-import logo from "@/assets/shootz/logo.jpeg";
-import mascot1 from "@/assets/shootz/mascot.jpeg";
-import mascot2 from "@/assets/shootz/mascot2.jpeg";
-import people from "@/assets/shootz/people.jpg";
+const banner1 = "https://live.staticflickr.com/65535/55590618625_078e899065_b.jpg";
+const banner2 = "https://live.staticflickr.com/65535/55590323978_34bc92e40b_b.jpg";
+const local1 = "https://live.staticflickr.com/65535/55590323963_b015a2b2cb_b.jpg";
+const local2 = "https://live.staticflickr.com/65535/55590216206_3e874eb607_b.jpg";
+const local3 = "https://live.staticflickr.com/65535/55590618665_8fe2f8bb3f_b.jpg";
+const logo = "https://live.staticflickr.com/65535/55590216106_99a2e25ca6_b.jpg";
+const mascot1 = "https://live.staticflickr.com/65535/55590323938_f960afd939_b.jpg";
+const mascot2 = "https://live.staticflickr.com/65535/55589171142_6277aaf292_b.jpg";
+const people = "https://live.staticflickr.com/65535/55589171127_57ce7726a2_z.jpg";
 
 const localImages = [
   {
@@ -168,7 +168,6 @@ function ShootzSection() {
       />
 
       <div className="relative max-w-7xl mx-auto">
-        {/* Banner 1 with headline inside */}
         <div className="reveal reveal-zoom relative mb-14 overflow-hidden rounded-sm">
           <img
             src={banner1}
@@ -186,11 +185,11 @@ function ShootzSection() {
               </p>
 
               <h1 className="reveal reveal-up mt-4 text-4xl md:text-6xl lg:text-7xl leading-[0.95] max-w-3xl text-white font-normal drop-shadow-xl">
-                Shootz a <em className="italic text-accent">commercial build-out</em> by DECOBAY.
+                Shootz — a <em className="italic text-accent">commercial build-out</em> by DECOBAY.
               </h1>
 
               <p className="reveal reveal-fade mt-6 max-w-xl text-white/90 text-lg drop-shadow-md">
-                See how DECOBAY Interiors has designed and built the Shootz commercial space — from
+                See how DECOBAY Interiors designed and built the Shootz commercial space — from
                 layout and construction to branding and atmosphere. Explore the gallery and the
                 finished space below.
               </p>
@@ -210,7 +209,7 @@ function ShootzSection() {
           </div>
           <p className="reveal reveal-fade max-w-md text-muted-foreground">
             Shootz is more than a restaurant — it's a movement. DECOBAY designed and built the
-            commercial space that brings that movement to life, expanding across California
+            commercial space that brings that movement to life, expanding across Southern California
             and beyond.
           </p>
         </div>
@@ -298,7 +297,6 @@ function ShootzSection() {
           </div>
         </div>
 
-        {/* Mascots + People with text beside */}
         <div className="grid grid-cols-12 gap-6 md:gap-8 mt-16 md:mt-24 items-center">
           <div className="reveal reveal-left col-span-12 md:col-span-4 lg:col-span-3 flex justify-center md:justify-start">
             <img
