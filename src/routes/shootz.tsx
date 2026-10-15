@@ -169,7 +169,49 @@ function ShootzSection() {
 
       <div className="relative max-w-7xl mx-auto">
         {/* Banner modificado con altura mínima adaptable y padding interno para móviles */}
-        <div className="reveal reveal-zoom relative mb-14 overflow-hidden rounded-sm min-h-[380px] sm:min-h-[440px] md:min-h-[520px] flex items-center">
+
+
+        <div className="reveal reveal-zoom relative mb-14 overflow-hidden rounded-sm min-h-[420px] sm:min-h-[460px] md:min-h-[520px] flex items-center">
+  {/* Imagen de fondo */}
+  <img
+    src={banner1}
+    alt="Shootz — Hawaiian-inspired fast casual"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  {/* Capas de opacidad para asegurar contraste */}
+  <div className="absolute inset-0 bg-black/40" />
+  <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/40 md:from-black/90 md:via-black/60 md:to-transparent" />
+
+  {/* Contenido */}
+  <div className="relative z-10 py-12 px-6 sm:px-8 lg:px-10 w-full">
+    <div className="max-w-3xl">
+      
+      {/* Título principal */}
+      <h1 className="reveal reveal-up text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.15] md:leading-[0.95] text-white font-normal drop-shadow-xl">
+        Shootz — a <em className="italic text-accent">commercial Design</em> by DECOBAY.
+      </h1>
+
+      {/* Descripción */}
+      <p className="reveal reveal-fade mt-4 max-w-xl text-white/90 text-xs sm:text-sm md:text-lg drop-shadow-md leading-relaxed">
+        See how DECOBAY Interiors designed and built the Shootz commercial space — from
+        layout and construction to branding and atmosphere. Explore the gallery and the
+        finished space below.
+      </p>
+
+      {/* Kicker abajo y en una sola línea (con scroll sutil por si la pantalla es muy chica) */}
+      <div className="mt-6 overflow-x-auto no-scrollbar">
+        <p className="kicker reveal reveal-fade !text-white font-medium text-xs sm:text-sm tracking-wide uppercase drop-shadow whitespace-nowrap">
+  Featured project · Southern California
+</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+        {/* <div className="reveal reveal-zoom relative mb-14 overflow-hidden rounded-sm min-h-[380px] sm:min-h-[440px] md:min-h-[520px] flex items-center">
           <img
             src={banner1}
             alt="Shootz — Hawaiian-inspired fast casual"
@@ -181,13 +223,14 @@ function ShootzSection() {
 
           <div className="relative z-10 py-10 px-6 sm:px-8 lg:px-10 w-full">
             <div className="max-w-3xl">
+              
+
+              <h1 className="reveal reveal-up mt-3 text-2xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.1] md:leading-[0.95] text-white font-normal drop-shadow-xl">
+                Shootz — a <em className="italic text-accent">commercial Design</em> by DECOBAY.
+              </h1>
               <p className="kicker reveal reveal-fade !text-white/90 drop-shadow">
                 Featured project · Southern California
               </p>
-
-              <h1 className="reveal reveal-up mt-3 text-2xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.1] md:leading-[0.95] text-white font-normal drop-shadow-xl">
-                Shootz — a <em className="italic text-accent">commercial build-out</em> by DECOBAY.
-              </h1>
 
               <p className="reveal reveal-fade mt-4 max-w-xl text-white/90 text-sm sm:text-base md:text-lg drop-shadow-md">
                 See how DECOBAY Interiors designed and built the Shootz commercial space — from
@@ -196,7 +239,7 @@ function ShootzSection() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
           <div>
