@@ -152,7 +152,7 @@ function ShootzSection() {
       if (!el) return;
       const r = el.getBoundingClientRect();
       const center = r.top + r.height / 2 - window.innerHeight / 2;
-      el.style.transform = `translate3d(0, ${center * -0.08}px, 0)`;
+      el.style.transform = `translate3d(0, ${center * 0.08}px, 0)`;
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -160,7 +160,7 @@ function ShootzSection() {
   }, []);
 
   return (
-    <section id="shootz-build" className="relative py-28 md:py-40 px-6 lg:px-10 overflow-hidden">
+    <section id="shootz-build" className="relative py-12 md:py-32 px-6 lg:px-10 overflow-hidden">
       <div
         ref={parallaxRef}
         aria-hidden
@@ -168,27 +168,28 @@ function ShootzSection() {
       />
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="reveal reveal-zoom relative mb-14 overflow-hidden rounded-sm">
+        {/* Banner modificado con altura mínima adaptable y padding interno para móviles */}
+        <div className="reveal reveal-zoom relative mb-14 overflow-hidden rounded-sm min-h-[380px] sm:min-h-[440px] md:min-h-[520px] flex items-center">
           <img
             src={banner1}
             alt="Shootz — Hawaiian-inspired fast casual"
-            className="w-full h-auto object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
           />
 
-          <div className="absolute inset-0 bg-black/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/75 to-transparent md:from-black/90 md:via-black/60 md:to-transparent" />
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-transparent md:from-black/90 md:via-black/60 md:to-transparent" />
 
-          <div className="absolute inset-0 flex items-center">
-            <div className="max-w-7xl mx-auto px-6 lg:px-10 w-full">
+          <div className="relative z-10 py-10 px-6 sm:px-8 lg:px-10 w-full">
+            <div className="max-w-3xl">
               <p className="kicker reveal reveal-fade !text-white/90 drop-shadow">
                 Featured project · Southern California
               </p>
 
-              <h1 className="reveal reveal-up mt-4 text-4xl md:text-6xl lg:text-7xl leading-[0.95] max-w-3xl text-white font-normal drop-shadow-xl">
+              <h1 className="reveal reveal-up mt-3 text-2xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.1] md:leading-[0.95] text-white font-normal drop-shadow-xl">
                 Shootz — a <em className="italic text-accent">commercial build-out</em> by DECOBAY.
               </h1>
 
-              <p className="reveal reveal-fade mt-6 max-w-xl text-white/90 text-lg drop-shadow-md">
+              <p className="reveal reveal-fade mt-4 max-w-xl text-white/90 text-sm sm:text-base md:text-lg drop-shadow-md">
                 See how DECOBAY Interiors designed and built the Shootz commercial space — from
                 layout and construction to branding and atmosphere. Explore the gallery and the
                 finished space below.
@@ -200,7 +201,7 @@ function ShootzSection() {
         <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
           <div>
             <p className="kicker reveal reveal-fade">Designed &amp; built by DECOBAY</p>
-            <h2 className="reveal reveal-up mt-4 text-4xl md:text-6xl">
+            <h2 className="reveal reveal-up mt-4 text-3xl md:text-6xl">
               <em className="italic text-accent">Hawaiian-Inspired Food,</em> Made From the Soul
             </h2>
             <p className="reveal reveal-up mt-3 text-sm text-muted-foreground tracking-[0.2em] uppercase">
@@ -361,7 +362,8 @@ function ShootzPage() {
   return (
     <main className="bg-background text-foreground">
       <Header />
-      <article className="pt-8 md:pt-12">
+      {/* Reducido el espacio superior en mobile de pt-8 md:pt-12 a pt-2 md:pt-6 */}
+      <article className="pt-2 md:pt-6">
         <ShootzSection />
 
         <div className="reveal reveal-zoom max-w-7xl mx-auto px-6 lg:px-10 mt-16 mb-16 overflow-hidden rounded-sm">
