@@ -186,11 +186,11 @@ function ShootzSection() {
               </p>
 
               <h1 className="reveal reveal-up mt-4 text-4xl md:text-6xl lg:text-7xl leading-[0.95] max-w-3xl text-white font-normal drop-shadow-xl">
-                Shootz — a <em className="italic text-accent">commercial build-out</em> by DECOBAY.
+                Shootz a <em className="italic text-accent">commercial build-out</em> by DECOBAY.
               </h1>
 
               <p className="reveal reveal-fade mt-6 max-w-xl text-white/90 text-lg drop-shadow-md">
-                See how DECOBAY Interiors designed and built the Shootz commercial space — from
+                See how DECOBAY Interiors has designed and built the Shootz commercial space — from
                 layout and construction to branding and atmosphere. Explore the gallery and the
                 finished space below.
               </p>
@@ -210,7 +210,7 @@ function ShootzSection() {
           </div>
           <p className="reveal reveal-fade max-w-md text-muted-foreground">
             Shootz is more than a restaurant — it's a movement. DECOBAY designed and built the
-            commercial space that brings that movement to life, expanding across Southern California
+            commercial space that brings that movement to life, expanding across California
             and beyond.
           </p>
         </div>
