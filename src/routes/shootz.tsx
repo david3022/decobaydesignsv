@@ -176,10 +176,7 @@ function ShootzSection() {
             className="w-full h-auto object-cover"
           />
 
-          {/* Capa de contraste 1: Un oscurecimiento sutil general a la imagen */}
           <div className="absolute inset-0 bg-black/20" />
-
-          {/* Capa de contraste 2: Degradado horizontal profundo (de negro/background muy oscuro a transparente) */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/75 to-transparent md:from-black/90 md:via-black/60 md:to-transparent" />
 
           <div className="absolute inset-0 flex items-center">
@@ -188,7 +185,6 @@ function ShootzSection() {
                 Featured project · Southern California
               </p>
 
-              {/* Forzamos el texto a blanco puro (text-white) con sombra proyectada sutil */}
               <h1 className="reveal reveal-up mt-4 text-4xl md:text-6xl lg:text-7xl leading-[0.95] max-w-3xl text-white font-normal drop-shadow-xl">
                 Shootz — a <em className="italic text-accent">commercial build-out</em> by DECOBAY.
               </h1>
@@ -304,7 +300,6 @@ function ShootzSection() {
 
         {/* Mascots + People with text beside */}
         <div className="grid grid-cols-12 gap-6 md:gap-8 mt-16 md:mt-24 items-center">
-          {/* People image left */}
           <div className="reveal reveal-left col-span-12 md:col-span-4 lg:col-span-3 flex justify-center md:justify-start">
             <img
               src={people}
@@ -315,7 +310,6 @@ function ShootzSection() {
             />
           </div>
 
-          {/* Text beside people */}
           <div className="reveal reveal-right col-span-12 md:col-span-8 lg:col-span-9">
             <div className="flex items-center gap-2 mb-4">
               <Users className="h-5 w-5 text-accent" />
@@ -333,7 +327,6 @@ function ShootzSection() {
               built the space that makes it all possible.
             </p>
 
-            {/* Mascots inside text block */}
             <div className="mt-8">
               <h5 className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-4">
                 The Mascots
@@ -370,11 +363,9 @@ function ShootzPage() {
   return (
     <main className="bg-background text-foreground">
       <Header />
-      {/* Se redujo el padding-top para acercar el banner 1 al header */}
       <article className="pt-8 md:pt-12">
         <ShootzSection />
 
-        {/* Banner 2 before footer */}
         <div className="reveal reveal-zoom max-w-7xl mx-auto px-6 lg:px-10 mt-16 mb-16 overflow-hidden rounded-sm">
           <img src={banner2} alt="Shootz banner" className="w-full h-auto object-cover" />
         </div>
