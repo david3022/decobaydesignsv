@@ -209,7 +209,7 @@ function ExtendedStorySection() {
           </div>
         </div>
         <p className="text-sm text-muted-foreground mt-6 leading-relaxed">
-          The dining experience is built around movement — warm materials, focused lighting, and a
+          The dining experience is all around movement — warm materials, focused lighting, and a
           layout that feels open yet intimate.
         </p>
       </div>
@@ -307,7 +307,7 @@ function ExtendedStorySection() {
       {/* ---------- SECCIÓN 5: Puente hacia "The Community" ---------- */}
       <div className="reveal reveal-up mt-16 md:mt-24 border-t border-border/70 pt-10">
         <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground text-center">
-          Commercial space designed &amp; built by DECOBAY
+          Commercial space designed &amp; by DECOBAY
         </p>
       </div>
     </>
@@ -365,7 +365,7 @@ function ShootzSection() {
 
               {/* Descripción */}
               <p className="reveal reveal-fade mt-4 max-w-xl text-white/90 text-xs sm:text-sm md:text-lg drop-shadow-md leading-relaxed">
-                See how DECOBAY Interiors designed and built the Shootz commercial space — from
+                See how DECOBAY Interiors designed the Shootz commercial space — from
                 layout and construction to branding and atmosphere. Explore the gallery and the
                 finished space below.
               </p>
@@ -382,7 +382,7 @@ function ShootzSection() {
 
         <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
           <div>
-            <p className="kicker reveal reveal-fade">Designed &amp; built by DECOBAY</p>
+            <p className="kicker reveal reveal-fade">Designed by DECOBAY</p>
             <h2 className="reveal reveal-up mt-4 text-3xl md:text-6xl">
               <em className="italic text-accent">Hawaiian-Inspired Food,</em> Made From the Soul
             </h2>
@@ -391,7 +391,7 @@ function ShootzSection() {
             </p>
           </div>
           <p className="reveal reveal-fade max-w-md text-muted-foreground">
-            Shootz is more than a restaurant — it's a movement. DECOBAY designed and built the
+            Shootz is more than a restaurant — it's a movement. DECOBAY designed the
             commercial space that brings that movement to life, expanding across Southern California
             and beyond.
           </p>
@@ -410,7 +410,7 @@ function ShootzSection() {
               </span>
             </div>
             <h3 className="text-3xl md:text-4xl">
-              Built for <br className="hidden sm:block" />
+              Designed for <br className="hidden sm:block" />
               the brand.
             </h3>
             <p className="text-muted-foreground mt-4 leading-relaxed">
@@ -502,13 +502,13 @@ function ShootzSection() {
               </span>
             </div>
             <h4 className="text-2xl md:text-3xl">
-              A following built on <em className="italic text-accent">real connection.</em>
+              A following designed on <em className="italic text-accent">real connection.</em>
             </h4>
             <p className="text-muted-foreground mt-4 leading-relaxed">
               Shootz has built one of the most engaged followings of any independent fast-casual
               brand in Southern California. Our content consistently generates organic reach through
               food influencers, customer-created videos, and brand-driven storytelling — and DECOBAY
-              built the space that makes it all possible.
+              designed the space that makes it all possible.
             </p>
 
             <div className="mt-8">
@@ -535,7 +535,7 @@ function ShootzSection() {
         </div>
 
         <p className="reveal reveal-fade mt-16 text-xs tracking-[0.25em] uppercase text-muted-foreground text-center">
-          Commercial space designed &amp; built by DECOBAY
+          Commercial space designed by DECOBAY
         </p>
       </div>
     </section>
@@ -584,7 +584,7 @@ export const Route = createFileRoute("/shootz")({
       {
         name: "description",
         content:
-          "Shootz commercial build-out by DECOBAY Interiors. Hawaiian-inspired fast casual designed and built in Southern California.",
+          "Shootz commercial build-out by DECOBAY Interiors. Hawaiian-inspired fast casual designed in Southern California.",
       },
       {
         name: "keywords",
@@ -595,7 +595,7 @@ export const Route = createFileRoute("/shootz")({
       {
         property: "og:description",
         content:
-          "Hawaiian-Inspired Food, Made From the Soul. Designed and built by DECOBAY Interiors.",
+          "Hawaiian-Inspired Food, Made From the Soul. Designed by DECOBAY Interiors.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://deco-bay-dream.lovable.app/shootz" },
@@ -604,7 +604,7 @@ export const Route = createFileRoute("/shootz")({
       {
         name: "twitter:description",
         content:
-          "Hawaiian-Inspired Food, Made From the Soul. Designed and built by DECOBAY Interiors.",
+          "Hawaiian-Inspired Food, Made From the Soul. Designed by DECOBAY Interiors.",
       },
     ],
     links: [{ rel: "canonical", href: "https://deco-bay-dream.lovable.app/shootz" }],
