@@ -15,6 +15,7 @@ import { Route as TermsAndConditionsRouteImport } from './routes/TermsAndConditi
 import { Route as BerkeleyRouteImport } from './routes/berkeley'
 import { Route as HardscapeRouteImport } from './routes/hardscape'
 import { Route as KatAndAdamRouteImport } from './routes/katAndAdam'
+import { Route as LinksRouteImport } from './routes/links'
 import { Route as OperaplazaRouteImport } from './routes/operaplaza'
 import { Route as PalmettoRouteImport } from './routes/palmetto'
 import { Route as SaritaRouteImport } from './routes/sarita'
@@ -50,6 +51,11 @@ const HardscapeRoute = HardscapeRouteImport.update({
 const KatAndAdamRoute = KatAndAdamRouteImport.update({
   id: '/katAndAdam',
   path: '/katAndAdam',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LinksRoute = LinksRouteImport.update({
+  id: '/links',
+  path: '/links',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OperaplazaRoute = OperaplazaRouteImport.update({
@@ -90,6 +96,7 @@ export interface FileRoutesByFullPath {
   '/berkeley': typeof BerkeleyRoute
   '/hardscape': typeof HardscapeRoute
   '/katAndAdam': typeof KatAndAdamRoute
+  '/links': typeof LinksRoute
   '/operaplaza': typeof OperaplazaRoute
   '/palmetto': typeof PalmettoRoute
   '/sarita': typeof SaritaRoute
@@ -104,6 +111,7 @@ export interface FileRoutesByTo {
   '/berkeley': typeof BerkeleyRoute
   '/hardscape': typeof HardscapeRoute
   '/katAndAdam': typeof KatAndAdamRoute
+  '/links': typeof LinksRoute
   '/operaplaza': typeof OperaplazaRoute
   '/palmetto': typeof PalmettoRoute
   '/sarita': typeof SaritaRoute
@@ -119,6 +127,7 @@ export interface FileRoutesById {
   '/berkeley': typeof BerkeleyRoute
   '/hardscape': typeof HardscapeRoute
   '/katAndAdam': typeof KatAndAdamRoute
+  '/links': typeof LinksRoute
   '/operaplaza': typeof OperaplazaRoute
   '/palmetto': typeof PalmettoRoute
   '/sarita': typeof SaritaRoute
@@ -135,6 +144,7 @@ export interface FileRouteTypes {
     | '/berkeley'
     | '/hardscape'
     | '/katAndAdam'
+    | '/links'
     | '/operaplaza'
     | '/palmetto'
     | '/sarita'
@@ -149,6 +159,7 @@ export interface FileRouteTypes {
     | '/berkeley'
     | '/hardscape'
     | '/katAndAdam'
+    | '/links'
     | '/operaplaza'
     | '/palmetto'
     | '/sarita'
@@ -163,6 +174,7 @@ export interface FileRouteTypes {
     | '/berkeley'
     | '/hardscape'
     | '/katAndAdam'
+    | '/links'
     | '/operaplaza'
     | '/palmetto'
     | '/sarita'
@@ -178,6 +190,7 @@ export interface RootRouteChildren {
   BerkeleyRoute: typeof BerkeleyRoute
   HardscapeRoute: typeof HardscapeRoute
   KatAndAdamRoute: typeof KatAndAdamRoute
+  LinksRoute: typeof LinksRoute
   OperaplazaRoute: typeof OperaplazaRoute
   PalmettoRoute: typeof PalmettoRoute
   SaritaRoute: typeof SaritaRoute
@@ -228,6 +241,13 @@ declare module '@tanstack/react-router' {
       path: '/katAndAdam'
       fullPath: '/katAndAdam'
       preLoaderRoute: typeof KatAndAdamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/links': {
+      id: '/links'
+      path: '/links'
+      fullPath: '/links'
+      preLoaderRoute: typeof LinksRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/operaplaza': {
@@ -282,6 +302,7 @@ const rootRouteChildren: RootRouteChildren = {
   BerkeleyRoute: BerkeleyRoute,
   HardscapeRoute: HardscapeRoute,
   KatAndAdamRoute: KatAndAdamRoute,
+  LinksRoute: LinksRoute,
   OperaplazaRoute: OperaplazaRoute,
   PalmettoRoute: PalmettoRoute,
   SaritaRoute: SaritaRoute,
