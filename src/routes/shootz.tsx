@@ -14,8 +14,8 @@ import { useReveal } from "@/hooks/use-reveal";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Consultation } from "@/components/consultation";
-import shootzVideo1 from "@/assets/shootz/shootzv.mp4";
-import shootzVideo2 from "@/assets/shootz/shootzv2.mp4";
+import shootzVideo1 from "@/assets/shootzv.mp4";
+import shootzVideo2 from "@/assets/shootzv2.mp4";
 
 const banner1 = "https://live.staticflickr.com/65535/55590618625_078e899065_b.jpg";
 const banner2 = "https://live.staticflickr.com/65535/55590323978_34bc92e40b_b.jpg";
