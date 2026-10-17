@@ -182,7 +182,7 @@ function ExtendedStorySection() {
         
       </div>
 
-      {/* ---------- SECCIÓN 2: Dos imágenes 16/9 lado a lado ---------- */}
+      {/* ---------- SECCIÓN 2: Dos imágenes  ---------- */}
       <div className="reveal reveal-fade mt-16 md:mt-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <div className="relative overflow-hidden rounded-sm border border-border/50 bg-muted/30">
@@ -193,7 +193,7 @@ function ExtendedStorySection() {
               className="w-full aspect-[16/9] object-cover"
             />
             <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full text-xs tracking-wider uppercase backdrop-blur bg-black/50 text-white">
-              Dining · atmosphere
+              Dining atmosphere
             </div>
           </div>
           <div className="relative overflow-hidden rounded-sm border border-border/50 bg-muted/30">
@@ -528,7 +528,7 @@ function ShootzSection() {
                 />
               </div>
               <p className="text-sm text-muted-foreground mt-4">
-                Brand mascots designed to carry the Shootz personality across the space and beyond.
+                Brand mascots designed to carry the Shootz personality across the space and beyond
               </p>
             </div>
           </div>
