@@ -214,9 +214,9 @@ function SHOOTZSection() {
                 finished space below.
               </p>
 
-              {/* Kicker abajo y en una sola línea (con scroll sutil por si la pantalla es muy chica) */}
-              <div className="mt-6 overflow-x-auto no-scrollbar">
-                <p className="kicker reveal reveal-fade !text-white font-medium text-xs sm:text-sm tracking-wide uppercase drop-shadow whitespace-nowrap">
+              {/* CAMBIO: frase responsiva. En móvil fluye en varias líneas; en pantallas sm+ se mantiene en una sola línea. */}
+              <div className="mt-6">
+                <p className="kicker reveal reveal-fade !text-white font-medium text-xs sm:text-sm tracking-wide uppercase drop-shadow whitespace-normal sm:whitespace-nowrap">
                   Featured project · Southern California Year 2026
                 </p>
               </div>
@@ -241,7 +241,7 @@ function SHOOTZSection() {
           </p>
         </div>
 
-        {/* CAMBIO: items-start para que el video quede arriba, no centrado verticalmente */}
+        {/* items-start para que el video quede arriba, no centrado verticalmente */}
         <div className="grid grid-cols-12 gap-6 md:gap-6 items-start">
           {/* Columna izquierda: video arriba + lista Location/Client/Year debajo */}
           <div className="reveal reveal-left col-span-12 lg:col-span-5 flex flex-col">
@@ -260,7 +260,7 @@ function SHOOTZSection() {
               />
             </div>
 
-            {/* CAMBIO: lista Location/Client/Year debajo del video, con el mismo ancho del video */}
+            {/* Lista Location/Client/Year debajo del video, con el mismo ancho del video */}
             <ul className="mt-6 w-full max-w-[560px] space-y-2 text-sm border-t border-border/70 pt-4">
               <li className="flex justify-between">
                 <span className="text-muted-foreground">Location</span>
@@ -277,7 +277,7 @@ function SHOOTZSection() {
             </ul>
           </div>
 
-          {/* Columna derecha: texto informativo (sin la lista, ya movida a la izquierda) */}
+          {/* Columna derecha: texto informativo */}
           <div className="reveal reveal-right col-span-12 lg:col-span-7 flex flex-col justify-start lg:pl-2">
             <div className="flex items-center gap-2 mb-4">
               <Sparkles className="h-4 w-4 text-accent" />
