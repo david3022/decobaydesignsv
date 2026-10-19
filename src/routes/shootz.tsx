@@ -125,7 +125,7 @@ function ExtendedStorySection() {
       {/* ---------- SECCIÓN 5: Puente hacia "The Community" ---------- */}
       <div className="reveal reveal-up mt-16 md:mt-24 border-t border-border/70 pt-10">
         <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground text-center">
-          Commercial space designed  by DECOBAY
+          Commercial space designed by DECOBAY Designs
         </p>
       </div>
     </>
@@ -178,7 +178,7 @@ function SHOOTZSection() {
             <div className="max-w-3xl">
               {/* Título principal */}
               <h1 className="reveal reveal-up text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.15] md:leading-[0.95] text-white font-normal drop-shadow-xl">
-                SHOOTZ — a <em className="italic text-accent">commercial Design</em> by DECOBAY.
+                SHOOTZ — a <em className="italic text-accent">commercial Design</em> by DECOBAY Designs
               </h1>
 
               {/* Descripción */}
@@ -200,7 +200,7 @@ function SHOOTZSection() {
 
         <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
           <div>
-            <p className="kicker reveal reveal-fade">Designed by DECOBAY</p>
+            <p className="kicker reveal reveal-fade">Designed by DECOBAY Designs</p>
             <h2 className="reveal reveal-up mt-4 text-3xl md:text-6xl">
               <em className="italic text-accent">Hawaiian-Inspired Food,</em> Made From the Soul
             </h2>
@@ -370,7 +370,7 @@ function SHOOTZSection() {
         </div>
 
         <p className="reveal reveal-fade mt-16 text-xs tracking-[0.25em] uppercase text-muted-foreground text-center">
-          Commercial space designed by DECOBAY
+          Commercial space designed by DECOBAY Designs
         </p>
       </div>
     </section>
