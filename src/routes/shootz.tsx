@@ -191,7 +191,7 @@ function SHOOTZSection() {
               {/* Kicker abajo y en una sola línea (con scroll sutil por si la pantalla es muy chica) */}
               <div className="mt-6 overflow-x-auto no-scrollbar">
                 <p className="kicker reveal reveal-fade !text-white font-medium text-xs sm:text-sm tracking-wide uppercase drop-shadow whitespace-nowrap">
-                  Featured project · Southern California
+                  Featured project · Southern California Year 2026
                 </p>
               </div>
             </div>
@@ -205,7 +205,7 @@ function SHOOTZSection() {
               <em className="italic text-accent">Hawaiian-Inspired Food,</em> Made From the Soul
             </h2>
             <p className="reveal reveal-up mt-3 text-sm text-muted-foreground tracking-[0.2em] uppercase">
-              Southern California · Commercial Design
+              Southern California Year 2026 · Commercial Design
             </p>
           </div>
           <p className="reveal reveal-fade max-w-md text-muted-foreground">
