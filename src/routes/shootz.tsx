@@ -14,134 +14,15 @@ import { useReveal } from "@/hooks/use-reveal";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Consultation } from "@/components/consultation";
-import shootzVideo1 from "@/assets/shootzv.mp4";
-import shootzVideo2 from "@/assets/shootzv2.mp4";
+import SHOOTZVideo1 from "@/assets/shootzv.mp4";
+import SHOOTZVideo2 from "@/assets/shootzv2.mp4";
 
 const banner1 = "https://live.staticflickr.com/65535/55590618625_078e899065_b.jpg";
 const banner2 = "https://live.staticflickr.com/65535/55590323978_34bc92e40b_b.jpg";
-const local1 = "https://live.staticflickr.com/65535/55590323963_b015a2b2cb_b.jpg";
-const local2 = "https://live.staticflickr.com/65535/55590216206_3e874eb607_b.jpg";
-const local3 = "https://live.staticflickr.com/65535/55590618665_8fe2f8bb3f_b.jpg";
 const logo = "https://live.staticflickr.com/65535/55590216106_99a2e25ca6_b.jpg";
 const mascot1 = "https://live.staticflickr.com/65535/55590323938_f960afd939_b.jpg";
 const mascot2 = "https://live.staticflickr.com/65535/55589171142_6277aaf292_b.jpg";
-const people = "https://live.staticflickr.com/65535/55589171127_57ce7726a2_z.jpg";
-
-const localImages = [
-  {
-    src: local1,
-    label: "The Space",
-    description:
-      "The finished commercial space — designed for flow, speed, and a welcoming fast-casual experience.",
-    badge: "Built",
-  },
-  {
-    src: local2,
-    label: "The Counter",
-    description:
-      "A service counter built for high-volume ordering without losing the brand's warm, island-inspired feel.",
-    badge: "Built",
-  },
-  {
-    src: local3,
-    label: "The Dining Area",
-    description:
-      "Seating and lighting designed to keep guests comfortable and moving — the heart of the Shootz experience.",
-    badge: "Built",
-  },
-];
-
-function LocalDisplay() {
-  const [paused, setPaused] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const next = useCallback(() => setActiveIndex((v) => (v + 1) % localImages.length), []);
-  const prev = useCallback(
-    () => setActiveIndex((v) => (v - 1 + localImages.length) % localImages.length),
-    [],
-  );
-
-  useEffect(() => {
-    if (paused) return;
-    const id = setInterval(next, 4000);
-    return () => clearInterval(id);
-  }, [paused, next]);
-
-  return (
-    <div className="space-y-6">
-      <div
-        className="relative aspect-[16/10] w-full overflow-hidden rounded-sm bg-muted group"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-      >
-        {localImages.map((img, idx) => (
-          <div
-            key={img.src}
-            className={`absolute inset-0 transition-all duration-[1400ms] ease-[cubic-bezier(.22,.61,.36,1)] ${
-              idx === activeIndex ? "opacity-100 scale-100" : "opacity-0 scale-105"
-            }`}
-          >
-            <img
-              src={img.src}
-              alt={`Shootz commercial space — ${img.label}`}
-              loading="lazy"
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute top-4 left-4">
-              <span className="px-3 py-1.5 rounded-full text-xs font-medium tracking-wider uppercase backdrop-blur bg-emerald-500/80 text-white">
-                {img.badge}
-              </span>
-            </div>
-          </div>
-        ))}
-
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-
-        <div className="absolute bottom-5 left-5 text-background/95">
-          <p className="kicker !text-background/70">
-            Shootz · {String(activeIndex + 1).padStart(2, "0")} /{" "}
-            {String(localImages.length).padStart(2, "0")}
-          </p>
-          <p className="font-display text-xl mt-1">{localImages[activeIndex].label}</p>
-        </div>
-
-        <button
-          onClick={prev}
-          aria-label="Previous"
-          className="absolute left-4 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-background/70 backdrop-blur flex items-center justify-center opacity-0 group-hover:opacity-100 hover:bg-background transition"
-        >
-          <ChevronLeft className="h-5 w-5" />
-        </button>
-        <button
-          onClick={next}
-          aria-label="Next"
-          className="absolute right-4 top-1/2 -translate-y-1/2 h-11 w-11 rounded-full bg-background/70 backdrop-blur flex items-center justify-center opacity-0 group-hover:opacity-100 hover:bg-background transition"
-        >
-          <ChevronRight className="h-5 w-5" />
-        </button>
-
-        <div className="absolute bottom-5 right-5 flex gap-1.5">
-          {localImages.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveIndex(idx)}
-              aria-label={`Go to slide ${idx + 1}`}
-              className={`h-1 rounded-full transition-all ${
-                idx === activeIndex ? "w-8 bg-background" : "w-3 bg-background/50"
-              }`}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="reveal reveal-fade bg-muted/30 rounded-lg p-6 border border-border/50">
-        <p className="text-sm text-muted-foreground leading-relaxed">
-          {localImages[activeIndex].description}
-        </p>
-      </div>
-    </div>
-  );
-}
+const heroImage = "https://live.staticflickr.com/65535/55595607749_5b28405022_b.jpg";
 
 /* ============================================================
    NUEVAS SECCIONES (complemento)
@@ -150,79 +31,23 @@ function LocalDisplay() {
 function ExtendedStorySection() {
   return (
     <>
-      {/* ---------- SECCIÓN 1: Dos videos lado a lado (cuadrado + 9/16), autoplay, loop ---------- */}
-      <div className="reveal reveal-zoom mt-16 md:mt-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
-          {/* Video 1 — cuadrado 1:1 */}
-          <div className="relative w-full aspect-square overflow-hidden rounded-sm bg-black">
-            <video
-              src={shootzVideo1}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          </div>
-
-          {/* Video 2 — vertical 9:16 */}
-          <div className="relative w-full aspect-[9/16] max-h-[70vh] mx-auto overflow-hidden rounded-sm bg-black">
-            <video
-              src={shootzVideo2}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          </div>
-        </div>
-        
-      </div>
-
-      {/* ---------- SECCIÓN 2: Dos imágenes  ---------- */}
+      {/* ---------- SECCIÓN 2: Solo texto (imagen movida a sección 3) ---------- */}
       <div className="reveal reveal-fade mt-16 md:mt-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          <div className="relative overflow-hidden rounded-sm border border-border/50 bg-muted/30">
-            <img
-              src="https://live.staticflickr.com/65535/55595607749_5b28405022_b.jpg"
-              alt="Shootz dining area with warm lighting"
-              loading="lazy"
-              className="w-full aspect-[16/9] object-cover"
-            />
-            <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full text-xs tracking-wider uppercase backdrop-blur bg-black/50 text-white">
-              Dining atmosphere
-            </div>
-          </div>
-          <div className="relative overflow-hidden rounded-sm border border-border/50 bg-muted/30">
-            <img
-              src="https://live.staticflickr.com/65535/55595417891_853aa59429_b.jpg"
-              alt="Shootz counter and seating detail"
-              loading="lazy"
-              className="w-full aspect-[16/9] object-cover"
-            />
-            <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full text-xs tracking-wider uppercase backdrop-blur bg-black/50 text-white">
-              Counter · flow
-            </div>
-          </div>
-        </div>
-        <p className="text-sm text-muted-foreground mt-6 leading-relaxed">
+        <p className="text-sm text-muted-foreground leading-relaxed">
           The dining experience is all around movement — warm materials, focused lighting, and a
           layout that feels open yet intimate.
         </p>
       </div>
 
-      {/* ---------- SECCIÓN 3: 4 imágenes 16/9 con offset orgánico + texto de construcción ---------- */}
+      {/* ---------- SECCIÓN 3: 5 imágenes 16/9 con offset orgánico + texto de construcción ---------- */}
       <div className="reveal reveal-up mt-16 md:mt-24">
         <div className="grid grid-cols-12 gap-6 md:gap-8 items-start">
-          {/* Columna izquierda: 2 imágenes, la segunda desplazada a la derecha */}
+          {/* Columna izquierda: 3 imágenes, la segunda desplazada a la derecha */}
           <div className="col-span-12 md:col-span-6 space-y-6 md:space-y-8">
             <div className="relative overflow-hidden rounded-sm border border-border/50">
               <img
                 src="https://live.staticflickr.com/65535/55595417886_05df9aa119_b.jpg"
-                alt="Commercial lobby — Shootz"
+                alt="Commercial lobby — SHOOTZ"
                 loading="lazy"
                 className="w-full aspect-[16/9] object-cover"
               />
@@ -241,6 +66,17 @@ function ExtendedStorySection() {
                 Lobby detail
               </div>
             </div>
+            <div className="relative overflow-hidden rounded-sm border border-border/50 md:ml-4">
+              <img
+                src="https://live.staticflickr.com/65535/55595417891_853aa59429_b.jpg"
+                alt="SHOOTZ counter and seating detail"
+                loading="lazy"
+                className="w-full aspect-[16/9] object-cover"
+              />
+              <div className="absolute bottom-3 left-3 px-2 py-1 rounded-sm text-[0.65rem] tracking-wider uppercase backdrop-blur bg-black/40 text-white">
+                Counter · flow
+              </div>
+            </div>
           </div>
 
           {/* Columna derecha: 2 imágenes, desplazadas hacia arriba */}
@@ -248,7 +84,7 @@ function ExtendedStorySection() {
             <div className="relative overflow-hidden rounded-sm border border-border/50">
               <img
                 src="https://live.staticflickr.com/65535/55594389117_1ac751371b_b.jpg"
-                alt="Commercial kitchen interior — Shootz"
+                alt="Commercial kitchen interior — SHOOTZ"
                 loading="lazy"
                 className="w-full aspect-[16/9] object-cover"
               />
@@ -277,7 +113,7 @@ function ExtendedStorySection() {
               Design &amp; construction integrity.
             </span>{" "}
             Every detail — from the flow of the lobby to the efficiency of the kitchen — was
-            coordinated by DECOBAY Interiors. The commercial build-out balances high-volume
+            coordinated by DECOBAY Interiors. The commercial design balances high-volume
             operations with a warm, island-inspired aesthetic. Durable finishes, strategic lighting,
             and a layout that supports both staff and guests were developed simultaneously to ensure
             the space feels effortless. The result is a seamless environment where construction
@@ -286,35 +122,17 @@ function ExtendedStorySection() {
         </div>
       </div>
 
-      {/* ---------- SECCIÓN 4: Plano (aspect ratio 1267x416) ---------- */}
-      <div className="reveal reveal-fade mt-16 md:mt-24">
-        <div
-          className="w-full overflow-hidden rounded-sm border border-border/50 bg-white/50 p-2"
-          style={{ aspectRatio: "1267 / 416" }}
-        >
-          <img
-            src="https://live.staticflickr.com/65535/55595607709_2518d07038_b.jpg"
-            alt="Shootz floor plan — commercial layout"
-            loading="lazy"
-            className="w-full h-full object-contain"
-          />
-        </div>
-        <p className="text-xs text-muted-foreground mt-3 tracking-[0.25em] uppercase text-center">
-          Floor plan · Shootz commercial build-out
-        </p>
-      </div>
-
       {/* ---------- SECCIÓN 5: Puente hacia "The Community" ---------- */}
       <div className="reveal reveal-up mt-16 md:mt-24 border-t border-border/70 pt-10">
         <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground text-center">
-          Commercial space designed &amp; by DECOBAY
+          Commercial space designed  by DECOBAY
         </p>
       </div>
     </>
   );
 }
 
-function ShootzSection() {
+function SHOOTZSection() {
   const parallaxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -333,7 +151,7 @@ function ShootzSection() {
   }, []);
 
   return (
-    <section id="shootz-build" className="relative py-12 md:py-32 px-6 lg:px-10 overflow-hidden">
+    <section id="SHOOTZ-build" className="relative py-12 md:py-32 px-6 lg:px-10 overflow-hidden">
       <div
         ref={parallaxRef}
         aria-hidden
@@ -347,7 +165,7 @@ function ShootzSection() {
           {/* Imagen de fondo */}
           <img
             src={banner1}
-            alt="Shootz — Hawaiian-inspired fast casual"
+            alt="SHOOTZ — Hawaiian-inspired fast casual"
             className="absolute inset-0 w-full h-full object-cover"
           />
 
@@ -360,12 +178,12 @@ function ShootzSection() {
             <div className="max-w-3xl">
               {/* Título principal */}
               <h1 className="reveal reveal-up text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-[1.15] md:leading-[0.95] text-white font-normal drop-shadow-xl">
-                Shootz — a <em className="italic text-accent">commercial Design</em> by DECOBAY.
+                SHOOTZ — a <em className="italic text-accent">commercial Design</em> by DECOBAY.
               </h1>
 
               {/* Descripción */}
               <p className="reveal reveal-fade mt-4 max-w-xl text-white/90 text-xs sm:text-sm md:text-lg drop-shadow-md leading-relaxed">
-                See how DECOBAY Interiors designed the Shootz commercial space — from
+                See how DECOBAY Interiors designed the SHOOTZ commercial space — from
                 layout and construction to branding and atmosphere. Explore the gallery and the
                 finished space below.
               </p>
@@ -387,11 +205,11 @@ function ShootzSection() {
               <em className="italic text-accent">Hawaiian-Inspired Food,</em> Made From the Soul
             </h2>
             <p className="reveal reveal-up mt-3 text-sm text-muted-foreground tracking-[0.2em] uppercase">
-              Southern California · Commercial Build-Out
+              Southern California · Commercial Design
             </p>
           </div>
           <p className="reveal reveal-fade max-w-md text-muted-foreground">
-            Shootz is more than a restaurant — it's a movement. DECOBAY designed the
+            SHOOTZ is more than a restaurant — it's a movement. DECOBAY designed the
             commercial space that brings that movement to life, expanding across Southern California
             and beyond.
           </p>
@@ -399,14 +217,22 @@ function ShootzSection() {
 
         <div className="grid grid-cols-12 gap-6 md:gap-8">
           <div className="reveal reveal-left col-span-12 lg:col-span-7">
-            <LocalDisplay />
+            {/* Imagen única en lugar del carrusel */}
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-sm bg-muted">
+              <img
+                src={heroImage}
+                alt="SHOOTZ dining area with warm lighting"
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
 
           <div className="reveal reveal-right col-span-12 lg:col-span-5 flex flex-col justify-center lg:pl-2">
             <div className="flex items-center gap-2 mb-6">
               <Sparkles className="h-5 w-5 text-accent" />
               <span className="text-xs font-medium tracking-widest uppercase text-accent">
-                Commercial Build-Out
+                Commercial Design
               </span>
             </div>
             <h3 className="text-3xl md:text-4xl">
@@ -414,19 +240,19 @@ function ShootzSection() {
               the brand.
             </h3>
             <p className="text-muted-foreground mt-4 leading-relaxed">
-              DECOBAY handled the full design and construction of the Shootz commercial space — from
+              DECOBAY handled the full design and construction of the SHOOTZ commercial space — from
               layout and flow to finishes and brand identity. The result is a fast-casual
-              environment that feels warm, fast, and unmistakably Shootz.
+              environment that feels warm, fast, and unmistakably SHOOTZ.
             </p>
 
             <div className="mt-6 flex items-center gap-4">
               <img
                 src={logo}
-                alt="Shootz logo"
+                alt="SHOOTZ logo"
                 className="h-14 w-14 rounded-full object-cover border border-border/60"
               />
               <div>
-                <p className="text-sm font-medium">Shootz</p>
+                <p className="text-sm font-medium">SHOOTZ</p>
                 <p className="text-xs text-muted-foreground">Hawaiian-Inspired Fast Casual</p>
               </div>
             </div>
@@ -438,7 +264,7 @@ function ShootzSection() {
                 </div>
                 <div>
                   <p className="text-sm font-medium">Timeline</p>
-                  <p className="text-xs text-muted-foreground">Complete commercial build-out</p>
+                  <p className="text-xs text-muted-foreground">Complete commercial design</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -470,7 +296,7 @@ function ShootzSection() {
               </li>
               <li className="flex justify-between">
                 <span className="text-muted-foreground">Client</span>
-                <span>Shootz</span>
+                <span>SHOOTZ</span>
               </li>
               <li className="flex justify-between">
                 <span className="text-muted-foreground">Year</span>
@@ -480,22 +306,31 @@ function ShootzSection() {
           </div>
         </div>
 
-        {/* ── SECCIONES EXTENDIDAS: video, galerías, plano ── */}
-        <ExtendedStorySection />
-
-        <div className="grid grid-cols-12 gap-6 md:gap-8 mt-16 md:mt-24 items-center">
-          <div className="reveal reveal-left col-span-12 md:col-span-4 lg:col-span-3 flex justify-center md:justify-start">
+        {/* ---------- PLANO: Movido aquí, justo debajo de la sección "Designed for the brand" ---------- */}
+        <div className="reveal reveal-fade mt-16 md:mt-24">
+          <div
+            className="w-full overflow-hidden rounded-sm border border-border/50 bg-white/50 p-2"
+            style={{ aspectRatio: "1267 / 416" }}
+          >
             <img
-              src={people}
-              alt="Shootz people"
-              width={275}
-              height={677}
-              className="rounded-sm object-cover border border-border/50 w-full max-w-[275px] h-auto"
+              src="https://live.staticflickr.com/65535/55595607709_2518d07038_b.jpg"
+              alt="SHOOTZ floor plan — commercial layout"
+              loading="lazy"
+              className="w-full h-full object-contain"
             />
           </div>
+          <p className="text-xs text-muted-foreground mt-3 tracking-[0.25em] uppercase text-center">
+            Floor plan · SHOOTZ commercial{" "}
+          </p>
+        </div>
 
-          <div className="reveal reveal-right col-span-12 md:col-span-8 lg:col-span-9">
-            <div className="flex items-center gap-2 mb-4">
+        {/* ── SECCIONES EXTENDIDAS: galerías ── */}
+        <ExtendedStorySection />
+
+        {/* ── SECCIÓN THE COMMUNITY (sin imagen "people", centrada) ── */}
+        <div className="reveal reveal-up mt-16 md:mt-24">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-2 mb-4">
               <Users className="h-5 w-5 text-accent" />
               <span className="text-xs font-medium tracking-widest uppercase text-accent">
                 The Community
@@ -505,30 +340,30 @@ function ShootzSection() {
               A following designed on <em className="italic text-accent">real connection.</em>
             </h4>
             <p className="text-muted-foreground mt-4 leading-relaxed">
-              Shootz has built one of the most engaged followings of any independent fast-casual
+              SHOOTZ has built one of the most engaged followings of any independent fast-casual
               brand in Southern California. Our content consistently generates organic reach through
               food influencers, customer-created videos, and brand-driven storytelling — and DECOBAY
               designed the space that makes it all possible.
             </p>
 
-            <div className="mt-8">
-              <h5 className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-4">
+            <div className="mt-10">
+              <h5 className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-6">
                 The Mascots
               </h5>
-              <div className="flex gap-4">
+              <div className="flex gap-6 justify-center">
                 <img
                   src={mascot1}
-                  alt="Shootz mascot"
-                  className="w-1/2 max-w-[180px] rounded-sm object-cover aspect-[3/4]"
+                  alt="SHOOTZ mascot"
+                  className="w-1/2 max-w-[200px] rounded-sm object-cover aspect-[3/4]"
                 />
                 <img
                   src={mascot2}
-                  alt="Shootz mascot alternate"
-                  className="w-1/2 max-w-[180px] rounded-sm object-cover aspect-[3/4]"
+                  alt="SHOOTZ mascot alternate"
+                  className="w-1/2 max-w-[200px] rounded-sm object-cover aspect-[3/4]"
                 />
               </div>
-              <p className="text-sm text-muted-foreground mt-4">
-                Brand mascots designed to carry the Shootz personality across the space and beyond
+              <p className="text-sm text-muted-foreground mt-6">
+                Brand mascots designed to carry the SHOOTZ personality across the space and beyond
               </p>
             </div>
           </div>
@@ -542,17 +377,17 @@ function ShootzSection() {
   );
 }
 
-function ShootzPage() {
+function SHOOTZPage() {
   useReveal();
   return (
     <main className="bg-background text-foreground">
       <Header />
       {/* Reducido el espacio superior en mobile de pt-8 md:pt-12 a pt-2 md:pt-6 */}
       <article className="pt-2 md:pt-6">
-        <ShootzSection />
+        <SHOOTZSection />
 
         <div className="reveal reveal-zoom max-w-7xl mx-auto px-6 lg:px-10 mt-16 mb-16 overflow-hidden rounded-sm">
-          <img src={banner2} alt="Shootz banner" className="w-full h-auto object-cover" />
+          <img src={banner2} alt="SHOOTZ banner" className="w-full h-auto object-cover" />
         </div>
 
         <Consultation />
@@ -580,44 +415,44 @@ function ShootzPage() {
 export const Route = createFileRoute("/shootz")({
   head: () => ({
     meta: [
-      { title: "Shootz — Commercial Build-Out | DECOBAY Interiors" },
+      { title: "SHOOTZ — Commercial Build-Out | DECOBAY Interiors" },
       {
         name: "description",
         content:
-          "Shootz commercial build-out by DECOBAY Interiors. Hawaiian-inspired fast casual designed in Southern California.",
+          "SHOOTZ commercial build-out by DECOBAY Interiors. Hawaiian-inspired fast casual designed in Southern California.",
       },
       {
         name: "keywords",
         content:
-          "Shootz, commercial build-out, fast casual design, Southern California restaurant, DECOBAY Interiors, Hawaiian-inspired restaurant",
+          "SHOOTZ, commercial build-out, fast casual design, Southern California restaurant, DECOBAY Interiors, Hawaiian-inspired restaurant",
       },
-      { property: "og:title", content: "Shootz Commercial Build-Out — DECOBAY Interiors" },
+      { property: "og:title", content: "SHOOTZ Commercial Build-Out — DECOBAY Interiors" },
       {
         property: "og:description",
         content:
           "Hawaiian-Inspired Food, Made From the Soul. Designed by DECOBAY Interiors.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://deco-bay-dream.lovable.app/shootz" },
+      { property: "og:url", content: "https://deco-bay-dream.lovable.app/SHOOTZ" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Shootz Commercial Build-Out — DECOBAY Interiors" },
+      { name: "twitter:title", content: "SHOOTZ Commercial Build-Out — DECOBAY Interiors" },
       {
         name: "twitter:description",
         content:
           "Hawaiian-Inspired Food, Made From the Soul. Designed by DECOBAY Interiors.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://deco-bay-dream.lovable.app/shootz" }],
+    links: [{ rel: "canonical", href: "https://deco-bay-dream.lovable.app/SHOOTZ" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "CreativeWork",
-          name: "Shootz Commercial Build-Out",
+          name: "SHOOTZ Commercial Build-Out",
           about:
             "Commercial design and construction project by DECOBAY Interiors in Southern California",
-          url: "https://deco-bay-dream.lovable.app/shootz",
+          url: "https://deco-bay-dream.lovable.app/SHOOTZ",
           locationCreated: {
             "@type": "Place",
             address: { "@type": "PostalAddress", addressRegion: "CA", addressCountry: "US" },
@@ -644,14 +479,13 @@ export const Route = createFileRoute("/shootz")({
             {
               "@type": "ListItem",
               position: 2,
-              name: "Shootz Commercial Build-Out",
-              item: "https://deco-bay-dream.lovable.app/shootz",
+              name: "SHOOTZ Commercial Build-Out",
+              item: "https://deco-bay-dream.lovable.app/SHOOTZ",
             },
           ],
         }),
       },
     ],
   }),
-  component: ShootzPage,
+  component: SHOOTZPage,
 });
-
