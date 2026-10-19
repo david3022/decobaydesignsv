@@ -14,7 +14,6 @@ import { useReveal } from "@/hooks/use-reveal";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Consultation } from "@/components/consultation";
-import SHOOTZVideo1 from "@/assets/shootzv.mp4";
 import SHOOTZVideo2 from "@/assets/shootzv2.mp4";
 
 const banner1 = "https://live.staticflickr.com/65535/55590618625_078e899065_b.jpg";
@@ -32,7 +31,7 @@ function ExtendedStorySection() {
   return (
     <>
       {/* ---------- SECCIÓN 2: Solo texto (imagen movida a sección 3) ---------- */}
-      <div className="reveal reveal-fade mt-16 md:mt-24">
+      <div className="reveal reveal-fade mt-14 md:mt-20">
         <p className="text-sm text-muted-foreground leading-relaxed">
           The dining experience is all around movement — warm materials, focused lighting, and a
           layout that feels open yet intimate.
@@ -40,9 +39,9 @@ function ExtendedStorySection() {
       </div>
 
       {/* ---------- SECCIÓN 3: 5 imágenes 16/9 con offset orgánico + texto de construcción ---------- */}
-      <div className="reveal reveal-up mt-16 md:mt-24">
+      <div className="reveal reveal-up mt-14 md:mt-20">
         <div className="grid grid-cols-12 gap-6 md:gap-8 items-start">
-          {/* Columna izquierda: 3 imágenes, la segunda desplazada a la derecha */}
+          {/* Columna izquierda: 4 imágenes (se agregó heroImage con categoría "Lobby") */}
           <div className="col-span-12 md:col-span-6 space-y-6 md:space-y-8">
             <div className="relative overflow-hidden rounded-sm border border-border/50">
               <img
@@ -77,6 +76,18 @@ function ExtendedStorySection() {
                 Counter · flow
               </div>
             </div>
+            {/* NUEVA: heroImage movida aquí con categoría "Lobby" */}
+            <div className="relative overflow-hidden rounded-sm border border-border/50 md:ml-2">
+              <img
+                src={heroImage}
+                alt="SHOOTZ dining area with warm lighting"
+                loading="lazy"
+                className="w-full aspect-[16/9] object-cover"
+              />
+              <div className="absolute bottom-3 left-3 px-2 py-1 rounded-sm text-[0.65rem] tracking-wider uppercase backdrop-blur bg-black/40 text-white">
+                Lobby
+              </div>
+            </div>
           </div>
 
           {/* Columna derecha: 2 imágenes, desplazadas hacia arriba */}
@@ -107,7 +118,7 @@ function ExtendedStorySection() {
         </div>
 
         {/* Texto de construcción y diseño (en inglés) */}
-        <div className="mt-12 bg-muted/30 rounded-lg p-6 border border-border/50">
+        <div className="mt-10 bg-muted/30 rounded-lg p-6 border border-border/50">
           <p className="text-sm text-muted-foreground leading-relaxed">
             <span className="font-medium text-foreground">
               Design &amp; construction integrity.
@@ -123,7 +134,7 @@ function ExtendedStorySection() {
       </div>
 
       {/* ---------- SECCIÓN 5: Puente hacia "The Community" ---------- */}
-      <div className="reveal reveal-up mt-16 md:mt-24 border-t border-border/70 pt-10">
+      <div className="reveal reveal-up mt-14 md:mt-20 border-t border-border/70 pt-8">
         <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground text-center">
           Commercial space designed by DECOBAY Designs
         </p>
@@ -134,6 +145,7 @@ function ExtendedStorySection() {
 
 function SHOOTZSection() {
   const parallaxRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -150,8 +162,22 @@ function SHOOTZSection() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Reinicio con pausa de 3s al terminar el video
+  const handleVideoEnded = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.currentTime = 0;
+        videoRef.current.play().catch(() => {
+          /* autoplay puede fallar silenciosamente si el navegador lo bloquea */
+        });
+      }
+    }, 3000);
+  }, []);
+
   return (
-    <section id="SHOOTZ-build" className="relative py-12 md:py-32 px-6 lg:px-10 overflow-hidden">
+    <section id="SHOOTZ-build" className="relative py-12 md:py-24 px-6 lg:px-10 overflow-hidden">
       <div
         ref={parallaxRef}
         aria-hidden
@@ -161,7 +187,7 @@ function SHOOTZSection() {
       <div className="relative max-w-7xl mx-auto">
         {/* Banner modificado con altura mínima adaptable y padding interno para móviles */}
 
-        <div className="reveal reveal-zoom relative mb-14 overflow-hidden rounded-sm min-h-[420px] sm:min-h-[460px] md:min-h-[520px] flex items-center">
+        <div className="reveal reveal-zoom relative mb-10 overflow-hidden rounded-sm min-h-[420px] sm:min-h-[460px] md:min-h-[520px] flex items-center">
           {/* Imagen de fondo */}
           <img
             src={banner1}
@@ -198,7 +224,7 @@ function SHOOTZSection() {
           </div>
         </div>
 
-        <div className="flex items-end justify-between flex-wrap gap-6 mb-14">
+        <div className="flex items-end justify-between flex-wrap gap-6 mb-10">
           <div>
             <p className="kicker reveal reveal-fade">Designed by DECOBAY Designs</p>
             <h2 className="reveal reveal-up mt-4 text-3xl md:text-6xl">
@@ -215,81 +241,27 @@ function SHOOTZSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-12 gap-6 md:gap-8">
-          <div className="reveal reveal-left col-span-12 lg:col-span-7">
-            {/* Imagen única en lugar del carrusel */}
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-sm bg-muted">
-              <img
-                src={heroImage}
-                alt="SHOOTZ dining area with warm lighting"
-                loading="lazy"
+        {/* CAMBIO: items-start para que el video quede arriba, no centrado verticalmente */}
+        <div className="grid grid-cols-12 gap-6 md:gap-6 items-start">
+          {/* Columna izquierda: video arriba + lista Location/Client/Year debajo */}
+          <div className="reveal reveal-left col-span-12 lg:col-span-5 flex flex-col">
+            {/* Video sin controles, loop con pausa de 3s, alineado a la izquierda */}
+            <div className="relative w-full max-w-[560px] aspect-[16/9] overflow-hidden rounded-sm bg-muted">
+              <video
+                ref={videoRef}
+                src={SHOOTZVideo2}
+                poster={heroImage}
+                autoPlay
+                muted
+                playsInline
+                loop={false}
+                onEnded={handleVideoEnded}
                 className="h-full w-full object-cover"
               />
             </div>
-          </div>
 
-          <div className="reveal reveal-right col-span-12 lg:col-span-5 flex flex-col justify-center lg:pl-2">
-            <div className="flex items-center gap-2 mb-6">
-              <Sparkles className="h-5 w-5 text-accent" />
-              <span className="text-xs font-medium tracking-widest uppercase text-accent">
-                Commercial Design
-              </span>
-            </div>
-            <h3 className="text-3xl md:text-4xl">
-              Designed for <br className="hidden sm:block" />
-              the brand.
-            </h3>
-            <p className="text-muted-foreground mt-4 leading-relaxed">
-              DECOBAY handled the full design and construction of the SHOOTZ commercial space — from
-              layout and flow to finishes and brand identity. The result is a fast-casual
-              environment that feels warm, fast, and unmistakably SHOOTZ.
-            </p>
-
-            <div className="mt-6 flex items-center gap-4">
-              <img
-                src={logo}
-                alt="SHOOTZ logo"
-                className="h-14 w-14 rounded-full object-cover border border-border/60"
-              />
-              <div>
-                <p className="text-sm font-medium">SHOOTZ</p>
-                <p className="text-xs text-muted-foreground">Hawaiian-Inspired Fast Casual</p>
-              </div>
-            </div>
-
-            <div className="mt-6 space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="h-8 w-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                  <Clock className="h-4 w-4 text-accent" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium">Timeline</p>
-                  <p className="text-xs text-muted-foreground">Complete commercial design</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="h-8 w-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                  <Maximize2 className="h-4 w-4 text-accent" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium">Scope</p>
-                  <p className="text-xs text-muted-foreground">Design · Construction · Branding</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="h-8 w-8 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                  <CheckCircle2 className="h-4 w-4 text-accent" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium">Key features</p>
-                  <p className="text-xs text-muted-foreground">
-                    Open layout · Fast-casual flow · Island-inspired finishes
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <ul className="mt-8 space-y-2 text-sm border-t border-border/70 pt-6">
+            {/* CAMBIO: lista Location/Client/Year debajo del video, con el mismo ancho del video */}
+            <ul className="mt-6 w-full max-w-[560px] space-y-2 text-sm border-t border-border/70 pt-4">
               <li className="flex justify-between">
                 <span className="text-muted-foreground">Location</span>
                 <span>Southern California</span>
@@ -300,14 +272,77 @@ function SHOOTZSection() {
               </li>
               <li className="flex justify-between">
                 <span className="text-muted-foreground">Year</span>
-                <span>2025</span>
+                <span>2026</span>
               </li>
             </ul>
           </div>
+
+          {/* Columna derecha: texto informativo (sin la lista, ya movida a la izquierda) */}
+          <div className="reveal reveal-right col-span-12 lg:col-span-7 flex flex-col justify-start lg:pl-2">
+            <div className="flex items-center gap-2 mb-4">
+              <Sparkles className="h-4 w-4 text-accent" />
+              <span className="text-[0.7rem] font-medium tracking-widest uppercase text-accent">
+                Commercial Design
+              </span>
+            </div>
+            <h3 className="text-2xl md:text-3xl">
+              Designed for <br className="hidden sm:block" />
+              the brand.
+            </h3>
+            <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+              DECOBAY handled the full design and construction of the SHOOTZ commercial space — from
+              layout and flow to finishes and brand identity. The result is a fast-casual
+              environment that feels warm, fast, and unmistakably SHOOTZ.
+            </p>
+
+            <div className="mt-4 flex items-center gap-3">
+              <img
+                src={logo}
+                alt="SHOOTZ logo"
+                className="h-11 w-11 rounded-full object-cover border border-border/60"
+              />
+              <div>
+                <p className="text-sm font-medium">SHOOTZ</p>
+                <p className="text-xs text-muted-foreground">Hawaiian-Inspired Fast Casual</p>
+              </div>
+            </div>
+
+            <div className="mt-4 space-y-2.5">
+              <div className="flex items-center gap-3">
+                <div className="h-7 w-7 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <Clock className="h-3.5 w-3.5 text-accent" />
+                </div>
+                <div>
+                  <p className="text-sm font-medium">Timeline</p>
+                  <p className="text-xs text-muted-foreground">Complete commercial design</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="h-7 w-7 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <Maximize2 className="h-3.5 w-3.5 text-accent" />
+                </div>
+                <div>
+                  <p className="text-sm font-medium">Scope</p>
+                  <p className="text-xs text-muted-foreground">Design · Construction · Branding</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="h-7 w-7 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 className="h-3.5 w-3.5 text-accent" />
+                </div>
+                <div>
+                  <p className="text-sm font-medium">Key features</p>
+                  <p className="text-xs text-muted-foreground">
+                    Open layout · Fast-casual flow · Island-inspired finishes
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* ---------- PLANO: Movido aquí, justo debajo de la sección "Designed for the brand" ---------- */}
-        <div className="reveal reveal-fade mt-16 md:mt-24">
+        {/* ---------- PLANO: Movido aquí, justo debajo del bloque video+info ---------- */}
+        <div className="reveal reveal-fade mt-14 md:mt-20">
           <div
             className="w-full overflow-hidden rounded-sm border border-border/50 bg-white/50 p-2"
             style={{ aspectRatio: "1267 / 416" }}
@@ -328,7 +363,7 @@ function SHOOTZSection() {
         <ExtendedStorySection />
 
         {/* ── SECCIÓN THE COMMUNITY (sin imagen "people", centrada) ── */}
-        <div className="reveal reveal-up mt-16 md:mt-24">
+        <div className="reveal reveal-up mt-14 md:mt-20">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Users className="h-5 w-5 text-accent" />
@@ -369,7 +404,7 @@ function SHOOTZSection() {
           </div>
         </div>
 
-        <p className="reveal reveal-fade mt-16 text-xs tracking-[0.25em] uppercase text-muted-foreground text-center">
+        <p className="reveal reveal-fade mt-14 text-xs tracking-[0.25em] uppercase text-muted-foreground text-center">
           Commercial space designed by DECOBAY Designs
         </p>
       </div>
@@ -386,7 +421,7 @@ function SHOOTZPage() {
       <article className="pt-2 md:pt-6">
         <SHOOTZSection />
 
-        <div className="reveal reveal-zoom max-w-7xl mx-auto px-6 lg:px-10 mt-16 mb-16 overflow-hidden rounded-sm">
+        <div className="reveal reveal-zoom max-w-7xl mx-auto px-6 lg:px-10 mt-14 mb-14 overflow-hidden rounded-sm">
           <img src={banner2} alt="SHOOTZ banner" className="w-full h-auto object-cover" />
         </div>
 
