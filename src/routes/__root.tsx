@@ -78,31 +78,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "DECOBAY Interiors — Architectural & Interior Design Firm in California" },
+      { title: "DECOBAY Interiors — Interior Designer in San Ramon & the East Bay" },
       {
         name: "description",
         content:
-          "DECOBAY Interiors: minimalist, warm and timeless residential and commercial interior design in California.",
+          "DECOBAY Interiors is an architectural & interior design firm in San Ramon, CA, creating warm, timeless homes and commercial spaces across the East Bay and Bay Area.",
       },
       { name: "author", content: "DECOBAY Interiors LLC" },
       { property: "og:site_name", content: "DECOBAY Interiors" },
-      { property: "og:title", content: "DECOBAY Interiors — Architectural & Interior Design Firm in California" },
+      { property: "og:title", content: "DECOBAY Interiors — Interior Designer in San Ramon & the East Bay" },
       {
         property: "og:description",
         content:
-          "Minimalist, warm and timeless residential and commercial interior design in California.",
+          "Warm, timeless residential and commercial interior design in San Ramon and the East Bay.",
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "DECOBAY Interiors — Architectural & Interior Design Firm in California",
+        content: "DECOBAY Interiors — Interior Designer in San Ramon & the East Bay",
       },
       {
         name: "twitter:description",
         content:
-          "Minimalist, warm and timeless residential and commercial interior design in California.",
+          "Warm, timeless residential and commercial interior design in San Ramon and the East Bay.",
       },
     ],
     links: [

@@ -500,7 +500,7 @@ export const Route = createFileRoute("/operaplaza")({
           "A sophisticated bathroom transformation in San Francisco's iconic Opera Plaza. Blending modern luxury with timeless elegance.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://deco-bay-dream.lovable.app/operaPlaza" },
+      { property: "og:url", content: "https://decobayinteriors.com/operaplaza" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Opera Plaza Bathroom Remodel — San Francisco" },
       {
@@ -509,7 +509,7 @@ export const Route = createFileRoute("/operaplaza")({
           "A sophisticated bathroom transformation in San Francisco's iconic Opera Plaza. Blending modern luxury with timeless elegance.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://deco-bay-dream.lovable.app/operaPlaza" }],
+    links: [{ rel: "canonical", href: "https://decobayinteriors.com/operaplaza" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -518,7 +518,7 @@ export const Route = createFileRoute("/operaplaza")({
           "@type": "CreativeWork",
           name: "Opera Plaza Bathroom Remodel",
           about: "Interior design bathroom renovation project in San Francisco",
-          url: "https://deco-bay-dream.lovable.app/operaPlaza",
+          url: "https://decobayinteriors.com/operaplaza",
           locationCreated: {
             "@type": "Place",
             address: { 
@@ -531,7 +531,7 @@ export const Route = createFileRoute("/operaplaza")({
           creator: {
             "@type": "Organization",
             name: "DECOBAY Interiors",
-            url: "https://deco-bay-dream.lovable.app/",
+            url: "https://decobayinteriors.com/",
           },
         }),
       },
@@ -545,13 +545,13 @@ export const Route = createFileRoute("/operaplaza")({
               "@type": "ListItem",
               position: 1,
               name: "Home",
-              item: "https://deco-bay-dream.lovable.app/",
+              item: "https://decobayinteriors.com/",
             },
             {
               "@type": "ListItem",
               position: 2,
               name: "Opera Plaza Bathroom Remodel",
-              item: "https://deco-bay-dream.lovable.app/operaPlaza",
+              item: "https://decobayinteriors.com/operaplaza",
             },
           ],
         }),
@@ -994,7 +994,7 @@ export const Route = createFileRoute("/operaplaza")({
 //           "A sophisticated bathroom transformation in San Francisco's iconic Opera Plaza. Blending modern luxury with timeless elegance.",
 //       },
 //       { property: "og:type", content: "article" },
-//       { property: "og:url", content: "https://deco-bay-dream.lovable.app/operaPlaza" },
+//       { property: "og:url", content: "https://decobayinteriors.com/operaplaza" },
 //       { name: "twitter:card", content: "summary_large_image" },
 //       { name: "twitter:title", content: "Opera Plaza Bathroom Remodel — San Francisco" },
 //       {
@@ -1003,7 +1003,7 @@ export const Route = createFileRoute("/operaplaza")({
 //           "A sophisticated bathroom transformation in San Francisco's iconic Opera Plaza. Blending modern luxury with timeless elegance.",
 //       },
 //     ],
-//     links: [{ rel: "canonical", href: "https://deco-bay-dream.lovable.app/operaPlaza" }],
+//     links: [{ rel: "canonical", href: "https://decobayinteriors.com/operaplaza" }],
 //     scripts: [
 //       {
 //         type: "application/ld+json",
@@ -1012,7 +1012,7 @@ export const Route = createFileRoute("/operaplaza")({
 //           "@type": "CreativeWork",
 //           name: "Opera Plaza Bathroom Remodel",
 //           about: "Interior design bathroom renovation project in San Francisco",
-//           url: "https://deco-bay-dream.lovable.app/operaPlaza",
+//           url: "https://decobayinteriors.com/operaplaza",
 //           locationCreated: {
 //             "@type": "Place",
 //             address: { 
@@ -1025,7 +1025,7 @@ export const Route = createFileRoute("/operaplaza")({
 //           creator: {
 //             "@type": "Organization",
 //             name: "DECOBAY Interiors",
-//             url: "https://deco-bay-dream.lovable.app/",
+//             url: "https://decobayinteriors.com/",
 //           },
 //         }),
 //       },
@@ -1039,13 +1039,13 @@ export const Route = createFileRoute("/operaplaza")({
 //               "@type": "ListItem",
 //               position: 1,
 //               name: "Home",
-//               item: "https://deco-bay-dream.lovable.app/",
+//               item: "https://decobayinteriors.com/",
 //             },
 //             {
 //               "@type": "ListItem",
 //               position: 2,
 //               name: "Opera Plaza Bathroom Remodel",
-//               item: "https://deco-bay-dream.lovable.app/operaPlaza",
+//               item: "https://decobayinteriors.com/operaplaza",
 //             },
 //           ],
 //         }),

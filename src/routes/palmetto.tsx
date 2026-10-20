@@ -441,7 +441,7 @@ export const Route = createFileRoute("/palmetto")({
           "A 12,000 SF  commercial development in San Ramon. Gallery and interactive 3D walkthrough by DECOBAY Interiors.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://deco-bay-dream.lovable.app/palmetto" },
+      { property: "og:url", content: "https://decobayinteriors.com/palmetto" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Palmetto San Ramon — Commercial Architecture Project" },
       {
@@ -450,7 +450,7 @@ export const Route = createFileRoute("/palmetto")({
           "A 12,000 SF  commercial development in San Ramon. Gallery and interactive 3D walkthrough by DECOBAY Interiors.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://deco-bay-dream.lovable.app/palmetto" }],
+    links: [{ rel: "canonical", href: "https://decobayinteriors.com/palmetto" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -459,7 +459,7 @@ export const Route = createFileRoute("/palmetto")({
           "@type": "CreativeWork",
           name: "Palmetto San Ramon",
           about: "Commercial architecture development in San Ramon, California",
-          url: "https://deco-bay-dream.lovable.app/palmetto",
+          url: "https://decobayinteriors.com/palmetto",
           locationCreated: {
             "@type": "Place",
             address: { 
@@ -472,7 +472,7 @@ export const Route = createFileRoute("/palmetto")({
           creator: {
             "@type": "Organization",
             name: "DECOBAY Interiors",
-            url: "https://deco-bay-dream.lovable.app/",
+            url: "https://decobayinteriors.com/",
           },
         }),
       },
@@ -486,13 +486,13 @@ export const Route = createFileRoute("/palmetto")({
               "@type": "ListItem",
               position: 1,
               name: "Home",
-              item: "https://deco-bay-dream.lovable.app/",
+              item: "https://decobayinteriors.com/",
             },
             {
               "@type": "ListItem",
               position: 2,
               name: "Palmetto San Ramon",
-              item: "https://deco-bay-dream.lovable.app/palmetto",
+              item: "https://decobayinteriors.com/palmetto",
             },
           ],
         }),

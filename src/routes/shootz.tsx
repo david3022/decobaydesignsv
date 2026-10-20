@@ -468,7 +468,7 @@ export const Route = createFileRoute("/shootz")({
           "Hawaiian-Inspired Food, Made From the Soul. Designed by DECOBAY Interiors.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://deco-bay-dream.lovable.app/SHOOTZ" },
+      { property: "og:url", content: "https://decobayinteriors.com/shootz" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "SHOOTZ Commercial Build-Out — DECOBAY Interiors" },
       {
@@ -477,7 +477,7 @@ export const Route = createFileRoute("/shootz")({
           "Hawaiian-Inspired Food, Made From the Soul. Designed by DECOBAY Interiors.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://deco-bay-dream.lovable.app/SHOOTZ" }],
+    links: [{ rel: "canonical", href: "https://decobayinteriors.com/shootz" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -487,7 +487,7 @@ export const Route = createFileRoute("/shootz")({
           name: "SHOOTZ Commercial Build-Out",
           about:
             "Commercial design and construction project by DECOBAY Interiors in Southern California",
-          url: "https://deco-bay-dream.lovable.app/SHOOTZ",
+          url: "https://decobayinteriors.com/shootz",
           locationCreated: {
             "@type": "Place",
             address: { "@type": "PostalAddress", addressRegion: "CA", addressCountry: "US" },
@@ -495,7 +495,7 @@ export const Route = createFileRoute("/shootz")({
           creator: {
             "@type": "Organization",
             name: "DECOBAY Interiors",
-            url: "https://deco-bay-dream.lovable.app/",
+            url: "https://decobayinteriors.com/",
           },
         }),
       },
@@ -509,13 +509,13 @@ export const Route = createFileRoute("/shootz")({
               "@type": "ListItem",
               position: 1,
               name: "Home",
-              item: "https://deco-bay-dream.lovable.app/",
+              item: "https://decobayinteriors.com/",
             },
             {
               "@type": "ListItem",
               position: 2,
               name: "SHOOTZ Commercial Build-Out",
-              item: "https://deco-bay-dream.lovable.app/SHOOTZ",
+              item: "https://decobayinteriors.com/shootz",
             },
           ],
         }),

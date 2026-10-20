@@ -408,7 +408,7 @@ export const Route = createFileRoute("/katAndAdam")({
           "A complete kitchen transformation from dark to light. Gallery and interactive 3D walkthrough by DECOBAY Interiors.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://deco-bay-dream.lovable.app/katAndAdam" },
+      { property: "og:url", content: "https://decobayinteriors.com/katAndAdam" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Kat & Adam Kitchen Remodel — California Interior Design" },
       {
@@ -417,7 +417,7 @@ export const Route = createFileRoute("/katAndAdam")({
           "A complete kitchen transformation from dark to light. Gallery and interactive 3D walkthrough by DECOBAY Interiors.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://deco-bay-dream.lovable.app/katAndAdam" }],
+    links: [{ rel: "canonical", href: "https://decobayinteriors.com/katAndAdam" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -426,7 +426,7 @@ export const Route = createFileRoute("/katAndAdam")({
           "@type": "CreativeWork",
           name: "Kat & Adam Kitchen Remodel",
           about: "Interior design kitchen renovation project in California",
-          url: "https://deco-bay-dream.lovable.app/katAndAdam",
+          url: "https://decobayinteriors.com/katAndAdam",
           locationCreated: {
             "@type": "Place",
             address: { "@type": "PostalAddress", addressRegion: "CA", addressCountry: "US" },
@@ -434,7 +434,7 @@ export const Route = createFileRoute("/katAndAdam")({
           creator: {
             "@type": "Organization",
             name: "DECOBAY Interiors",
-            url: "https://deco-bay-dream.lovable.app/",
+            url: "https://decobayinteriors.com/",
           },
         }),
       },
@@ -448,13 +448,13 @@ export const Route = createFileRoute("/katAndAdam")({
               "@type": "ListItem",
               position: 1,
               name: "Home",
-              item: "https://deco-bay-dream.lovable.app/",
+              item: "https://decobayinteriors.com/",
             },
             {
               "@type": "ListItem",
               position: 2,
               name: "Kat & Adam Kitchen Remodel",
-              item: "https://deco-bay-dream.lovable.app/katAndAdam",
+              item: "https://decobayinteriors.com/katAndAdam",
             },
           ],
         }),

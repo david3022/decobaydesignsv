@@ -19,14 +19,14 @@ export const Route = createFileRoute("/hardscape")({
         content:
           "Hardscape, California interior design project, 3D interior walkthrough, DECOBAY Interiors",
       },
-      { property: "og:title", content: "Hardscapeh — California Interior Design Project" },
+      { property: "og:title", content: "Hardscape — California Interior Design Project" },
       {
         property: "og:description",
         content:
           "A warm, light-filled California home. Gallery and interactive 3D walkthrough by DECOBAY Interiors.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://deco-bay-dream.lovable.app/hardscape" },
+      { property: "og:url", content: "https://decobayinteriors.com/hardscape" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Hardscape — California Interior Design Project" },
       {
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/hardscape")({
           "A warm, light-filled California home. Gallery and interactive 3D walkthrough by DECOBAY Interiors.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://deco-bay-dream.lovable.app/hardscape" }],
+    links: [{ rel: "canonical", href: "https://decobayinteriors.com/hardscape" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -44,7 +44,7 @@ export const Route = createFileRoute("/hardscape")({
           "@type": "CreativeWork",
           name: "Hardscape",
           about: "Interior design project in California",
-          url: "https://deco-bay-dream.lovable.app/hardscape",
+          url: "https://decobayinteriors.com/hardscape",
           locationCreated: {
             "@type": "Place",
             address: { "@type": "PostalAddress", addressRegion: "CA", addressCountry: "US" },
@@ -52,7 +52,7 @@ export const Route = createFileRoute("/hardscape")({
           creator: {
             "@type": "Organization",
             name: "DECOBAY Interiors",
-            url: "https://deco-bay-dream.lovable.app/",
+            url: "https://decobayinteriors.com/",
           },
         }),
       },
@@ -66,13 +66,13 @@ export const Route = createFileRoute("/hardscape")({
               "@type": "ListItem",
               position: 1,
               name: "Home",
-              item: "https://deco-bay-dream.lovable.app/",
+              item: "https://decobayinteriors.com/",
             },
             {
               "@type": "ListItem",
               position: 2,
               name: "Hardscape",
-              item: "https://deco-bay-dream.lovable.app/hardscape",
+              item: "https://decobayinteriors.com/hardscape",
             },
           ],
         }),

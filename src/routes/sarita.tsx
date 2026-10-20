@@ -25,7 +25,7 @@ export const Route = createFileRoute("/sarita")({
           "A warm, light-filled California home. Gallery and interactive 3D walkthrough by DECOBAY Interiors.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://deco-bay-dream.lovable.app/sarita" },
+      { property: "og:url", content: "https://decobayinteriors.com/sarita" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Sarita Residence — California Interior Design Project" },
       {
@@ -34,7 +34,7 @@ export const Route = createFileRoute("/sarita")({
           "A warm, light-filled California home. Gallery and interactive 3D walkthrough by DECOBAY Interiors.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://deco-bay-dream.lovable.app/sarita" }],
+    links: [{ rel: "canonical", href: "https://decobayinteriors.com/sarita" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -43,7 +43,7 @@ export const Route = createFileRoute("/sarita")({
           "@type": "CreativeWork",
           name: "Sarita Residence",
           about: "Interior design project in California",
-          url: "https://deco-bay-dream.lovable.app/sarita",
+          url: "https://decobayinteriors.com/sarita",
           locationCreated: {
             "@type": "Place",
             address: { "@type": "PostalAddress", addressRegion: "CA", addressCountry: "US" },
@@ -51,7 +51,7 @@ export const Route = createFileRoute("/sarita")({
           creator: {
             "@type": "Organization",
             name: "DECOBAY Interiors",
-            url: "https://deco-bay-dream.lovable.app/",
+            url: "https://decobayinteriors.com/",
           },
         }),
       },
@@ -65,13 +65,13 @@ export const Route = createFileRoute("/sarita")({
               "@type": "ListItem",
               position: 1,
               name: "Home",
-              item: "https://deco-bay-dream.lovable.app/",
+              item: "https://decobayinteriors.com/",
             },
             {
               "@type": "ListItem",
               position: 2,
               name: "Sarita residence",
-              item: "https://deco-bay-dream.lovable.app/sarita",
+              item: "https://decobayinteriors.com/sarita",
             },
           ],
         }),

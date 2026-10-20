@@ -388,7 +388,7 @@ export const Route = createFileRoute("/berkeley")({
           "Explore Palmetto Berkeley by DECOBAY Interiors — custom architectural design and bespoke kitchen spaces in Berkeley, CA.",
       },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "https://deco-bay-dream.lovable.app/palmetto-berkeley" },
+      { property: "og:url", content: "https://decobayinteriors.com/berkeley" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Palmetto Berkeley — Architecture Project" },
       {
@@ -397,7 +397,7 @@ export const Route = createFileRoute("/berkeley")({
           "Bespoke residential architecture and interior design in Berkeley, California by DECOBAY Interiors.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://deco-bay-dream.lovable.app/palmetto-berkeley" }],
+    links: [{ rel: "canonical", href: "https://decobayinteriors.com/berkeley" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -406,7 +406,7 @@ export const Route = createFileRoute("/berkeley")({
           "@type": "CreativeWork",
           name: "Palmetto Berkeley",
           about: "Architectural and interior design project in Berkeley, California",
-          url: "https://deco-bay-dream.lovable.app/palmetto-berkeley",
+          url: "https://decobayinteriors.com/berkeley",
           locationCreated: {
             "@type": "Place",
             address: {
@@ -419,7 +419,7 @@ export const Route = createFileRoute("/berkeley")({
           creator: {
             "@type": "Organization",
             name: "DECOBAY Interiors",
-            url: "https://deco-bay-dream.lovable.app/",
+            url: "https://decobayinteriors.com/",
           },
         }),
       },
@@ -433,13 +433,13 @@ export const Route = createFileRoute("/berkeley")({
               "@type": "ListItem",
               position: 1,
               name: "Home",
-              item: "https://deco-bay-dream.lovable.app/",
+              item: "https://decobayinteriors.com/",
             },
             {
               "@type": "ListItem",
               position: 2,
               name: "Palmetto Berkeley",
-              item: "https://deco-bay-dream.lovable.app/palmetto-berkeley",
+              item: "https://decobayinteriors.com/berkeley",
             },
           ],
         }),

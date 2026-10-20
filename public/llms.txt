@@ -1,10 +1,17 @@
 # DECOBAY Interiors
 
-> California Architectural & Interior Design Firm creating minimalist, warm and timeless residential and commercial interiors.
+> Architectural & interior design firm based in San Ramon, California, creating warm, timeless residential and commercial interiors across the East Bay and San Francisco Bay Area.
 
-DECOBAY Interiors (DECOBAY Designs LLC) designs full homes, single rooms and commercial spaces across California. Free 30-minute consultations are booked online.
+DECOBAY Interiors (DECOBAY Interiors LLC, 3032 Promontory Cir, San Ramon, CA 94583) offers full-home and architectural design, construction documentation, procurement and furniture sourcing, commercial spaces, single-room refreshes and project management. Service area: San Ramon, Danville, Dublin, Pleasanton, Walnut Creek, Alamo, Lafayette, Livermore and the wider Bay Area. BBB Accredited Business. Free 30-minute consultations are booked online.
 
 ## Pages
 
-- [Home](/): Studio overview, philosophy, selected projects, services and free consultation booking.
-- [Sarita residence](/sarita): Featured California project with photo gallery and interactive 3D walkthrough.
+- [Home](https://decobayinteriors.com/): Studio overview, philosophy, selected projects, services and free consultation booking.
+- [Projects](https://decobayinteriors.com/links): Index of residential and commercial projects.
+- [Palmetto Berkeley](https://decobayinteriors.com/berkeley): Architecture and interiors project in Berkeley, CA.
+- [Palmetto San Ramon](https://decobayinteriors.com/palmetto): Commercial architecture project in San Ramon, CA.
+- [Kat & Adam](https://decobayinteriors.com/katAndAdam): Kitchen remodel.
+- [Opera Plaza](https://decobayinteriors.com/operaplaza): Bathroom remodel in San Francisco.
+- [Sarita residence](https://decobayinteriors.com/sarita): Residential project with photo gallery and 3D walkthrough.
+- [Hardscape](https://decobayinteriors.com/hardscape): Outdoor hardscape and pool project.
+- [SHOOTZ](https://decobayinteriors.com/shootz): Commercial build-out.

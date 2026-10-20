@@ -11,54 +11,32 @@ import dining from "@/assets/sarita-2.jpg";
 import bath from "@/assets/KatAndAdam/k2.jpg";
 import commercial from "@/assets/hardscape/hardscape9.jpg";
 
+const SITE_URL = "https://decobayinteriors.com";
+const PAGE_TITLE = "Interior Designer in San Ramon & the East Bay | DECOBAY Interiors";
+const PAGE_DESCRIPTION =
+  "DECOBAY Interiors is an architectural & interior design firm in San Ramon, CA. Full-home design, remodels, procurement and commercial interiors across Danville, Walnut Creek, Pleasanton and the Bay Area. Book a free 30-minute consultation.";
+const SHARE_DESCRIPTION =
+  "Architectural & interior design in San Ramon and the East Bay — warm, timeless homes and commercial spaces. Book a free 30-minute consultation.";
+const OG_IMAGE = `${SITE_URL}${hero}`;
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DECOBAY Interiors — Architectural & Interior Design in California" },
-      {
-        name: "description",
-        content:
-          "California Architectural & Interior Design Firm offering full-service architectural design, construction documentation, procurement, and project management for residential and commercial spaces. Book a free 30-minute consultation.",
-      },
-      {
-        name: "keywords",
-        content:
-          "interior design California, architectural design, construction documentation, procurement, interior design, residential interior design, commercial interior design, DECOBAY Interiors, free consultation",
-      },
-      {
-        property: "og:title",
-        content: "DECOBAY Interiors — Architectural Interior Design in California",
-      },
-      {
-        property: "og:description",
-        content:
-          "California Architectural & Interior Design Firm offering full-service architectural design, construction documentation, procurement, and timeless residential and commercial spaces.",
-      },
+      { title: PAGE_TITLE },
+      { name: "description", content: PAGE_DESCRIPTION },
+      { property: "og:title", content: PAGE_TITLE },
+      { property: "og:description", content: SHARE_DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://deco-bay-dream.lovable.app/" },
-      {
-        property: "og:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fb883835-6702-42e0-a9dc-f2070c1fd8fa/id-preview-44fd052c--a0b0cace-1d38-4ef2-b39f-67d3ab31cade.lovable.app-1782841553501.png",
-      },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:alt", content: "Living room interior designed by DECOBAY Interiors in the East Bay" },
       { name: "twitter:card", content: "summary_large_image" },
-      {
-        name: "twitter:title",
-        content: "DECOBAY Interiors — Architectural Interior Design in California",
-      },
-      {
-        name: "twitter:description",
-        content:
-          "California Architectural & Interior Design Firm. Architectural design, construction documents, procurement, and commercial interiors. Book a free consultation.",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fb883835-6702-42e0-a9dc-f2070c1fd8fa/id-preview-44fd052c--a0b0cace-1d38-4ef2-b39f-67d3ab31cade.lovable.app-1782841553501.png",
-      },
+      { name: "twitter:title", content: PAGE_TITLE },
+      { name: "twitter:description", content: SHARE_DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
-      { rel: "canonical", href: "https://deco-bay-dream.lovable.app/" },
+      { rel: "canonical", href: `${SITE_URL}/` },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -71,22 +49,39 @@ export const Route = createFileRoute("/")({
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "InteriorDesignStudio",
+          "@type": "HomeAndConstructionBusiness",
+          "@id": `${SITE_URL}/#business`,
           name: "DECOBAY Interiors",
+          legalName: "DECOBAY Interiors LLC",
           description:
-            "California Architectural & Interior Design Firm offering architectural design, construction documentation, procurement, and residential and commercial interior design services.",
-          areaServed: { "@type": "State", name: "California" },
-          url: "https://deco-bay-dream.lovable.app/",
-          image:
-            "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fb883835-6702-42e0-a9dc-f2070c1fd8fa/id-preview-44fd052c--a0b0cace-1d38-4ef2-b39f-67d3ab31cade.lovable.app-1782841553501.png",
+            "Architectural & interior design firm in San Ramon, CA offering full-home design, construction documentation, procurement and commercial interiors across the East Bay and Bay Area.",
+          url: `${SITE_URL}/`,
+          image: OG_IMAGE,
           priceRange: "$$",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "3032 Promontory Cir",
+            addressLocality: "San Ramon",
+            addressRegion: "CA",
+            postalCode: "94583",
+            addressCountry: "US",
+          },
+          areaServed: [
+            "San Ramon",
+            "Danville",
+            "Dublin",
+            "Pleasanton",
+            "Walnut Creek",
+            "Alamo",
+            "Lafayette",
+            "Livermore",
+            "San Francisco Bay Area",
+          ].map((name) => ({ "@type": "City", name })),
           sameAs: [
-            "https://decobayinteriors.com",
             "https://www.instagram.com/decobay.interiors/",
             "https://www.facebook.com/109287792171724",
             "https://www.tiktok.com/@decobay.interiors",
           ],
-          address: { "@type": "PostalAddress", addressRegion: "CA", addressCountry: "US" },
           hasOfferCatalog: {
             "@type": "OfferCatalog",
             name: "Architectural & Interior design services",
@@ -112,12 +107,12 @@ function Hero() {
     <section
       id="top"
       className="relative min-h-screen flex items-center justify-center text-center overflow-hidden pt-28 md:pt-36"
-      aria-label="DECOBAY Interiors — Architectural Interior Design in California"
+      aria-label="DECOBAY Interiors — Interior Design in San Ramon & the East Bay"
     >
       <div className="absolute inset-0">
         <img
           src={hero}
-          alt="California living room interior designed by DECOBAY Interiors"
+          alt="Warm, light-filled living room interior designed by DECOBAY Interiors in the East Bay"
           className="w-full h-full object-cover scale-105 animate-[fade-in_1.4s_ease-out]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/40" />
@@ -126,11 +121,11 @@ function Hero() {
         
         {/* Eslogan centrado en la parte superior con la misma fuente y estilo tipográfico del título */}
         <p className="reveal reveal-fade text-2xl md:text-3xl lg:text-4xl italic text-accent font-display mb-4">
-           Architectural & Interior Design Firm
+           Architectural &amp; Interior Design Firm
         </p>
 
         <h1 className="reveal reveal-up text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-4xl">
-          Art of<em className="italic text-accent"> Home Design  </em> 
+          Interior Design in <em className="italic text-accent">San Ramon</em> &amp; the East Bay
         </h1>
 
         <p className="reveal reveal-up mt-6 max-w-xl text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
@@ -138,8 +133,8 @@ function Hero() {
     DECOBAY INTERIORS
   </em>{" "}
   <span className="text-black ">
-    Shaping warm, and timeless residential and commercial spaces — from
-    architectural concept to procurement and full execution.
+    The art of home design — warm, timeless residential and commercial spaces across
+    the Bay Area, from architectural concept to procurement and full execution.
   </span>
 </p>
 
@@ -163,12 +158,6 @@ function Hero() {
             className="px-6 py-3 rounded-full border border-foreground/30 hover:border-foreground transition-colors"
           >
             View projects
-          </a>
-          <a
-            href="/sarita"
-            className="px-6 py-3 rounded-full border border-foreground/30 hover:border-foreground transition-colors"
-          >
-            Sarita residence →
           </a>
         </div>
       </div>
@@ -293,7 +282,7 @@ function Projects() {
             <a href="./berkeley" className="block w-full h-full">
               <img
                 src={living}
-                alt="California living room with linen sofa and oak details"
+                alt="Living room with linen sofa and oak details — Palmetto Berkeley project, Berkeley CA"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -303,7 +292,7 @@ function Projects() {
             <a href="./palmetto" className="block w-full h-full">
               <img
                 src={kitchen}
-                alt=" oak kitchen with stone worktop by DECOBAY Interiors"
+                alt="Modern kitchen design with stone worktop — Palmetto San Ramon project, San Ramon CA"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -322,7 +311,7 @@ function Projects() {
             <a href="./sarita" className="block w-full h-full">
               <img
                 src={bedroom}
-                alt="Warm neutral bedroom interior design in a California home"
+                alt="Warm neutral bedroom interior design — Sarita residence, Bay Area"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -333,7 +322,7 @@ function Projects() {
             <a href="./sarita" className="block w-full h-full">
               <img
                 src={dining}
-                alt="Dining room with sculptural wood table and soft lighting"
+                alt="Dining room with sculptural wood table and soft lighting — Sarita residence"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -343,7 +332,7 @@ function Projects() {
             <a href="./katAndAdam" className="block w-full h-full">
               <img
                 src={bath}
-                alt="Serene stone bathroom design with natural textures"
+                alt="Kitchen remodel with black lower cabinets, white uppers and marble counters — Kat and Adam project"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -353,7 +342,7 @@ function Projects() {
             <a href="./hardscape" className="block w-full h-full">
               <img
                 src={commercial}
-                alt="Commercial interior design project for a California workspace"
+                alt="Backyard hardscape with pool, concrete pavers, turf and cedar fence — East Bay hardscape project"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
@@ -465,8 +454,8 @@ function Services() {
           </h2>
           <p className="reveal reveal-up mt-6 text-muted-foreground max-w-md">
             We work at every scale — from architectural planning and construction documents to
-            procurement and interior styling. Tell us what you have in mind — we'll respond with a
-            tailored proposal within 48 hours.
+            procurement and interior styling. Book a free 30-minute consultation and we'll follow up
+            with a tailored proposal.
           </p>
         </div>
         <ul className="md:col-span-7 grid sm:grid-cols-2 gap-x-10">
@@ -545,7 +534,7 @@ function BBBAccreditation() {
             </h3>
             <p className="reveal reveal-up text-sm md:text-base text-muted-foreground mt-1 max-w-xl">
               We are proud to be a BBB Accredited business, committed to the highest standards of
-              integrity, transparency, and architectural service quality in California.
+              integrity, transparency, and architectural service quality across the Bay Area.
             </p>
           </div>
         </div>
@@ -607,7 +596,7 @@ function Index() {
 //           "California Architectural & Interior Design Firm offering full-service architectural design, construction documentation, procurement, and timeless residential and commercial spaces.",
 //       },
 //       { property: "og:type", content: "website" },
-//       { property: "og:url", content: "https://deco-bay-dream.lovable.app/" },
+//       { property: "og:url", content: "https://decobayinteriors.com/" },
 //       {
 //         property: "og:image",
 //         content:
@@ -630,7 +619,7 @@ function Index() {
 //       },
 //     ],
 //     links: [
-//       { rel: "canonical", href: "https://deco-bay-dream.lovable.app/" },
+//       { rel: "canonical", href: "https://decobayinteriors.com/" },
 //       { rel: "preconnect", href: "https://fonts.googleapis.com" },
 //       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
 //       {
@@ -648,7 +637,7 @@ function Index() {
 //           description:
 //             "California Architectural & Interior Design Firm offering architectural design, construction documentation, procurement, and residential and commercial interior design services.",
 //           areaServed: { "@type": "State", name: "California" },
-//           url: "https://deco-bay-dream.lovable.app/",
+//           url: "https://decobayinteriors.com/",
 //           image:
 //             "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/fb883835-6702-42e0-a9dc-f2070c1fd8fa/id-preview-44fd052c--a0b0cace-1d38-4ef2-b39f-67d3ab31cade.lovable.app-1782841553501.png",
 //           priceRange: "$$",

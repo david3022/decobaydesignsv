@@ -11,13 +11,13 @@ type Project = {
 };
 
 const projects: Project[] = [
-  { title: "Berkeley", slug: "berkeley", url: "https://decobayineriors.com/berkeley" },
-  { title: "Hardscape", slug: "hardscape", url: "https://decobayineriors.com/hardscape" },
-  { title: "Kat and Adam", slug: "katAndAdam", url: "https://decobayineriors.com/katAndAdam" },
-  { title: "Opera Plaza", slug: "operaplaza", url: "https://decobayineriors.com/operaplaza" },
-  { title: "Palmetto", slug: "palmetto", url: "https://decobayineriors.com/palmetto" },
-  { title: "Sarita", slug: "sarita", url: "https://decobayineriors.com/sarita" },
-  { title: "Shootz", slug: "shootz", url: "https://decobayineriors.com/shootz" },
+  { title: "Berkeley", slug: "berkeley", url: "https://decobayinteriors.com/berkeley" },
+  { title: "Hardscape", slug: "hardscape", url: "https://decobayinteriors.com/hardscape" },
+  { title: "Kat and Adam", slug: "katAndAdam", url: "https://decobayinteriors.com/katAndAdam" },
+  { title: "Opera Plaza", slug: "operaplaza", url: "https://decobayinteriors.com/operaplaza" },
+  { title: "Palmetto", slug: "palmetto", url: "https://decobayinteriors.com/palmetto" },
+  { title: "Sarita", slug: "sarita", url: "https://decobayinteriors.com/sarita" },
+  { title: "Shootz", slug: "shootz", url: "https://decobayinteriors.com/shootz" },
 ];
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
@@ -45,7 +45,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           rel="noopener noreferrer"
           className="underline underline-offset-4 group-hover:text-accent transition-colors"
         >
-          decobayineriors.com/{project.slug}
+          decobayinteriors.com/{project.slug}
         </a>
       </p>
     </a>
@@ -127,7 +127,7 @@ export const Route = createFileRoute("/links")({
         content: "A curated index of commercial and residential work by DECOBAY Interiors.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://decobayineriors.com/projects" },
+      { property: "og:url", content: "https://decobayinteriors.com/links" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Projects — DECOBAY Interiors" },
       {
@@ -135,7 +135,7 @@ export const Route = createFileRoute("/links")({
         content: "A curated index of commercial and residential work by DECOBAY Interiors.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://decobayineriors.com/projects" }],
+    links: [{ rel: "canonical", href: "https://decobayinteriors.com/links" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -143,11 +143,11 @@ export const Route = createFileRoute("/links")({
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           name: "Projects — DECOBAY Interiors",
-          url: "https://decobayineriors.com/projects",
+          url: "https://decobayinteriors.com/links",
           creator: {
             "@type": "Organization",
             name: "DECOBAY Interiors",
-            url: "https://decobayineriors.com/",
+            url: "https://decobayinteriors.com/",
           },
           hasPart: projects.map((p) => ({
             "@type": "CreativeWork",
