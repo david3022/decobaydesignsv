@@ -38,8 +38,15 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         {project.title}
       </h2>
 
-      <p className="mt-3 text-xs md:text-sm text-muted-foreground break-all underline underline-offset-4 group-hover:text-accent transition-colors">
-        decobayineriors.com/{project.slug}
+      <p className="mt-3 text-xs md:text-sm text-muted-foreground break-all">
+        <a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-4 group-hover:text-accent transition-colors"
+        >
+          decobayineriors.com/{project.slug}
+        </a>
       </p>
     </a>
   );
