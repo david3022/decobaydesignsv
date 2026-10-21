@@ -54,17 +54,7 @@ function ExtendedStorySection() {
                 Lobby
               </div>
             </div>
-            <div className="relative overflow-hidden rounded-sm border border-border/50 md:ml-8">
-              <img
-                src="https://live.staticflickr.com/65535/55594389102_814e7f32f9_b.jpg"
-                alt="Lobby detail with branding"
-                loading="lazy"
-                className="w-full aspect-[16/9] object-cover"
-              />
-              <div className="absolute bottom-3 left-3 px-2 py-1 rounded-sm text-[0.65rem] tracking-wider uppercase backdrop-blur bg-black/40 text-white">
-                Lobby detail
-              </div>
-            </div>
+            
             <div className="relative overflow-hidden rounded-sm border border-border/50 md:ml-4">
               <img
                 src="https://live.staticflickr.com/65535/55595417891_853aa59429_b.jpg"
