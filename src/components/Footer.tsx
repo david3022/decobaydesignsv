@@ -45,6 +45,9 @@ export function Footer() {
           <Link className="block hover:text-accent transition-colors" to="/" hash="services">
             Services
           </Link>
+          <Link className="block hover:text-accent transition-colors" to="/links">
+            All projects
+          </Link>
           <Link className="block hover:text-accent transition-colors" to="/PrivacyPolicy">
             Privacy Policy
           </Link>

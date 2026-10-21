@@ -23,9 +23,7 @@ const projects: Project[] = [
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <a
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer"
+      href={`/${project.slug}`}
       className="reveal reveal-up project-card group block rounded-sm border border-border bg-background/60 backdrop-blur p-7 md:p-8"
       style={{ transitionDelay: `${(index % 6) * 70}ms` }}
     >
@@ -39,14 +37,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       </h2>
 
       <p className="mt-3 text-xs md:text-sm text-muted-foreground break-all">
-        <a
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline underline-offset-4 group-hover:text-accent transition-colors"
-        >
+        <span className="underline underline-offset-4 group-hover:text-accent transition-colors">
           decobayinteriors.com/{project.slug}
-        </a>
+        </span>
       </p>
     </a>
   );

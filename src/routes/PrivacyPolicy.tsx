@@ -1,72 +1,46 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 // Registrar la ruta en TanStack Router
+const PRIVACY_URL = "https://decobayinteriors.com/PrivacyPolicy";
+const PRIVACY_TITLE = "Privacy Policy | DECOBAY Interiors — San Ramon, CA";
+const PRIVACY_DESCRIPTION =
+  "Read DECOBAY Interiors LLC's privacy policy: how we protect your personal information and keep your architectural and interior design project confidential.";
+
 export const Route = createFileRoute("/PrivacyPolicy")({
+  head: () => ({
+    meta: [
+      { title: PRIVACY_TITLE },
+      { name: "description", content: PRIVACY_DESCRIPTION },
+      { property: "og:title", content: PRIVACY_TITLE },
+      { property: "og:description", content: PRIVACY_DESCRIPTION },
+      { property: "og:url", content: PRIVACY_URL },
+      { name: "twitter:title", content: PRIVACY_TITLE },
+      { name: "twitter:description", content: PRIVACY_DESCRIPTION },
+    ],
+    links: [{ rel: "canonical", href: PRIVACY_URL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Privacy Policy | DECOBAY Interiors",
+          url: PRIVACY_URL,
+          inLanguage: "en-US",
+          publisher: { "@id": "https://decobayinteriors.com/#business" },
+        }),
+      },
+    ],
+  }),
   component: Privacy,
 });
 
 function PrivacyPolicy() {
   return (
     <>
-      <Helmet>
-        <html lang="en" />
-        <title>Privacy Policy | Decobay Interiors LLC - Bay Area Architecture & Interior Design</title>
-        <meta 
-          name="description" 
-          content="Read Decobay Interiors LLC's privacy policy. Learn how we protect your personal information, handle architectural plans, and ensure confidentiality for our architecture and interior design services in The Bay Area, California." 
-        />
-        <meta 
-          name="keywords" 
-          content="privacy policy, data protection, architectural design privacy, Bay Area architecture studio, California interior design, confidential architectural plans, personal information protection, Decobay Interiors LLC" 
-        />
-        <meta name="robots" content="index, follow" />
-        
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Decobay Interiors LLC" />
-        <meta property="og:title" content="Privacy Policy | Decobay Interiors LLC - Bay Area Architecture Studio" />
-        <meta property="og:description" content="Read Decobay Interiors LLC's privacy policy. Learn how we protect your personal information and ensure confidentiality for your architectural and interior design projects." />
-        <meta property="og:locale" content="en_US" />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@decobayinteriors" />
-        <meta name="twitter:title" content="Privacy Policy | Decobay Interiors LLC" />
-        <meta name="twitter:description" content="Learn how Decobay Interiors LLC protects your personal information and ensures confidentiality for your architectural and design project." />
-        
-        {/* Schema Markup */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "Privacy Policy | Decobay Interiors LLC",
-            "description": "Privacy policy and data protection practices for Decobay Interiors LLC, an  Architectural & Interior Design Firm in The Bay Area, California.",
-            "inLanguage": "en-US",
-            "about": {
-              "@type": "Thing",
-              "name": "Privacy Policy",
-              "description": "Information about how Decobay Interiors LLC collects, uses, and protects personal data."
-            },
-            /* ✅ AÑADIDO: LocalBusiness schema con dirección física para SEO local */
-            "publisher": {
-              "@type": "LocalBusiness",
-              "name": "Decobay Interiors LLC",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "3032 Promontory Cir",
-                "addressLocality": "San Ramon",
-                "addressRegion": "CA",
-                "postalCode": "94583",
-                "addressCountry": "US"
-              }
-            }
-          })}
-        </script>
-      </Helmet>
 
       <main className="flex-grow py-12 px-4 sm:px-6 lg:px-8 bg-background text-foreground min-h-screen flex items-center">
         <div className="max-w-4xl mx-auto bg-card p-8 sm:p-12 rounded-xl border border-border shadow-sm w-full">

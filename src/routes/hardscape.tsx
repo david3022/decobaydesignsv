@@ -8,7 +8,7 @@ import { Consultation } from "@/components/consultation";
 export const Route = createFileRoute("/hardscape")({
   head: () => ({
     meta: [
-      { title: "Hardscape — California Project | DECOBAY" },
+      { title: "Backyard Hardscape & Pool Design — East Bay Project | DECOBAY Interiors" },
       {
         name: "description",
         content:

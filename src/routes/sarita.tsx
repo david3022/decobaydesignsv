@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 export const Route = createFileRoute("/sarita")({
   head: () => ({
     meta: [
-      { title: "Sarita Residence — California Project | DECOBAY" },
+      { title: "Sarita Residence — Bay Area Interior Design Project | DECOBAY Interiors" },
       {
         name: "description",
         content:

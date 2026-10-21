@@ -3,7 +3,24 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
+const TERMS_URL = "https://decobayinteriors.com/TermsAndConditions";
+const TERMS_TITLE = "Terms and Conditions | DECOBAY Interiors — San Ramon, CA";
+const TERMS_DESCRIPTION =
+  "Terms and conditions for using the DECOBAY Interiors website and booking architectural and interior design services in San Ramon and the Bay Area.";
+
 export const Route = createFileRoute("/TermsAndConditions")({
+  head: () => ({
+    meta: [
+      { title: TERMS_TITLE },
+      { name: "description", content: TERMS_DESCRIPTION },
+      { property: "og:title", content: TERMS_TITLE },
+      { property: "og:description", content: TERMS_DESCRIPTION },
+      { property: "og:url", content: TERMS_URL },
+      { name: "twitter:title", content: TERMS_TITLE },
+      { name: "twitter:description", content: TERMS_DESCRIPTION },
+    ],
+    links: [{ rel: "canonical", href: TERMS_URL }],
+  }),
   component: TermsAndConditionsPage,
 });
 
