@@ -125,7 +125,7 @@ function Hero() {
         </p>
 
         <h1 className="reveal reveal-up text-5xl md:text-7xl lg:text-8xl leading-[0.95] max-w-4xl">
-          Interior Design in <em className="italic text-accent">San Ramon</em> &amp; the East Bay
+          Art of <em className="italic text-accent">Home</em> Design
         </h1>
 
         <p className="reveal reveal-up mt-6 max-w-xl text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
