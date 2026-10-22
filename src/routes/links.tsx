@@ -4,6 +4,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ArrowUpRight } from "lucide-react";
 
+const JOURNEY_BANNER = "https://live.staticflickr.com/65535/55604809784_17d40a7182_b.jpg";
+
 type Project = {
   title: string;
   slug: string;
@@ -18,6 +20,7 @@ const projects: Project[] = [
   { title: "Palmetto", slug: "palmetto", url: "https://decobayinteriors.com/palmetto" },
   { title: "Sarita", slug: "sarita", url: "https://decobayinteriors.com/sarita" },
   { title: "Shootz", slug: "shootz", url: "https://decobayinteriors.com/shootz" },
+  { title: "Journey", slug: "journey", url: "https://decobayinteriors.com/journey" },
 ];
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
@@ -44,6 +47,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     </a>
   );
 }
+
+
 
 function ProjectsPage() {
   useReveal();
@@ -81,6 +86,8 @@ function ProjectsPage() {
             ))}
           </div>
         </section>
+
+        
 
         {/* Línea de cierre */}
         <p className="reveal reveal-fade mt-16 md:mt-24 text-xs tracking-[0.25em] uppercase text-muted-foreground text-center">
