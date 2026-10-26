@@ -420,7 +420,7 @@ function PalmettoPage() {
   );
 }
 
-export const Route = createFileRoute("/palmetto")({
+export const Route = createFileRoute("/sanramon")({
   head: () => ({
     meta: [
       { title: "Palmetto San Ramon — Commercial Architecture | DECOBAY Interiors" },

@@ -13,16 +13,20 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as PrivacyPolicyRouteImport } from './routes/PrivacyPolicy'
 import { Route as TermsAndConditionsRouteImport } from './routes/TermsAndConditions'
 import { Route as BerkeleyRouteImport } from './routes/berkeley'
+import { Route as FremontRouteImport } from './routes/fremont'
 import { Route as HardscapeRouteImport } from './routes/hardscape'
 import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as KatAndAdamRouteImport } from './routes/katAndAdam'
 import { Route as LinksRouteImport } from './routes/links'
 import { Route as OperaplazaRouteImport } from './routes/operaplaza'
-import { Route as PalmettoRouteImport } from './routes/palmetto'
+import { Route as PetalumaRouteImport } from './routes/petaluma'
+import { Route as SanjoseRouteImport } from './routes/sanjose'
+import { Route as SanramonRouteImport } from './routes/sanramon'
 import { Route as SaritaRouteImport } from './routes/sarita'
 import { Route as Sarita2RouteImport } from './routes/sarita2'
 import { Route as ShootzRouteImport } from './routes/shootz'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as StonestownRouteImport } from './routes/stonestown'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -42,6 +46,11 @@ const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
 const BerkeleyRoute = BerkeleyRouteImport.update({
   id: '/berkeley',
   path: '/berkeley',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FremontRoute = FremontRouteImport.update({
+  id: '/fremont',
+  path: '/fremont',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HardscapeRoute = HardscapeRouteImport.update({
@@ -69,9 +78,19 @@ const OperaplazaRoute = OperaplazaRouteImport.update({
   path: '/operaplaza',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PalmettoRoute = PalmettoRouteImport.update({
-  id: '/palmetto',
-  path: '/palmetto',
+const PetalumaRoute = PetalumaRouteImport.update({
+  id: '/petaluma',
+  path: '/petaluma',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SanjoseRoute = SanjoseRouteImport.update({
+  id: '/sanjose',
+  path: '/sanjose',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SanramonRoute = SanramonRouteImport.update({
+  id: '/sanramon',
+  path: '/sanramon',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SaritaRoute = SaritaRouteImport.update({
@@ -94,38 +113,51 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StonestownRoute = StonestownRouteImport.update({
+  id: '/stonestown',
+  path: '/stonestown',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/PrivacyPolicy': typeof PrivacyPolicyRoute
   '/TermsAndConditions': typeof TermsAndConditionsRoute
   '/berkeley': typeof BerkeleyRoute
+  '/fremont': typeof FremontRoute
   '/hardscape': typeof HardscapeRoute
   '/journey': typeof JourneyRoute
   '/katAndAdam': typeof KatAndAdamRoute
   '/links': typeof LinksRoute
   '/operaplaza': typeof OperaplazaRoute
-  '/palmetto': typeof PalmettoRoute
+  '/petaluma': typeof PetalumaRoute
+  '/sanjose': typeof SanjoseRoute
+  '/sanramon': typeof SanramonRoute
   '/sarita': typeof SaritaRoute
   '/sarita2': typeof Sarita2Route
   '/shootz': typeof ShootzRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/stonestown': typeof StonestownRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/PrivacyPolicy': typeof PrivacyPolicyRoute
   '/TermsAndConditions': typeof TermsAndConditionsRoute
   '/berkeley': typeof BerkeleyRoute
+  '/fremont': typeof FremontRoute
   '/hardscape': typeof HardscapeRoute
   '/journey': typeof JourneyRoute
   '/katAndAdam': typeof KatAndAdamRoute
   '/links': typeof LinksRoute
   '/operaplaza': typeof OperaplazaRoute
-  '/palmetto': typeof PalmettoRoute
+  '/petaluma': typeof PetalumaRoute
+  '/sanjose': typeof SanjoseRoute
+  '/sanramon': typeof SanramonRoute
   '/sarita': typeof SaritaRoute
   '/sarita2': typeof Sarita2Route
   '/shootz': typeof ShootzRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/stonestown': typeof StonestownRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -133,16 +165,20 @@ export interface FileRoutesById {
   '/PrivacyPolicy': typeof PrivacyPolicyRoute
   '/TermsAndConditions': typeof TermsAndConditionsRoute
   '/berkeley': typeof BerkeleyRoute
+  '/fremont': typeof FremontRoute
   '/hardscape': typeof HardscapeRoute
   '/journey': typeof JourneyRoute
   '/katAndAdam': typeof KatAndAdamRoute
   '/links': typeof LinksRoute
   '/operaplaza': typeof OperaplazaRoute
-  '/palmetto': typeof PalmettoRoute
+  '/petaluma': typeof PetalumaRoute
+  '/sanjose': typeof SanjoseRoute
+  '/sanramon': typeof SanramonRoute
   '/sarita': typeof SaritaRoute
   '/sarita2': typeof Sarita2Route
   '/shootz': typeof ShootzRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/stonestown': typeof StonestownRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -151,48 +187,60 @@ export interface FileRouteTypes {
     | '/PrivacyPolicy'
     | '/TermsAndConditions'
     | '/berkeley'
+    | '/fremont'
     | '/hardscape'
     | '/journey'
     | '/katAndAdam'
     | '/links'
     | '/operaplaza'
-    | '/palmetto'
+    | '/petaluma'
+    | '/sanjose'
+    | '/sanramon'
     | '/sarita'
     | '/sarita2'
     | '/shootz'
     | '/sitemap.xml'
+    | '/stonestown'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/PrivacyPolicy'
     | '/TermsAndConditions'
     | '/berkeley'
+    | '/fremont'
     | '/hardscape'
     | '/journey'
     | '/katAndAdam'
     | '/links'
     | '/operaplaza'
-    | '/palmetto'
+    | '/petaluma'
+    | '/sanjose'
+    | '/sanramon'
     | '/sarita'
     | '/sarita2'
     | '/shootz'
     | '/sitemap.xml'
+    | '/stonestown'
   id:
     | '__root__'
     | '/'
     | '/PrivacyPolicy'
     | '/TermsAndConditions'
     | '/berkeley'
+    | '/fremont'
     | '/hardscape'
     | '/journey'
     | '/katAndAdam'
     | '/links'
     | '/operaplaza'
-    | '/palmetto'
+    | '/petaluma'
+    | '/sanjose'
+    | '/sanramon'
     | '/sarita'
     | '/sarita2'
     | '/shootz'
     | '/sitemap.xml'
+    | '/stonestown'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -200,16 +248,20 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   BerkeleyRoute: typeof BerkeleyRoute
+  FremontRoute: typeof FremontRoute
   HardscapeRoute: typeof HardscapeRoute
   JourneyRoute: typeof JourneyRoute
   KatAndAdamRoute: typeof KatAndAdamRoute
   LinksRoute: typeof LinksRoute
   OperaplazaRoute: typeof OperaplazaRoute
-  PalmettoRoute: typeof PalmettoRoute
+  PetalumaRoute: typeof PetalumaRoute
+  SanjoseRoute: typeof SanjoseRoute
+  SanramonRoute: typeof SanramonRoute
   SaritaRoute: typeof SaritaRoute
   Sarita2Route: typeof Sarita2Route
   ShootzRoute: typeof ShootzRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  StonestownRoute: typeof StonestownRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -240,6 +292,13 @@ declare module '@tanstack/react-router' {
       path: '/berkeley'
       fullPath: '/berkeley'
       preLoaderRoute: typeof BerkeleyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fremont': {
+      id: '/fremont'
+      path: '/fremont'
+      fullPath: '/fremont'
+      preLoaderRoute: typeof FremontRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/hardscape': {
@@ -277,11 +336,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OperaplazaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/palmetto': {
-      id: '/palmetto'
-      path: '/palmetto'
-      fullPath: '/palmetto'
-      preLoaderRoute: typeof PalmettoRouteImport
+    '/petaluma': {
+      id: '/petaluma'
+      path: '/petaluma'
+      fullPath: '/petaluma'
+      preLoaderRoute: typeof PetalumaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sanjose': {
+      id: '/sanjose'
+      path: '/sanjose'
+      fullPath: '/sanjose'
+      preLoaderRoute: typeof SanjoseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sanramon': {
+      id: '/sanramon'
+      path: '/sanramon'
+      fullPath: '/sanramon'
+      preLoaderRoute: typeof SanramonRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sarita': {
@@ -312,6 +385,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/stonestown': {
+      id: '/stonestown'
+      path: '/stonestown'
+      fullPath: '/stonestown'
+      preLoaderRoute: typeof StonestownRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -320,16 +400,20 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   TermsAndConditionsRoute: TermsAndConditionsRoute,
   BerkeleyRoute: BerkeleyRoute,
+  FremontRoute: FremontRoute,
   HardscapeRoute: HardscapeRoute,
   JourneyRoute: JourneyRoute,
   KatAndAdamRoute: KatAndAdamRoute,
   LinksRoute: LinksRoute,
   OperaplazaRoute: OperaplazaRoute,
-  PalmettoRoute: PalmettoRoute,
+  PetalumaRoute: PetalumaRoute,
+  SanjoseRoute: SanjoseRoute,
+  SanramonRoute: SanramonRoute,
   SaritaRoute: SaritaRoute,
   Sarita2Route: Sarita2Route,
   ShootzRoute: ShootzRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  StonestownRoute: StonestownRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

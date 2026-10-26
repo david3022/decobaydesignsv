@@ -12,16 +12,28 @@ type Project = {
   url: string;
 };
 
+// Palmetto group — rendered in its own section
+const palmettos: Project[] = [
+  { title: "Palmetto San Ramon", slug: "sanramon", url: "https://decobayinteriors.com/sanramon" },
+  { title: "Palmetto Petaluma", slug: "petaluma", url: "https://decobayinteriors.com/petaluma" },
+  { title: "Palmetto San Jose", slug: "sanjose", url: "https://decobayinteriors.com/sanjose" },
+  { title: "Palmetto Stonestown", slug: "stonestown", url: "https://decobayinteriors.com/stonestown" },
+  { title: "Palmetto Berkeley", slug: "berkeley", url: "https://decobayinteriors.com/berkeley" },
+  { title: "Palmetto Journey", slug: "journey", url: "https://decobayinteriors.com/journey" },
+  { title: "Palmetto Fremont", slug: "fremont", url: "https://decobayinteriors.com/fremont" },
+];
+
+// All other projects
 const projects: Project[] = [
-  { title: "Berkeley", slug: "berkeley", url: "https://decobayinteriors.com/berkeley" },
   { title: "Hardscape", slug: "hardscape", url: "https://decobayinteriors.com/hardscape" },
   { title: "Kat and Adam", slug: "katAndAdam", url: "https://decobayinteriors.com/katAndAdam" },
   { title: "Opera Plaza", slug: "operaplaza", url: "https://decobayinteriors.com/operaplaza" },
-  { title: "Palmetto", slug: "palmetto", url: "https://decobayinteriors.com/palmetto" },
   { title: "Sarita", slug: "sarita", url: "https://decobayinteriors.com/sarita" },
   { title: "Shootz", slug: "shootz", url: "https://decobayinteriors.com/shootz" },
-  { title: "Journey", slug: "journey", url: "https://decobayinteriors.com/journey" },
 ];
+
+// Combined list for SEO / JSON-LD
+const allProjects: Project[] = [...palmettos, ...projects];
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
@@ -47,8 +59,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     </a>
   );
 }
-
-
 
 function ProjectsPage() {
   useReveal();
@@ -78,8 +88,18 @@ function ProjectsPage() {
           </p>
         </section>
 
-        {/* Grid de proyectos */}
-        <section aria-label="Projects">
+        {/* Projects section (moved before Palmettos) */}
+        <section aria-labelledby="projects-heading" className="mb-16 md:mb-24">
+          <div className="mb-8 md:mb-10">
+            <p className="kicker reveal reveal-fade">More work</p>
+            <h2
+              id="projects-heading"
+              className="reveal reveal-up font-display text-3xl md:text-4xl lg:text-5xl mt-3"
+            >
+              <em className="italic text-accent">Projects</em>
+            </h2>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {projects.map((project, index) => (
               <ProjectCard key={project.slug} project={project} index={index} />
@@ -87,7 +107,28 @@ function ProjectsPage() {
           </div>
         </section>
 
-        
+        {/* Palmettos section */}
+        <section aria-labelledby="palmettos-heading">
+          <div className="mb-8 md:mb-10">
+            <p className="kicker reveal reveal-fade">Restaurant group</p>
+            <h2
+              id="palmettos-heading"
+              className="reveal reveal-up font-display text-3xl md:text-4xl lg:text-5xl mt-3"
+            >
+              <em className="italic text-accent">Palmettos</em>
+            </h2>
+            <p className="reveal reveal-fade mt-3 max-w-lg text-sm text-muted-foreground leading-relaxed">
+              A family of restaurant locations, each designed to feel connected
+              to its own neighborhood.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {palmettos.map((project, index) => (
+              <ProjectCard key={project.slug} project={project} index={index} />
+            ))}
+          </div>
+        </section>
 
         {/* Línea de cierre */}
         <p className="reveal reveal-fade mt-16 md:mt-24 text-xs tracking-[0.25em] uppercase text-muted-foreground text-center">
@@ -114,12 +155,12 @@ export const Route = createFileRoute("/links")({
       {
         name: "description",
         content:
-          "Selected projects by DECOBAY Interiors — Berkeley, Hardscape, Kat and Adam, Opera Plaza, Palmetto, Sarita, Shootz.",
+          "Selected projects by DECOBAY Interiors — Hardscape, Kat and Adam, Opera Plaza, Sarita, Shootz, plus the Palmettos group (San Ramon, Petaluma, San Jose, Stonestown, Berkeley, Journey, Fremont).",
       },
       {
         name: "keywords",
         content:
-          "DECOBAY Interiors, Berkeley, Hardscape, Kat and Adam, Opera Plaza, Palmetto, Sarita, Shootz, interior design, commercial design",
+          "DECOBAY Interiors, Hardscape, Kat and Adam, Opera Plaza, Sarita, Shootz, Palmetto San Ramon, Palmetto Petaluma, Palmetto San Jose, Palmetto Stonestown, Palmetto Berkeley, Palmetto Journey, Palmetto Fremont, interior design, commercial design",
       },
       { property: "og:title", content: "Projects — DECOBAY Interiors" },
       {
@@ -149,7 +190,7 @@ export const Route = createFileRoute("/links")({
             name: "DECOBAY Interiors",
             url: "https://decobayinteriors.com/",
           },
-          hasPart: projects.map((p) => ({
+          hasPart: allProjects.map((p) => ({
             "@type": "CreativeWork",
             name: p.title,
             url: p.url,
