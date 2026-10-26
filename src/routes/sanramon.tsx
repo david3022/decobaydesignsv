@@ -143,7 +143,7 @@ function Collage() {
         </div>
       </div>
 
-      {/* Descripción activa con efecto reveal */}
+      
       <div className="reveal reveal-fade bg-muted/30 rounded-lg p-6 border border-border/50">
         <p className="text-sm text-muted-foreground leading-relaxed">
           {collageImages[activeIndex].description}
