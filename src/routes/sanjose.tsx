@@ -553,7 +553,7 @@ export const Route = createFileRoute("/sanjose")({
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://decobayinteriors.com/palmetto-san-jose" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Palmetto San Jose — Lobby & Kitchen" },
+      { name: "twitter:title", content: "Palmetto San Jose —  Lobby & Kitchen" },
       {
         name: "twitter:description",
         content:
