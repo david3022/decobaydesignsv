@@ -28,7 +28,7 @@ import { Consultation } from "@/components/consultation";
 import banner from "@/assets/PalmettoSanJose/jb1.jpg";     // main banner
 import lobby1 from "@/assets/PalmettoSanJose/jb2.jpg";    // lobby photo 1
 import lobby2 from "@/assets/PalmettoSanJose/jb3.jpg";    // lobby photo 2
-import kitchen1 from "@/assets/PalmettoSanJose/jb.jpg";   // kitchen photo 1
+import kitchen1 from "@/assets/PalmettoSanJose/JB.jpg";   // kitchen photo 1
 import kitchen2 from "@/assets/PalmettoSanJose/jb5.jpg";  // kitchen photo 2
 import kitchen3 from "@/assets/PalmettoSanJose/jb6.jpg";  // kitchen photo 3
 
@@ -553,7 +553,7 @@ export const Route = createFileRoute("/sanjose")({
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://decobayinteriors.com/palmetto-san-jose" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Palmetto San Jose — Lobby & Kitchen" },
+      { name: "twitter:title", content: "Palmetto San Jose  — Lobby & Kitchen" },
       {
         name: "twitter:description",
         content:
