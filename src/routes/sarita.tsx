@@ -18,7 +18,7 @@ const kitchenAngle =
 export const Route = createFileRoute("/sarita")({
   head: () => ({
     meta: [
-      { title: "Sarita Kitchen Renovation — Bay Area Interior Design | DECOBAY Interiors" },
+      { title: "Sarita Kitchen Renovation — Bay Area Interior Design | DECOBAY Interiors LLC" },
       {
         name: "description",
         content:
@@ -27,22 +27,22 @@ export const Route = createFileRoute("/sarita")({
       {
         name: "keywords",
         content:
-          "Sarita kitchen renovation, California kitchen design, laundry room, 3D interior walkthrough, DECOBAY Interiors",
+          "Sarita kitchen renovation, California kitchen design, laundry room, 3D interior walkthrough, DECOBAY Interiors LLC",
       },
-      { property: "og:title", content: "Sarita Kitchen Renovation — DECOBAY Interiors" },
+      { property: "og:title", content: "Sarita Kitchen Renovation — DECOBAY Interiors LLC" },
       {
         property: "og:description",
         content:
-          "A warm, functional California kitchen with a dedicated laundry nook. Gallery and video by DECOBAY Interiors.",
+          "A warm, functional California kitchen with a dedicated laundry nook. Gallery and video by DECOBAY Interiors LLC",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://decobayinteriors.com/sarita/kitchen" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Sarita Kitchen Renovation — DECOBAY Interiors" },
+      { name: "twitter:title", content: "Sarita Kitchen Renovation — DECOBAY Interiors LLC" },
       {
         name: "twitter:description",
         content:
-          "A warm, functional California kitchen with a dedicated laundry nook. Gallery and video by DECOBAY Interiors.",
+          "A warm, functional California kitchen with a dedicated laundry nook. Gallery and video by DECOBAY Interiors LLC",
       },
     ],
     links: [{ rel: "canonical", href: "https://decobayinteriors.com/sarita/kitchen" }],
@@ -127,7 +127,7 @@ function SaritaKitchenPage() {
             home.
           </h1>
           <p className="mt-6 max-w-xl text-muted-foreground">
-            A full kitchen renovation by DECOBAY Interiors, complete with a dedicated laundry nook.
+            A full kitchen renovation by DECOBAY Interiors LLC, complete with a dedicated laundry nook.
             Browse the gallery, watch the family film, and explore the design details below.
           </p>
         </header>
@@ -282,7 +282,7 @@ function SaritaKitchenPage() {
             ← Back to Sarita residence
           </Link>
           <Link to="/" className="underline underline-offset-4 hover:text-accent">
-            DECOBAY Interiors
+            DECOBAY Interiors LLC
           </Link>
           <Link to="/" hash="projects" className="underline underline-offset-4 hover:text-accent">
             More projects

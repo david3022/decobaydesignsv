@@ -540,7 +540,7 @@ function PalmettoFremontPage() {
 export const Route = createFileRoute("/fremont")({
   head: () => ({
     meta: [
-      { title: "Palmetto Fremont — Lobby, Kitchen & Bathroom | DECOBAY Interiors" },
+      { title: "Palmetto Fremont — Lobby, Kitchen & Bathroom | DECOBAY Interiors LLC" },
       {
         name: "description",
         content:
@@ -588,11 +588,11 @@ export const Route = createFileRoute("/fremont")({
           },
           creator: {
             "@type": "Organization",
-            name: "DECOBAY Interiors",
+            name: "DECOBAY Interiors LLC",
             url: "https://decobayinteriors.com/",
           },
         }),
-      },
+      },  
       {
         type: "application/ld+json",
         children: JSON.stringify({

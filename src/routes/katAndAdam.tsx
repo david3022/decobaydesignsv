@@ -390,11 +390,11 @@ function KatAndAdamPage() {
 export const Route = createFileRoute("/katAndAdam")({
   head: () => ({
     meta: [
-      { title: "Kat & Adam — Kitchen Remodel | DECOBAY Interiors" },
+      { title: "Kat & Adam — Kitchen Remodel | DECOBAY Interiors LLC" },
       {
         name: "description",
         content:
-          "Kat & Adam kitchen remodel by DECOBAY Interiors. From dark to light — explore the before & after gallery and interactive 3D walkthrough.",
+          "Kat & Adam kitchen remodel by DECOBAY Interiors LLC. From dark to light — explore the before & after gallery and interactive 3D walkthrough.",
       },
       {
         name: "keywords",

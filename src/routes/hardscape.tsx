@@ -8,7 +8,7 @@ import { Consultation } from "@/components/consultation";
 export const Route = createFileRoute("/hardscape")({
   head: () => ({
     meta: [
-      { title: "Backyard Hardscape & Pool Design — East Bay Project | DECOBAY Interiors" },
+      { title: "Backyard Hardscape & Pool Design — East Bay Project | DECOBAY Interiors LLC" },
       {
         name: "description",
         content:
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/hardscape")({
       {
         name: "keywords",
         content:
-          "Hardscape, California interior design project, 3D interior walkthrough, DECOBAY Interiors",
+          "Hardscape, California interior design project, 3D interior walkthrough, DECOBAY Interiors LLC",
       },
       { property: "og:title", content: "Hardscape — California Interior Design Project" },
       {
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/hardscape")({
       {
         name: "twitter:description",
         content:
-          "A warm, light-filled California home. Gallery and interactive 3D walkthrough by DECOBAY Interiors.",
+          "A warm, light-filled California home. Gallery and interactive 3D walkthrough by DECOBAY Interiors LLC",
       },
     ],
     links: [{ rel: "canonical", href: "https://decobayinteriors.com/hardscape" }],
@@ -51,7 +51,7 @@ export const Route = createFileRoute("/hardscape")({
           },
           creator: {
             "@type": "Organization",
-            name: "DECOBAY Interiors",
+            name: "DECOBAY Interiors LLC",
             url: "https://decobayinteriors.com/",
           },
         }),

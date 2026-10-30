@@ -4,9 +4,9 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 const TERMS_URL = "https://decobayinteriors.com/TermsAndConditions";
-const TERMS_TITLE = "Terms and Conditions | DECOBAY Interiors — San Ramon, CA";
+const TERMS_TITLE = "Terms and Conditions | DECOBAY Interiors LLC";
 const TERMS_DESCRIPTION =
-  "Terms and conditions for using the DECOBAY Interiors website and booking architectural and interior design services in San Ramon and the Bay Area.";
+  "Terms and conditions for using the DECOBAY Interiors LLC website and booking architectural and interior design services in San Ramon and the Bay Area.";
 
 export const Route = createFileRoute("/TermsAndConditions")({
   head: () => ({

@@ -370,7 +370,7 @@ function PalmettoBerkeleyPage() {
 export const Route = createFileRoute("/berkeley")({
   head: () => ({
     meta: [
-      { title: "Palmetto Berkeley — Architecture & Interiors | DECOBAY Interiors" },
+      { title: "Palmetto Berkeley — Architecture & Interiors | DECOBAY Interiors LLC" },
       {
         name: "description",
         content:
@@ -418,7 +418,7 @@ export const Route = createFileRoute("/berkeley")({
           },
           creator: {
             "@type": "Organization",
-            name: "DECOBAY Interiors",
+            name: "DECOBAY Interiors LLC",
             url: "https://decobayinteriors.com/",
           },
         }),

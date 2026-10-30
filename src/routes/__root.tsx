@@ -88,8 +88,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "DECOBAY Interiors is an architectural & interior design firm, creating warm, timeless homes and commercial spaces across the Bay Area.",
       },
       { name: "author", content: "DECOBAY Interiors LLC" },
-      { property: "og:site_name", content: "DECOBAY Interiors" },
-      { property: "og:title", content: "DECOBAY Interiors" },
+      { property: "og:site_name", content: "DECOBAY Interiors LLC" },
+      { property: "og:title", content: "DECOBAY Interiors LLC" },
       {
         property: "og:description",
         content:
@@ -100,7 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "DECOBAY Interiors",
+        content: "DECOBAY Interiors LLC",
       },
       {
         name: "twitter:description",

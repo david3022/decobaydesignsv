@@ -423,11 +423,11 @@ function PalmettoPage() {
 export const Route = createFileRoute("/sanramon")({
   head: () => ({
     meta: [
-      { title: "Palmetto San Ramon — Commercial Architecture | DECOBAY Interiors" },
+      { title: "Palmetto San Ramon — Commercial Architecture | DECOBAY Interiors LLC" },
       {
         name: "description",
         content:
-          "Palmetto San Ramon: a 12,000 SF  commercial development by DECOBAY Interiors. Explore the gallery, design brief, and interactive 3D walkthrough.",
+          "Palmetto San Ramon: a 12,000 SF  commercial development by DECOBAY Interiors LLC. Explore the gallery, design brief, and interactive 3D walkthrough.",
       },
       {
         name: "keywords",

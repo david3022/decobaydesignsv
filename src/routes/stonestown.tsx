@@ -512,7 +512,7 @@ function PalmettoStonestownPage() {
 export const Route = createFileRoute("/stonestown")({
   head: () => ({
     meta: [
-      { title: "Palmetto Stonestown — Lobby, Kitchen & Bathroom | DECOBAY Interiors" },
+      { title: "Palmetto Stonestown — Lobby, Kitchen & Bathroom | DECOBAY Interiors LLC" },
       {
         name: "description",
         content:

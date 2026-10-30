@@ -114,7 +114,7 @@ function ExtendedStorySection() {
               Design &amp; construction integrity.
             </span>{" "}
             Every detail — from the flow of the lobby to the efficiency of the kitchen — was
-            coordinated by DECOBAY Interiors. The commercial design balances high-volume
+            coordinated by DECOBAY Interiors LLC. The commercial design balances high-volume
             operations with a warm, island-inspired aesthetic. Durable finishes, strategic lighting,
             and a layout that supports both staff and guests were developed simultaneously to ensure
             the space feels effortless. The result is a seamless environment where construction
@@ -440,31 +440,31 @@ function SHOOTZPage() {
 export const Route = createFileRoute("/shootz")({
   head: () => ({
     meta: [
-      { title: "SHOOTZ — Commercial Build-Out | DECOBAY Interiors" },
+      { title: "SHOOTZ — Commercial Build-Out | DECOBAY Interiors LLC" },
       {
         name: "description",
         content:
-          "SHOOTZ commercial build-out by DECOBAY Interiors. Hawaiian-inspired fast casual designed in Southern California.",
+          "SHOOTZ commercial build-out by DECOBAY Interiors LLC. Hawaiian-inspired fast casual designed in Southern California.",
       },
       {
         name: "keywords",
         content:
-          "SHOOTZ, commercial build-out, fast casual design, Southern California restaurant, DECOBAY Interiors, Hawaiian-inspired restaurant",
+          "SHOOTZ, commercial build-out, fast casual design, Southern California restaurant, DECOBAY Interiors LLC, Hawaiian-inspired restaurant",
       },
-      { property: "og:title", content: "SHOOTZ Commercial Build-Out — DECOBAY Interiors" },
+      { property: "og:title", content: "SHOOTZ Commercial Build-Out — DECOBAY Interiors LLC" },
       {
         property: "og:description",
         content:
-          "Hawaiian-Inspired Food, Made From the Soul. Designed by DECOBAY Interiors.",
+          "Hawaiian-Inspired Food, Made From the Soul. Designed by DECOBAY Interiors LLC.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://decobayinteriors.com/shootz" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "SHOOTZ Commercial Build-Out — DECOBAY Interiors" },
+      { name: "twitter:title", content: "SHOOTZ Commercial Build-Out — DECOBAY Interiors LLC" },
       {
         name: "twitter:description",
         content:
-          "Hawaiian-Inspired Food, Made From the Soul. Designed by DECOBAY Interiors.",
+          "Hawaiian-Inspired Food, Made From the Soul. Designed by DECOBAY Interiors LLC",
       },
     ],
     links: [{ rel: "canonical", href: "https://decobayinteriors.com/shootz" }],
@@ -476,7 +476,7 @@ export const Route = createFileRoute("/shootz")({
           "@type": "CreativeWork",
           name: "SHOOTZ Commercial Build-Out",
           about:
-            "Commercial design and construction project by DECOBAY Interiors in Southern California",
+            "Commercial design and construction project by DECOBAY Interiors LLC in California",
           url: "https://decobayinteriors.com/shootz",
           locationCreated: {
             "@type": "Place",
@@ -484,7 +484,7 @@ export const Route = createFileRoute("/shootz")({
           },
           creator: {
             "@type": "Organization",
-            name: "DECOBAY Interiors",
+            name: "DECOBAY Interiors LLC",
             url: "https://decobayinteriors.com/",
           },
         }),

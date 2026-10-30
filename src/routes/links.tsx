@@ -76,14 +76,14 @@ function ProjectsPage() {
       <article className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pb-24">
         {/* Hero / intro */}
         <section className="pt-16 md:pt-24 pb-14 md:pb-20">
-          <p className="kicker reveal reveal-fade">Selected work · DECOBAY Interiors</p>
+          <p className="kicker reveal reveal-fade">Selected work · DECOBAY Interiors LLC</p>
 
           <h1 className="reveal reveal-up font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] mt-5 max-w-4xl">
             Projects that <em className="italic text-accent">shape space.</em>
           </h1>
 
           <p className="reveal reveal-fade mt-6 max-w-xl text-muted-foreground text-sm md:text-base leading-relaxed">
-            A curated index of commercial and residential work by DECOBAY Interiors. Explore each
+            A curated index of commercial and residential work by DECOBAY Interiors LLC. Explore each
             project below.
           </p>
         </section>
@@ -132,7 +132,7 @@ function ProjectsPage() {
 
         {/* Línea de cierre */}
         <p className="reveal reveal-fade mt-16 md:mt-24 text-xs tracking-[0.25em] uppercase text-muted-foreground text-center">
-          Commercial &amp; residential spaces designed &amp; built by DECOBAY
+          Commercial &amp; residential spaces designed &amp; built by DECOBAY Interiors LLC
         </p>
 
         {/* Navegación secundaria, igual que en Shootz */}
@@ -155,7 +155,7 @@ export const Route = createFileRoute("/links")({
       {
         name: "description",
         content:
-          "Selected projects by DECOBAY Interiors — Hardscape, Kat and Adam, Opera Plaza, Sarita, Shootz, plus the Palmettos group (San Ramon, Petaluma, San Jose, Stonestown, Berkeley, Journey, Fremont).",
+          "Selected projects by DECOBAY Interiors LLC — Hardscape, Kat and Adam, Opera Plaza, Sarita, Shootz, plus the Palmettos group (San Ramon, Petaluma, San Jose, Stonestown, Berkeley, Journey, Fremont).",
       },
       {
         name: "keywords",
@@ -170,7 +170,7 @@ export const Route = createFileRoute("/links")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://decobayinteriors.com/links" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Projects — DECOBAY Interiors" },
+      { name: "twitter:title", content: "Projects — DECOBAY Interiors LLC" },
       {
         name: "twitter:description",
         content: "A curated index of commercial and residential work by DECOBAY Interiors.",

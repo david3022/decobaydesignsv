@@ -533,7 +533,7 @@ function PalmettoSanJosePage() {
 export const Route = createFileRoute("/sanjose")({
   head: () => ({
     meta: [
-      { title: "Palmetto San Jose — Lobby & Kitchen | DECOBAY Interiors" },
+      { title: "Palmetto San Jose — Lobby & Kitchen | DECOBAY Interiors LLC" },
       {
         name: "description",
         content:

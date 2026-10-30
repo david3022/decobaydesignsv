@@ -550,7 +550,7 @@ function PalmettoPetalumaPage() {
 export const Route = createFileRoute("/petaluma")({
   head: () => ({
     meta: [
-      { title: "Palmetto Petaluma — Lobby & Kitchen | DECOBAY Interiors" },
+      { title: "Palmetto Petaluma — Lobby & Kitchen | DECOBAY Interiors LLC" },
       {
         name: "description",
         content:

@@ -423,23 +423,23 @@ function PalmettoPage() {
 export const Route = createFileRoute("/sarita2")({
   head: () => ({
     meta: [
-      { title: "Palmetto San Ramon — Commercial Architecture | DECOBAY Interiors" },
+      { title: "Palmetto San Ramon — Commercial Architecture | DECOBAY Interiors LLC" },
       { name: "robots", content: "noindex, follow" },
       {
         name: "description",
         content:
-          "Palmetto San Ramon: a 12,000 SF mixed-use commercial development by DECOBAY Interiors. Explore the gallery, design brief, and interactive 3D walkthrough.",
+          "Palmetto San Ramon: a 12,000 SF mixed-use commercial development by DECOBAY Interiors LLC. Explore the gallery, design brief, and interactive 3D walkthrough.",
       },
       {
         name: "keywords",
         content:
-          "Palmetto San Ramon, commercial architecture, mixed-use development, San Ramon retail, DECOBAY Interiors, 3D commercial walkthrough",
+          "Palmetto San Ramon, commercial architecture, mixed-use development, San Ramon retail, DECOBAY Interiors LLC, 3D commercial walkthrough",
       },
       { property: "og:title", content: "Palmetto San Ramon — Commercial Architecture Project" },
       {
         property: "og:description",
         content:
-          "A 12,000 SF mixed-use commercial development in San Ramon. Gallery and interactive 3D walkthrough by DECOBAY Interiors.",
+          "A 12,000 SF mixed-use commercial development in San Ramon. Gallery and interactive 3D walkthrough by DECOBAY Interiors LLC",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://decobayinteriors.com/palmetto" },
@@ -448,7 +448,7 @@ export const Route = createFileRoute("/sarita2")({
       {
         name: "twitter:description",
         content:
-          "A 12,000 SF mixed-use commercial development in San Ramon. Gallery and interactive 3D walkthrough by DECOBAY Interiors.",
+          "A 12,000 SF mixed-use commercial development in San Ramon. Gallery and interactive 3D walkthrough by DECOBAY Interiors LLC",
       },
     ],
     links: [{ rel: "canonical", href: "https://decobayinteriors.com/palmetto" }],

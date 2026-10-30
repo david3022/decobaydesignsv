@@ -12,7 +12,7 @@ import bath from "@/assets/KatAndAdam/k2.jpg";
 import commercial from "@/assets/hardscape/hardscape9.jpg";
 
 const SITE_URL = "https://decobayinteriors.com";
-const PAGE_TITLE = "DECOBAY Interiors";
+const PAGE_TITLE = "DECOBAY Interiors LLC";
 const PAGE_DESCRIPTION =
   "DECOBAY Interiors is an architectural & interior design firm in San Ramon, CA. Full-home design, remodels, procurement and commercial interiors across Danville, Walnut Creek, Pleasanton and the Bay Area. Book a free 30-minute consultation.";
 const SHARE_DESCRIPTION =
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE_URL}/` },
       { property: "og:image", content: OG_IMAGE },
-      { property: "og:image:alt", content: "Living room interior designed by DECOBAY Interiors in the East Bay" },
+      { property: "og:image:alt", content: "Living room interior designed by DECOBAY Interiors LLC" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: PAGE_TITLE },
       { name: "twitter:description", content: SHARE_DESCRIPTION },
@@ -107,12 +107,12 @@ function Hero() {
     <section
       id="top"
       className="relative min-h-screen flex items-center justify-center text-center overflow-hidden pt-28 md:pt-36"
-      aria-label="DECOBAY Interiors — Interior Design in San Ramon & the East Bay"
+      aria-label="DECOBAY Interiors LLC"
     >
       <div className="absolute inset-0">
         <img
           src={hero}
-          alt="Warm, light-filled living room interior designed by DECOBAY Interiors in the East Bay"
+          alt="Warm, light-filled living room interior designed by DECOBAY Interiors LLC"
           className="w-full h-full object-cover scale-105 animate-[fade-in_1.4s_ease-out]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-background/40" />
@@ -130,7 +130,7 @@ function Hero() {
 
         <p className="reveal reveal-up mt-6 max-w-xl text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
   <em className="font-display italic font-semibold text-accent not-italic-none">
-    DECOBAY INTERIORS
+    DECOBAY Interiors LLC
   </em>{" "}
   <span className="text-black ">
     The art of home design — warm, timeless residential and commercial spaces across
