@@ -316,7 +316,7 @@ function PalmettoSection() {
             <h3 className="text-3xl md:text-4xl">A new commercial <br className="hidden sm:block" />anchor.</h3>
             <p className="text-muted-foreground mt-4 leading-relaxed">
               Palmetto San Ramon is a 12,000 SF  development designed to bring a new level 
-              of architectural sophistication to the East Bay retail landscape. The project features 
+              of architectural sophistication to the Bay retail landscape. The project features 
               flexible commercial spaces, a central courtyard, and a material palette that balances 
               durability with contemporary elegance.
             </p>

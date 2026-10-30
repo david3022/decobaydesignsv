@@ -12,11 +12,11 @@ import bath from "@/assets/KatAndAdam/k2.jpg";
 import commercial from "@/assets/hardscape/hardscape9.jpg";
 
 const SITE_URL = "https://decobayinteriors.com";
-const PAGE_TITLE = "Interior Designer in San Ramon & the East Bay | DECOBAY Interiors";
+const PAGE_TITLE = "Interior Designs | DECOBAY Interiors";
 const PAGE_DESCRIPTION =
   "DECOBAY Interiors is an architectural & interior design firm in San Ramon, CA. Full-home design, remodels, procurement and commercial interiors across Danville, Walnut Creek, Pleasanton and the Bay Area. Book a free 30-minute consultation.";
 const SHARE_DESCRIPTION =
-  "Architectural & interior design in San Ramon and the East Bay — warm, timeless homes and commercial spaces. Book a free 30-minute consultation.";
+  "Architectural & interior designs — warm, timeless homes and commercial spaces. Book a free 30-minute consultation.";
 const OG_IMAGE = `${SITE_URL}${hero}`;
 
 export const Route = createFileRoute("/")({
@@ -54,7 +54,7 @@ export const Route = createFileRoute("/")({
           name: "DECOBAY Interiors",
           legalName: "DECOBAY Interiors LLC",
           description:
-            "Architectural & interior design firm in San Ramon, CA offering full-home design, construction documentation, procurement and commercial interiors across the East Bay and Bay Area.",
+            "Architectural & interior design firm in CA offering full-home design, construction documentation, procurement and commercial interiors across the Bay Area.",
           url: `${SITE_URL}/`,
           image: OG_IMAGE,
           priceRange: "$$",

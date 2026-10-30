@@ -35,11 +35,14 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    reportLovableError(
+      error instanceof Error ? error : new Error(String(error)),
+      { boundary: "tanstack_root_error_component" },
+    );
   }, [error]);
 
   return (
@@ -78,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "DECOBAY Interiors — Interior Designer in San Ramon & the East Bay" },
+      { title: "DECOBAY Interiors — Interior Designs" },
       {
         name: "description",
         content:
@@ -86,23 +89,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "DECOBAY Interiors LLC" },
       { property: "og:site_name", content: "DECOBAY Interiors" },
-      { property: "og:title", content: "DECOBAY Interiors — Interior Designer in San Ramon & the East Bay" },
+      { property: "og:title", content: "DECOBAY Interiors — Interior Designs" },
       {
         property: "og:description",
         content:
-          "Warm, timeless residential and commercial interior design in San Ramon and the East Bay.",
+          "Warm, timeless residential and commercial interior designs",
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_US" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "DECOBAY Interiors — Interior Designer in San Ramon & the East Bay",
+        content: "DECOBAY Interiors — Interior Designs",
       },
       {
         name: "twitter:description",
         content:
-          "Warm, timeless residential and commercial interior design in San Ramon and the East Bay.",
+          "Warm, timeless residential and commercial interior designs",
       },
     ],
     links: [
