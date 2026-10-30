@@ -81,15 +81,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "DECOBAY Interiors — Interior Designs" },
+      { title: "DECOBAY Interiors" },
       {
         name: "description",
         content:
-          "DECOBAY Interiors is an architectural & interior design firm in San Ramon, CA, creating warm, timeless homes and commercial spaces across the East Bay and Bay Area.",
+          "DECOBAY Interiors is an architectural & interior design firm, creating warm, timeless homes and commercial spaces across the Bay Area.",
       },
       { name: "author", content: "DECOBAY Interiors LLC" },
       { property: "og:site_name", content: "DECOBAY Interiors" },
-      { property: "og:title", content: "DECOBAY Interiors — Interior Designs" },
+      { property: "og:title", content: "DECOBAY Interiors" },
       {
         property: "og:description",
         content:
@@ -100,7 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
-        content: "DECOBAY Interiors — Interior Designs",
+        content: "DECOBAY Interiors",
       },
       {
         name: "twitter:description",

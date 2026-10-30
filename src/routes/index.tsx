@@ -12,7 +12,7 @@ import bath from "@/assets/KatAndAdam/k2.jpg";
 import commercial from "@/assets/hardscape/hardscape9.jpg";
 
 const SITE_URL = "https://decobayinteriors.com";
-const PAGE_TITLE = "Interior Designs | DECOBAY Interiors";
+const PAGE_TITLE = "DECOBAY Interiors";
 const PAGE_DESCRIPTION =
   "DECOBAY Interiors is an architectural & interior design firm in San Ramon, CA. Full-home design, remodels, procurement and commercial interiors across Danville, Walnut Creek, Pleasanton and the Bay Area. Book a free 30-minute consultation.";
 const SHARE_DESCRIPTION =
