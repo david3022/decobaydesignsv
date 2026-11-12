@@ -75,7 +75,7 @@ export function Footer() {
             target="_blank"
             rel="noreferrer"
           >
-            Decobay Interiors →
+            Decobay Interiors LLC →
           </a>
         </div>
 

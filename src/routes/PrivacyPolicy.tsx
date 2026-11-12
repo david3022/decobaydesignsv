@@ -27,7 +27,7 @@ export const Route = createFileRoute("/PrivacyPolicy")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebPage",
-          name: "Privacy Policy | DECOBAY Interiors",
+          name: "Privacy Policy | DECOBAY Interiors LLC",
           url: PRIVACY_URL,
           inLanguage: "en-US",
           publisher: { "@id": "https://decobayinteriors.com/#business" },

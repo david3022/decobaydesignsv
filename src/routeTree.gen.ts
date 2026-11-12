@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as PrivacyPolicyRouteImport } from './routes/PrivacyPolicy'
 import { Route as TermsAndConditionsRouteImport } from './routes/TermsAndConditions'
 import { Route as BerkeleyRouteImport } from './routes/berkeley'
+import { Route as BroadwayRouteImport } from './routes/broadway'
 import { Route as FremontRouteImport } from './routes/fremont'
 import { Route as HardscapeRouteImport } from './routes/hardscape'
 import { Route as JourneyRouteImport } from './routes/journey'
@@ -46,6 +47,11 @@ const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
 const BerkeleyRoute = BerkeleyRouteImport.update({
   id: '/berkeley',
   path: '/berkeley',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BroadwayRoute = BroadwayRouteImport.update({
+  id: '/broadway',
+  path: '/broadway',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FremontRoute = FremontRouteImport.update({
@@ -124,6 +130,7 @@ export interface FileRoutesByFullPath {
   '/PrivacyPolicy': typeof PrivacyPolicyRoute
   '/TermsAndConditions': typeof TermsAndConditionsRoute
   '/berkeley': typeof BerkeleyRoute
+  '/broadway': typeof BroadwayRoute
   '/fremont': typeof FremontRoute
   '/hardscape': typeof HardscapeRoute
   '/journey': typeof JourneyRoute
@@ -144,6 +151,7 @@ export interface FileRoutesByTo {
   '/PrivacyPolicy': typeof PrivacyPolicyRoute
   '/TermsAndConditions': typeof TermsAndConditionsRoute
   '/berkeley': typeof BerkeleyRoute
+  '/broadway': typeof BroadwayRoute
   '/fremont': typeof FremontRoute
   '/hardscape': typeof HardscapeRoute
   '/journey': typeof JourneyRoute
@@ -165,6 +173,7 @@ export interface FileRoutesById {
   '/PrivacyPolicy': typeof PrivacyPolicyRoute
   '/TermsAndConditions': typeof TermsAndConditionsRoute
   '/berkeley': typeof BerkeleyRoute
+  '/broadway': typeof BroadwayRoute
   '/fremont': typeof FremontRoute
   '/hardscape': typeof HardscapeRoute
   '/journey': typeof JourneyRoute
@@ -187,6 +196,7 @@ export interface FileRouteTypes {
     | '/PrivacyPolicy'
     | '/TermsAndConditions'
     | '/berkeley'
+    | '/broadway'
     | '/fremont'
     | '/hardscape'
     | '/journey'
@@ -207,6 +217,7 @@ export interface FileRouteTypes {
     | '/PrivacyPolicy'
     | '/TermsAndConditions'
     | '/berkeley'
+    | '/broadway'
     | '/fremont'
     | '/hardscape'
     | '/journey'
@@ -227,6 +238,7 @@ export interface FileRouteTypes {
     | '/PrivacyPolicy'
     | '/TermsAndConditions'
     | '/berkeley'
+    | '/broadway'
     | '/fremont'
     | '/hardscape'
     | '/journey'
@@ -248,6 +260,7 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   BerkeleyRoute: typeof BerkeleyRoute
+  BroadwayRoute: typeof BroadwayRoute
   FremontRoute: typeof FremontRoute
   HardscapeRoute: typeof HardscapeRoute
   JourneyRoute: typeof JourneyRoute
@@ -292,6 +305,13 @@ declare module '@tanstack/react-router' {
       path: '/berkeley'
       fullPath: '/berkeley'
       preLoaderRoute: typeof BerkeleyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/broadway': {
+      id: '/broadway'
+      path: '/broadway'
+      fullPath: '/broadway'
+      preLoaderRoute: typeof BroadwayRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/fremont': {
@@ -400,6 +420,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   TermsAndConditionsRoute: TermsAndConditionsRoute,
   BerkeleyRoute: BerkeleyRoute,
+  BroadwayRoute: BroadwayRoute,
   FremontRoute: FremontRoute,
   HardscapeRoute: HardscapeRoute,
   JourneyRoute: JourneyRoute,
