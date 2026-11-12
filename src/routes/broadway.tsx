@@ -25,7 +25,11 @@ const kitchenTallImages = [
   "https://live.staticflickr.com/65535/55647793819_5df57f1155_b.jpg",
 ];
 
-// Dirección del PROYECTO (no del estudio)
+// Imagen TEMPORAL de mujer profesional sonriente (Unsplash, uso libre)
+// Reemplazar por foto real del founder cuando esté disponible
+const founderPhoto =
+  "https://images.pexels.com/photos/6980994/pexels-photo-6980994.jpeg";
+
 const projectAddress = {
   line1: "350 Sansome St",
   line2: "Suite 820 PMB 1211",
@@ -125,50 +129,6 @@ export const Route = createFileRoute("/broadway")({
   }),
   component: BroadwayPage,
 });
-
-/* ============================================================
-   SMALL UTILITIES
-   ============================================================ */
-function useCountUp(target: number, duration = 1400) {
-  const [value, setValue] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return;
-        const start = performance.now();
-        const tick = (now: number) => {
-          const p = Math.min((now - start) / duration, 1);
-          setValue(Math.round(target * (1 - Math.pow(1 - p, 3))));
-          if (p < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
-        io.disconnect();
-      },
-      { threshold: 0.4 },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, [target, duration]);
-  return { value, ref };
-}
-
-function Stat({ number, label, suffix = "" }: { number: number; label: string; suffix?: string }) {
-  const { value, ref } = useCountUp(number);
-  return (
-    <div className="text-center">
-      <span ref={ref} className="block text-4xl md:text-5xl font-light tabular-nums">
-        {value}
-        {suffix}
-      </span>
-      <span className="mt-2 block text-xs uppercase tracking-[0.18em] text-muted-foreground">
-        {label}
-      </span>
-    </div>
-  );
-}
 
 /* ============================================================
    CAROUSEL (accessible, touch-friendly)
@@ -365,16 +325,6 @@ function BroadwayPage() {
           </div>
         </section>
 
-        {/* ============ FACTS / STATS ============ */}
-        <section className="max-w-7xl mx-auto px-6 lg:px-10 -mt-10 md:-mt-16 relative z-10">
-          <div className="bg-background border border-border rounded-xl shadow-lg px-6 py-8 md:px-10 md:py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
-            <Stat number={4} label="Areas renovated" />
-            <Stat number={1} label="Historic home" />
-            <Stat number={100} suffix="%" label="Character preserved" />
-            <Stat number={2026} label="Completed" />
-          </div>
-        </section>
-
         {/* ============ OVERVIEW / BRIEF ============ */}
         <section className="max-w-7xl mx-auto px-6 lg:px-10 mt-16 md:mt-24 grid gap-10 md:grid-cols-2 md:items-center">
           <div className="reveal">
@@ -395,7 +345,6 @@ function BroadwayPage() {
             </p>
           </div>
 
-          {/* Sin duplicados: banner ya está arriba, aquí usamos kitchen.d + un tall */}
           <div className="reveal grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[kitchenImages.d, kitchenTallImages[0]].map((src, i) => (
               <button
@@ -415,6 +364,40 @@ function BroadwayPage() {
             ))}
           </div>
         </section>
+
+        {/* ============ MEET THE FOUNDER ============ */}
+        {/* <section className="max-w-7xl mx-auto px-6 lg:px-10 mt-20 md:mt-28">
+          <div className="reveal grid gap-10 md:grid-cols-[1fr_1.2fr] md:items-center rounded-2xl border border-border bg-card overflow-hidden">
+            <div className="relative aspect-[4/5] md:aspect-auto md:h-full bg-muted">
+              <img
+                src={founderPhoto}
+                alt="Founder and principal designer of DECOBAY Interiors, smiling"
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="p-8 md:p-12">
+              <p className="kicker">Behind DECOBAY</p>
+              <h2 className="mt-3 text-3xl md:text-4xl leading-tight">
+                A personal approach to <em className="italic text-accent">timeless</em> design.
+              </h2>
+              <p className="mt-5 text-muted-foreground">
+                At DECOBAY Interiors, every project begins with listening. We believe a renovation
+                is more than construction — it's a collaboration between the home, its history and
+                the people who live in it.
+              </p>
+              <p className="mt-4 text-muted-foreground">
+                With a background in interior architecture and a deep respect for California's
+                historic homes, our founder leads each project personally — from the first sketch
+                to the final walkthrough.
+              </p>
+              <div className="mt-6">
+                <p className="font-medium">DECOBAY Interiors LLC</p>
+                <p className="text-sm text-muted-foreground">Founder & Principal Designer</p>
+              </div>
+            </div>
+          </div>
+        </section> */}
 
         {/* ============ SCOPE OF WORK ============ */}
         <section className="max-w-7xl mx-auto px-6 lg:px-10 mt-20 md:mt-28">
@@ -492,7 +475,6 @@ function BroadwayPage() {
             </p>
           </div>
 
-          {/* Grid 16/9 + 9/16 sin duplicados */}
           <div className="mt-10 grid gap-4 grid-cols-1 md:grid-cols-3">
             <button
               type="button"
@@ -550,7 +532,6 @@ function BroadwayPage() {
           </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2 md:items-start">
-            {/* Carrusel principal — baño 1 */}
             <div className="reveal">
               <Carousel
                 images={bathImages.slice(0, 3)}
@@ -563,7 +544,6 @@ function BroadwayPage() {
               </p>
             </div>
 
-            {/* Carrusel secundario — baño 2 */}
             <div className="reveal">
               <Carousel
                 images={bathImages.slice(3)}
